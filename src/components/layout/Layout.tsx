@@ -3,6 +3,7 @@ import TopBar from './TopBar';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import FeedbackButton from '../ui/FeedbackButton';
+import NavigateToTopButton from '../ui/NavigateToTopButton';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -40,6 +41,7 @@ const Layout: React.FC<LayoutProps> = ({
         {children}
       </main>
       <Footer />
+      <NavigateToTopButton />
       <FeedbackButton />
     </div>
   );
