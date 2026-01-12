@@ -294,8 +294,6 @@ const News: React.FC = () => {
 
   return (
     <PageLayout
-      title="Notas de Interés"
-      description="Las últimas noticias, análisis y reportajes sobre el sistema judicial guatemalteco."
     >
       <HeroSlider slides={slides} />
 
