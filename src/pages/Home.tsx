@@ -6,6 +6,7 @@ import FeatureBlocks from '../components/home/FeatureBlocks';
 import FeaturedSection from '../components/home/FeaturedSection';
 import StatsSection from '../components/home/StatsSection';
 import NewsSection from '../components/home/NewsSection';
+import ActiveProcessesNotification from '../components/ui/ActiveProcessesNotification';
 
 const Home: React.FC = () => {
   const featuredInstitutions = [
@@ -36,17 +37,19 @@ const Home: React.FC = () => {
     <Layout>
       <Hero />
       <FeatureBlocks />
-      
-      <FeaturedSection 
-        title="Instituciones de Justicia" 
+
+      <FeaturedSection
+        title="Instituciones de Justicia"
         description="Conoce las principales instituciones del sistema de justicia en Guatemala."
         items={featuredInstitutions}
         viewAllLink="/instituciones"
       />
-      
+
       <StatsSection />
 
       <NewsSection />
+
+      <ActiveProcessesNotification />
     </Layout>
   );
 };
