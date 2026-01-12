@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Institutions from './pages/Institutions';
-import InstitutionProfile from './pages/InstitutionProfile';
-import Commissions from './pages/Commissions';
-import CommissionProfile from './pages/CommissionProfile';
-import Candidates from './pages/Candidates';
-import CandidateProfile from './pages/CandidateProfile';
-import Dashboard from './pages/Dashboard';
-import Documentation from './pages/Documentation';
-import News from './pages/News';
-import NewsArticle from './pages/NewsArticle';
-import SearchPage from './pages/Search';
-import NotFound from './pages/NotFound';
-import About from './pages/About';
-import WhatIsJusticiapedia from './pages/WhatIsJusticiapedia';
-import OpenData from './pages/OpenData';
-import Learn from './pages/Learn';
-import Contact from './pages/Contact';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
-import Cookies from './pages/Cookies';
-import Resources from './pages/Resources';
+import Loading from './components/ui/Loading';
+
+const Home = lazy(() => import('./pages/Home'));
+const Institutions = lazy(() => import('./pages/Institutions'));
+const InstitutionProfile = lazy(() => import('./pages/InstitutionProfile'));
+const Commissions = lazy(() => import('./pages/Commissions'));
+const CommissionProfile = lazy(() => import('./pages/CommissionProfile'));
+const Candidates = lazy(() => import('./pages/Candidates'));
+const CandidateProfile = lazy(() => import('./pages/CandidateProfile'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Documentation = lazy(() => import('./pages/Documentation'));
+const News = lazy(() => import('./pages/News'));
+const NewsArticle = lazy(() => import('./pages/NewsArticle'));
+const SearchPage = lazy(() => import('./pages/Search'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const About = lazy(() => import('./pages/About'));
+const WhatIsJusticiapedia = lazy(() => import('./pages/WhatIsJusticiapedia'));
+const OpenData = lazy(() => import('./pages/OpenData'));
+const Learn = lazy(() => import('./pages/Learn'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Terms = lazy(() => import('./pages/Terms'));
+const Cookies = lazy(() => import('./pages/Cookies'));
+const Resources = lazy(() => import('./pages/Resources'));
 
 function App() {
   React.useEffect(() => {
@@ -39,31 +41,33 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/instituciones" element={<Institutions />} />
-        <Route path="/instituciones/:institutionId" element={<InstitutionProfile />} />
-        <Route path="/comisiones" element={<Commissions />} />
-        <Route path="/comisiones/:commissionId" element={<CommissionProfile />} />
-        <Route path="/candidatos" element={<Candidates />} />
-        <Route path="/candidatos/:candidateId" element={<CandidateProfile />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/documentacion" element={<Documentation />} />
-        <Route path="/noticias" element={<News />} />
-        <Route path="/noticias/:articleId" element={<NewsArticle />} />
-        <Route path="/buscar" element={<SearchPage />} />
-        <Route path="/acerca" element={<About />} />
-        <Route path="/que-es-justiciapedia" element={<WhatIsJusticiapedia />} />
-        <Route path="/contacto" element={<Contact />} />
-        <Route path="/legal/privacidad" element={<Privacy />} />
-        <Route path="/legal/terminos" element={<Terms />} />
-        <Route path="/legal/cookies" element={<Cookies />} />
-        <Route path="/recursos/datos" element={<OpenData />} />
-        <Route path="/aprende" element={<Learn />} />
-        <Route path="/recursos/informes" element={<Resources />} />
-        <Route path="/recursos/biblioteca" element={<Resources />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<Loading fullScreen text="" />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/instituciones" element={<Institutions />} />
+          <Route path="/instituciones/:institutionId" element={<InstitutionProfile />} />
+          <Route path="/comisiones" element={<Commissions />} />
+          <Route path="/comisiones/:commissionId" element={<CommissionProfile />} />
+          <Route path="/candidatos" element={<Candidates />} />
+          <Route path="/candidatos/:candidateId" element={<CandidateProfile />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/documentacion" element={<Documentation />} />
+          <Route path="/noticias" element={<News />} />
+          <Route path="/noticias/:articleId" element={<NewsArticle />} />
+          <Route path="/buscar" element={<SearchPage />} />
+          <Route path="/acerca" element={<About />} />
+          <Route path="/que-es-justiciapedia" element={<WhatIsJusticiapedia />} />
+          <Route path="/contacto" element={<Contact />} />
+          <Route path="/legal/privacidad" element={<Privacy />} />
+          <Route path="/legal/terminos" element={<Terms />} />
+          <Route path="/legal/cookies" element={<Cookies />} />
+          <Route path="/recursos/datos" element={<OpenData />} />
+          <Route path="/aprende" element={<Learn />} />
+          <Route path="/recursos/informes" element={<Resources />} />
+          <Route path="/recursos/biblioteca" element={<Resources />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

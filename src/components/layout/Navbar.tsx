@@ -4,6 +4,7 @@ import { NAV_ITEMS, SITE_NAME } from '../../utils/constants';
 import Container from '../ui/Container';
 import SearchBar from '../ui/SearchBar';
 import Button from '../ui/Button';
+import Logo from '../../assets/logorednegro.png';
 
 interface NavItem {
   title: string;
@@ -130,17 +131,7 @@ const Navbar: React.FC = () => {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center group">
-            <div className="w-12 h-12 bg-gradient-to-br from-slate-700 to-slate-900 rounded-xl flex items-center justify-center mr-3 group-hover:shadow-lg transition-all duration-300 group-hover:scale-105 border border-slate-300">
-              <Scale size={24} className="text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors leading-tight">
-                {SITE_NAME}
-              </span>
-              <span className="text-xs text-slate-600 leading-none hidden sm:block font-medium">
-                Transparencia Judicial
-              </span>
-            </div>
+            <img src={Logo} alt={SITE_NAME} className="h-8 w-auto" />
           </a>
 
           {/* Desktop Navigation */}

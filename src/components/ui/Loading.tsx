@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loader2 } from 'lucide-react';
+import loader from '../../assets/loader.gif';
 
 interface LoadingProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -9,7 +9,7 @@ interface LoadingProps {
 }
 
 const Loading: React.FC<LoadingProps> = ({
-  size = 'md',
+  size = 'xl',
   text = 'Cargando...',
   fullScreen = false,
   className = ''
@@ -30,7 +30,7 @@ const Loading: React.FC<LoadingProps> = ({
 
   const content = (
     <div className={`flex flex-col items-center justify-center space-y-4 ${className}`}>
-      <Loader2 className={`${sizeClasses[size]} animate-spin text-primary-600`} />
+      <img src={loader} alt="Loading" className={`${sizeClasses[size]}`} />
       {text && (
         <p className={`${textSizeClasses[size]} text-gray-600 font-medium`}>
           {text}

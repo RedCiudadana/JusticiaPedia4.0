@@ -35,7 +35,6 @@ const Home: React.FC = () => {
   return (
     <Layout>
       <Hero />
-      <AboutSection />
       <FeatureBlocks />
       
       <FeaturedSection 
