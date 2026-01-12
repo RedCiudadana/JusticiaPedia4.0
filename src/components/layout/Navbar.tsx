@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
     <header
       className={`fixed top-[44px] left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/98 backdrop-blur-lg shadow-lg py-2 border-b border-slate-200'
+          ? 'bg-white shadow-lg py-2 border-b border-slate-200'
           : 'bg-white shadow-md py-3 border-b border-slate-100'
       }`}
     >
