@@ -4,6 +4,7 @@ import PageLayout from '../components/layout/PageLayout';
 import Card, { CardContent, CardHeader } from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import HeroSlider from '../components/ui/HeroSlider';
+import SocialShare from '../components/ui/SocialShare';
 import { commissions } from '../data/commissions';
 
 const Commissions: React.FC = () => {
@@ -494,7 +495,7 @@ const Commissions: React.FC = () => {
                                 e.stopPropagation();
                                 toggleCommissionDetails(commission.id);
                               }}
-                              className="flex-1 min-w-[150px]"
+                              className="flex-1 min-w-[120px]"
                             >
                               {isExpanded ? (
                                 <>
@@ -514,11 +515,19 @@ const Commissions: React.FC = () => {
                                 e.stopPropagation();
                                 window.location.href = `/comisiones/${commission.id}`;
                               }}
-                              className="flex-1 min-w-[150px]"
+                              className="flex-1 min-w-[120px]"
                             >
                               <FileText size={16} className="mr-1.5" />
                               Perfil Completo
                             </Button>
+                            <div onClick={(e) => e.stopPropagation()}>
+                              <SocialShare
+                                url={`${window.location.origin}/comisiones/${commission.id}`}
+                                title={`${commission.name} - Justiciapedia`}
+                                description={commission.description}
+                                variant="dropdown"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -714,25 +723,42 @@ const Commissions: React.FC = () => {
                           )}
 
                           {/* Action Buttons in Expanded View */}
-                          <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t-2 border-gray-200">
-                            <Button
-                              variant="primary"
-                              onClick={() => window.location.href = `/comisiones/${commission.id}`}
-                              className="flex-1 bg-gradient-to-r from-primary-600 to-blue-600 hover:from-primary-700 hover:to-blue-700 shadow-lg hover:shadow-xl transition-all"
-                            >
-                              <Target size={18} className="mr-2" />
-                              Ver Perfil Completo
-                            </Button>
-                            {commission.candidatesCount > 0 && (
+                          <div className="space-y-3 pt-6 border-t-2 border-gray-200">
+                            <div className="flex flex-col sm:flex-row gap-3">
                               <Button
-                                variant="outline"
-                                onClick={() => window.location.href = `/candidatos?commission=${commission.id}`}
-                                className="flex-1 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-700 transition-all"
+                                variant="primary"
+                                onClick={() => window.location.href = `/comisiones/${commission.id}`}
+                                className="flex-1 bg-gradient-to-r from-primary-600 to-blue-600 hover:from-primary-700 hover:to-blue-700 shadow-lg hover:shadow-xl transition-all"
                               >
-                                <Award size={18} className="mr-2" />
-                                Ver Candidatos ({commission.candidatesCount})
+                                <Target size={18} className="mr-2" />
+                                Ver Perfil Completo
                               </Button>
-                            )}
+                              {commission.candidatesCount > 0 && (
+                                <Button
+                                  variant="outline"
+                                  onClick={() => window.location.href = `/candidatos?commission=${commission.id}`}
+                                  className="flex-1 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-700 transition-all"
+                                >
+                                  <Award size={18} className="mr-2" />
+                                  Ver Candidatos ({commission.candidatesCount})
+                                </Button>
+                              )}
+                            </div>
+                            <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-4 rounded-xl border-2 border-gray-200">
+                              <div className="flex items-center justify-between gap-4 flex-wrap">
+                                <div className="flex-1 min-w-[200px]">
+                                  <p className="text-sm font-bold text-gray-900 mb-1">Compartir este proceso</p>
+                                  <p className="text-xs text-gray-600">Comparte este proceso en redes sociales o copia el enlace directo</p>
+                                </div>
+                                <SocialShare
+                                  url={`${window.location.origin}/comisiones/${commission.id}`}
+                                  title={`${commission.name} - Justiciapedia`}
+                                  description={commission.description}
+                                  variant="buttons"
+                                  className="flex-shrink-0"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
