@@ -2,6 +2,7 @@ import React from 'react';
 import { Twitter, Instagram, Mail, Phone, Youtube } from 'lucide-react';
 import Container from '../ui/Container';
 import { SOCIAL_LINKS } from '../../utils/constants';
+import LogoPequeno from '../../assets/redciudadana.png';
 
 const TikTokIcon: React.FC<{ size?: number }> = ({ size = 14 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -30,8 +31,8 @@ const TopBar: React.FC = () => {
       <Container>
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <span className="text-slate-300 text-xs font-medium">Una iniciativa de</span>
-            <span className="text-white font-semibold">Red Ciudadana</span>
+            <img src={LogoPequeno} alt="Red Ciudadana" className="h-5 w-auto" style={{ filter: 'invert(100%)' }} />
+            <span className="text-slate-300 text-xs font-medium">Sitio oficial de la Asociación Civil Red Ciudadana</span>
           </div>
 
           <div className="flex items-center space-x-4">

@@ -2,6 +2,7 @@ import React from 'react';
 import { Twitter, Instagram, Scale, ExternalLink, Youtube } from 'lucide-react';
 import { FOOTER_SECTIONS, SOCIAL_LINKS, SITE_NAME } from '../../utils/constants';
 import Container from '../ui/Container';
+import Logo from '../../assets/logorednegro.png';
 
 const TikTokIcon: React.FC<{ size?: number }> = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -35,15 +36,7 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* About Site */}
             <div className="lg:col-span-1">
-              <div className="flex items-center mb-6">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mr-3">
-                  <Scale size={24} className="text-primary-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">{SITE_NAME}</h3>
-                  <p className="text-primary-300 text-sm">Transparencia Judicial</p>
-                </div>
-              </div>
+              <img src={Logo} alt={SITE_NAME} className="h-10 mb-4" style={{ filter: 'invert(100%)' }}/>
               <p className="text-primary-200 mb-6 leading-relaxed">
                 Plataforma cívica dedicada a promover la transparencia en los procesos de
                 designación de autoridades judiciales en Guatemala.

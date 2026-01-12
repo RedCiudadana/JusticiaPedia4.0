@@ -4,6 +4,7 @@ import Layout from '../components/layout/Layout';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import Card, { CardContent } from '../components/ui/Card';
+import notFoundImage from '../assets/404.png';
 
 const NotFound: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -104,15 +105,7 @@ const NotFound: React.FC = () => {
           <div className="max-w-4xl mx-auto">
             {/* Main Error Section */}
             <div className="text-center mb-12">
-              <div className="relative mb-8">
-                {/* Animated 404 */}
-                <div className="text-8xl md:text-9xl font-bold text-gray-200 select-none">
-                  404
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <FileQuestion size={80} className="text-primary-600 animate-pulse" />
-                </div>
-              </div>
+              <img src={notFoundImage} alt="404 Not Found" className="mx-auto mb-6 w-100 h-auto" />
               
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 ¡Oops! Página no encontrada
@@ -127,146 +120,12 @@ const NotFound: React.FC = () => {
               </p>
 
               {/* Quick Actions */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                {quickActions.map((action, index) => {
-                  const Icon = action.icon;
-                  return (
-                    <button
-                      key={index}
-                      onClick={action.action}
-                      className={`${action.color} text-white p-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg`}
-                    >
-                      <Icon size={24} className="mx-auto mb-2" />
-                      <div className="text-sm font-medium">{action.title}</div>
-                      <div className="text-xs opacity-90">{action.description}</div>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Search Section */}
-            <Card className="mb-8 bg-white shadow-lg">
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
-                  ¿Qué estabas buscando?
-                </h2>
-                <form onSubmit={handleSearch} className="max-w-md mx-auto">
-                  <div className="relative">
-                    <input
-                      id="search-input"
-                      type="text"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Buscar candidatos, instituciones, noticias..."
-                      className="w-full px-4 py-3 pl-12 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm"
-                    />
-                    <Search size={20} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                    <Button
-                      type="submit"
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2"
-                      size="sm"
-                    >
-                      Buscar
-                    </Button>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
-
-            {/* Suggested Pages */}
-            <div className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-                Páginas que podrían interesarte
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {suggestedPages.map((page, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    <CardContent className="p-6">
-                      <a href={page.href} className="block">
-                        <div className="flex items-start space-x-4">
-                          <div className="text-3xl">{page.icon}</div>
-                          <div className="flex-1">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-primary-600 transition-colors">
-                              {page.title}
-                            </h3>
-                            <p className="text-gray-600 mb-3">{page.description}</p>
-                            <div className="flex items-center text-primary-600 hover:text-primary-700 font-medium">
-                              Explorar
-                              <ExternalLink size={16} className="ml-1" />
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Help Section */}
-            <Card className="bg-primary-50 border-primary-200">
-              <CardContent className="p-8 text-center">
-                <h2 className="text-2xl font-semibold text-primary-900 mb-4">
-                  ¿Necesitas ayuda?
-                </h2>
-                <p className="text-primary-700 mb-6">
-                  Si crees que esto es un error o necesitas asistencia, no dudes en contactarnos.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    variant="primary"
-                    onClick={() => window.location.href = '/contacto'}
-                    className="bg-primary-600 hover:bg-primary-700"
-                  >
-                    <Mail size={16} className="mr-2" />
-                    Contactar Soporte
-                  </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() => window.location.href = '/documentacion'}
-                    className="border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
-                  >
-                    Ver Documentación
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Navigation */}
-            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <Button
-                variant="outline"
-                onClick={() => window.history.back()}
-                className="flex items-center"
-              >
-                <ArrowLeft size={16} className="mr-2" />
-                Volver atrás
-              </Button>
-              <Button
-                variant="primary"
-                onClick={() => window.location.href = '/'}
-                className="flex items-center"
-              >
-                <Home size={16} className="mr-2" />
+              <div className="flex justify-center mb-8">
+                <a href="/" className='inline-flex items-center gap-2 px-6 py-3 bg-justice-500 hover:bg-justice-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5'>
                 Ir al inicio
-              </Button>
-            </div>
-
-            {/* Additional Info */}
-            <div className="mt-12 text-center text-sm text-gray-500">
-              <p>
-                Si continúas experimentando problemas, puedes reportar este enlace roto a{' '}
-                <a 
-                  href="mailto:soporte@justiciapedia.org.gt" 
-                  className="text-primary-600 hover:text-primary-700 underline"
-                >
-                  soporte@justiciapedia.org.gt
                 </a>
-              </p>
-              <p className="mt-2">
-                Código de error: 404 | Timestamp: {new Date().toLocaleString('es-ES')}
-              </p>
+              </div>
+
             </div>
           </div>
         </Container>
