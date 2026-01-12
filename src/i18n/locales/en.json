@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Home",
+    "institutions": "Justice Institutions",
+    "commissions": "Nomination Commissions",
+    "candidates": "Candidate Profiles",
+    "powerMaps": "Power Maps",
+    "news": "News",
+    "participate": "Participate",
+    "about": "About"
+  },
+  "home": {
+    "hero": {
+      "title": "Transparency in Guatemala's Justice System",
+      "subtitle": "Information about judicial authority nomination processes for an independent and transparent justice system."
+    }
+  }
+}

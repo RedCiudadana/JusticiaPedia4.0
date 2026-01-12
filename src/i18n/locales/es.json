@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "institutions": "Instituciones de Justicia",
+    "commissions": "Comisiones de Postulación",
+    "candidates": "Perfiles de Candidatos",
+    "powerMaps": "Mapas de Poder",
+    "news": "Notas de Interés",
+    "participate": "Participa",
+    "about": "Acerca de"
+  },
+  "home": {
+    "hero": {
+      "title": "Transparencia en la Justicia de Guatemala",
+      "subtitle": "Información sobre los procesos de designación de autoridades judiciales para un sistema de justicia independiente y transparente."
+    }
+  }
+}
