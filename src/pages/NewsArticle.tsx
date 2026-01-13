@@ -31,9 +31,9 @@ const NewsArticle: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <BookOpen size={64} className="mx-auto text-gray-400 mb-4" />
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Artículo no encontrado</h1>
-          <p className="text-gray-600 mb-4">El artículo que buscas no existe o ha sido removido.</p>
+          <BookOpen size={64} className="mx-auto text-justice-400 mb-4" />
+          <h1 className="text-2xl font-bold text-justice-900 mb-2">Artículo no encontrado</h1>
+          <p className="text-justice-600 mb-4">El artículo que buscas no existe o ha sido removido.</p>
           <Link
             to="/noticias"
             className="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors"
@@ -56,14 +56,14 @@ const NewsArticle: React.FC = () => {
 
   const getCategoryColor = (category: string) => {
     const colors = {
-      'Procesos de Selección': 'bg-blue-100 text-blue-800',
+      'Procesos de Selección': 'bg-justice-100 text-justice-800',
       'Análisis': 'bg-purple-100 text-purple-800',
-      'Entrevistas': 'bg-green-100 text-green-800',
-      'Noticias': 'bg-yellow-100 text-yellow-800',
-      'Reportajes': 'bg-red-100 text-red-800',
+      'Entrevistas': 'bg-justice-100 text-justice-800',
+      'Noticias': 'bg-justice-100 text-justice-800',
+      'Reportajes': 'bg-justice-100 text-justice-800',
       'Opinión': 'bg-indigo-100 text-indigo-800',
     };
-    return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+    return colors[category as keyof typeof colors] || 'bg-justice-100 text-justice-800';
   };
 
   // Related articles (same category, excluding current)
@@ -111,19 +111,19 @@ const NewsArticle: React.FC = () => {
           <Card className="mb-8">
             <CardContent className="p-8">
               {/* Article Meta */}
-              <div className="flex flex-wrap items-center gap-4 mb-6 pb-6 border-b border-gray-200">
-                <div className="flex items-center text-gray-600">
+              <div className="flex flex-wrap items-center gap-4 mb-6 pb-6 border-b border-justice-200">
+                <div className="flex items-center text-justice-600">
                   <Calendar size={16} className="mr-2" />
                   <span>{formatDate(article.date)}</span>
                 </div>
                 {article.author && (
-                  <div className="flex items-center text-gray-600">
+                  <div className="flex items-center text-justice-600">
                     <User size={16} className="mr-2" />
                     <span>Por {article.author}</span>
                   </div>
                 )}
                 {article.readTime && (
-                  <div className="flex items-center text-gray-600">
+                  <div className="flex items-center text-justice-600">
                     <Clock size={16} className="mr-2" />
                     <span>{article.readTime} minutos de lectura</span>
                   </div>
@@ -139,12 +139,12 @@ const NewsArticle: React.FC = () => {
 
               {/* Article Body */}
               <div className="prose prose-lg max-w-none">
-                <p className="text-xl text-gray-600 mb-6 font-medium leading-relaxed">
+                <p className="text-xl text-justice-600 mb-6 font-medium leading-relaxed">
                   {article.excerpt}
                 </p>
                 
                 {/* Mock content - in a real app, this would come from the article.content field */}
-                <div className="space-y-6 text-gray-700 leading-relaxed">
+                <div className="space-y-6 text-justice-700 leading-relaxed">
                   <p>
                     El sistema judicial guatemalteco se encuentra en un momento crucial de transformación y modernización. 
                     Los procesos de selección de autoridades judiciales han cobrado especial relevancia en el contexto 
@@ -160,7 +160,7 @@ const NewsArticle: React.FC = () => {
                     selección judicial.
                   </p>
                   
-                  <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  <h3 className="text-2xl font-semibold text-justice-900 mt-8 mb-4">
                     Principales Cambios en los Criterios
                   </h3>
                   
@@ -177,7 +177,7 @@ const NewsArticle: React.FC = () => {
                     las sesiones de las comisiones y los criterios de evaluación utilizados.
                   </p>
                   
-                  <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  <h3 className="text-2xl font-semibold text-justice-900 mt-8 mb-4">
                     Impacto en la Independencia Judicial
                   </h3>
                   
@@ -198,8 +198,8 @@ const NewsArticle: React.FC = () => {
 
               {/* Tags */}
               {article.tags && article.tags.length > 0 && (
-                <div className="mt-8 pt-6 border-t border-gray-200">
-                  <h4 className="text-sm font-medium text-gray-900 mb-3 flex items-center">
+                <div className="mt-8 pt-6 border-t border-justice-200">
+                  <h4 className="text-sm font-medium text-justice-900 mb-3 flex items-center">
                     <Tag size={16} className="mr-2" />
                     Etiquetas
                   </h4>
@@ -207,7 +207,7 @@ const NewsArticle: React.FC = () => {
                     {article.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 transition-colors cursor-pointer"
+                        className="bg-justice-100 text-justice-700 px-3 py-1 rounded-full text-sm hover:bg-justice-200 transition-colors cursor-pointer"
                       >
                         #{tag}
                       </span>
@@ -217,9 +217,9 @@ const NewsArticle: React.FC = () => {
               )}
 
               {/* Social Share at bottom */}
-              <div className="mt-8 pt-6 border-t border-gray-200">
+              <div className="mt-8 pt-6 border-t border-justice-200">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-sm font-medium text-gray-900">
+                  <h4 className="text-sm font-medium text-justice-900">
                     ¿Te gustó este artículo? Compártelo
                   </h4>
                   <SocialShare
@@ -259,28 +259,28 @@ const NewsArticle: React.FC = () => {
               <h3 className="font-semibold mb-4">Información del Artículo</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Categoría:</span>
+                  <span className="text-justice-600">Categoría:</span>
                   <span className="font-medium">{article.category}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Fecha:</span>
+                  <span className="text-justice-600">Fecha:</span>
                   <span className="font-medium">{formatDate(article.date)}</span>
                 </div>
                 {article.author && (
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Autor:</span>
+                    <span className="text-justice-600">Autor:</span>
                     <span className="font-medium">{article.author}</span>
                   </div>
                 )}
                 {article.readTime && (
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Lectura:</span>
+                    <span className="text-justice-600">Lectura:</span>
                     <span className="font-medium">{article.readTime} min</span>
                   </div>
                 )}
                 {article.views && (
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Vistas:</span>
+                    <span className="text-justice-600">Vistas:</span>
                     <span className="font-medium">{article.views.toLocaleString()}</span>
                   </div>
                 )}
@@ -307,10 +307,10 @@ const NewsArticle: React.FC = () => {
                           className="w-16 h-16 object-cover rounded-lg flex-shrink-0"
                         />
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-sm font-medium text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2">
+                          <h4 className="text-sm font-medium text-justice-900 group-hover:text-primary-600 transition-colors line-clamp-2">
                             {relatedArticle.title}
                           </h4>
-                          <p className="text-xs text-gray-600 mt-1">
+                          <p className="text-xs text-justice-600 mt-1">
                             {formatDate(relatedArticle.date)}
                           </p>
                         </div>

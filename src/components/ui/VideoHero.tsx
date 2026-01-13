@@ -15,7 +15,7 @@ const VideoHero: React.FC<VideoHeroProps> = ({
   overlayOpacity = 0.6
 }) => {
   return (
-    <div className="relative w-full h-[500px] overflow-hidden bg-gray-900">
+    <div className="relative w-full h-[500px] overflow-hidden bg-justice-900">
       <video
         autoPlay
         loop
@@ -50,3 +50,4 @@ const VideoHero: React.FC<VideoHeroProps> = ({
 };
 
 export default VideoHero;
+

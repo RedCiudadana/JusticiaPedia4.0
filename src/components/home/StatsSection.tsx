@@ -42,7 +42,7 @@ const StatsSection: React.FC = () => {
 
   return (
     <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-800 via-primary-900 to-secondary-950"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-800 via-primary-900 to-justice-950"></div>
 
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-justice-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary-400/10 rounded-full blur-3xl"></div>
@@ -109,3 +109,4 @@ const StatsSection: React.FC = () => {
 };
 
 export default StatsSection;
+

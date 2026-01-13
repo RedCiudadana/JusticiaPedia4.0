@@ -30,7 +30,7 @@ const Dashboard: React.FC = () => {
       description: 'María Eugenia Morales se postuló para la CSJ',
       timestamp: '2024-01-15T10:30:00',
       icon: Users,
-      color: 'text-blue-600'
+      color: 'text-justice-600'
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ const Dashboard: React.FC = () => {
       description: 'Comisión CSJ completó evaluación documental',
       timestamp: '2024-01-14T15:45:00',
       icon: Award,
-      color: 'text-green-600'
+      color: 'text-justice-600'
     },
     {
       id: 3,
@@ -57,7 +57,7 @@ const Dashboard: React.FC = () => {
       description: 'Comisión CA tiene fecha límite en 5 días',
       timestamp: '2024-01-12T14:20:00',
       icon: AlertCircle,
-      color: 'text-orange-600'
+      color: 'text-justice-600'
     }
   ];
 
@@ -76,7 +76,7 @@ const Dashboard: React.FC = () => {
       description: 'Descargar datos en formato CSV',
       icon: Download,
       action: () => console.log('Export data'),
-      color: 'bg-blue-500 hover:bg-blue-600'
+      color: 'bg-justice-500 hover:bg-justice-600'
     },
     {
       title: 'Generar Reporte',
@@ -90,7 +90,7 @@ const Dashboard: React.FC = () => {
       description: 'Personalizar notificaciones',
       icon: AlertCircle,
       action: () => console.log('Configure alerts'),
-      color: 'bg-orange-500 hover:bg-orange-600'
+      color: 'bg-justice-500 hover:bg-justice-600'
     }
   ];
 
@@ -129,28 +129,28 @@ const Dashboard: React.FC = () => {
 
         {/* Statistics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
+          <Card className="bg-gradient-to-br from-justice-50 to-justice-100 border-justice-200">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-blue-600 text-sm font-medium">Total Candidatos</p>
-                  <p className="text-3xl font-bold text-blue-900">{stats.totalCandidates}</p>
-                  <p className="text-blue-700 text-sm">{stats.activeCandidates} activos</p>
+                  <p className="text-justice-600 text-sm font-medium">Total Candidatos</p>
+                  <p className="text-3xl font-bold text-justice-900">{stats.totalCandidates}</p>
+                  <p className="text-justice-700 text-sm">{stats.activeCandidates} activos</p>
                 </div>
-                <Users size={32} className="text-blue-600" />
+                <Users size={32} className="text-justice-600" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200">
+          <Card className="bg-gradient-to-br from-justice-50 to-justice-100 border-justice-200">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-green-600 text-sm font-medium">Instituciones</p>
-                  <p className="text-3xl font-bold text-green-900">{stats.totalInstitutions}</p>
-                  <p className="text-green-700 text-sm">Sistema judicial</p>
+                  <p className="text-justice-600 text-sm font-medium">Instituciones</p>
+                  <p className="text-3xl font-bold text-justice-900">{stats.totalInstitutions}</p>
+                  <p className="text-justice-700 text-sm">Sistema judicial</p>
                 </div>
-                <Building2 size={32} className="text-green-600" />
+                <Building2 size={32} className="text-justice-600" />
               </div>
             </CardContent>
           </Card>
@@ -168,15 +168,15 @@ const Dashboard: React.FC = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200">
+          <Card className="bg-gradient-to-br from-justice-50 to-justice-100 border-justice-200">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-orange-600 text-sm font-medium">Experiencia Promedio</p>
-                  <p className="text-3xl font-bold text-orange-900">{stats.avgExperience}</p>
-                  <p className="text-orange-700 text-sm">años</p>
+                  <p className="text-justice-600 text-sm font-medium">Experiencia Promedio</p>
+                  <p className="text-3xl font-bold text-justice-900">{stats.avgExperience}</p>
+                  <p className="text-justice-700 text-sm">años</p>
                 </div>
-                <TrendingUp size={32} className="text-orange-600" />
+                <TrendingUp size={32} className="text-justice-600" />
               </div>
             </CardContent>
           </Card>
@@ -197,14 +197,14 @@ const Dashboard: React.FC = () => {
                   {recentActivity.map((activity) => {
                     const Icon = activity.icon;
                     return (
-                      <div key={activity.id} className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                      <div key={activity.id} className="flex items-start space-x-4 p-4 bg-justice-50 rounded-lg hover:bg-justice-100 transition-colors">
                         <div className={`w-10 h-10 rounded-full bg-white flex items-center justify-center ${activity.color}`}>
                           <Icon size={20} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-medium text-gray-900">{activity.title}</h4>
-                          <p className="text-gray-600 text-sm">{activity.description}</p>
-                          <p className="text-gray-500 text-xs mt-1">{formatTimestamp(activity.timestamp)}</p>
+                          <h4 className="font-medium text-justice-900">{activity.title}</h4>
+                          <p className="text-justice-600 text-sm">{activity.description}</p>
+                          <p className="text-justice-500 text-xs mt-1">{formatTimestamp(activity.timestamp)}</p>
                         </div>
                       </div>
                     );
@@ -253,44 +253,44 @@ const Dashboard: React.FC = () => {
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">Base de datos</span>
+                    <span className="text-sm text-justice-600">Base de datos</span>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                      <span className="text-sm font-medium text-green-600">Operativo</span>
+                      <div className="w-2 h-2 bg-justice-500 rounded-full mr-2"></div>
+                      <span className="text-sm font-medium text-justice-600">Operativo</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">API</span>
+                    <span className="text-sm text-justice-600">API</span>
                     <div className="flex items-center">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                      <span className="text-sm font-medium text-green-600">Operativo</span>
+                      <div className="w-2 h-2 bg-justice-500 rounded-full mr-2"></div>
+                      <span className="text-sm font-medium text-justice-600">Operativo</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">Última actualización</span>
-                    <span className="text-sm font-medium text-gray-900">Hace 2 horas</span>
+                    <span className="text-sm text-justice-600">Última actualización</span>
+                    <span className="text-sm font-medium text-justice-900">Hace 2 horas</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Alerts */}
-            <Card className="border-orange-200 bg-orange-50">
+            <Card className="border-justice-200 bg-justice-50">
               <CardHeader>
-                <h3 className="text-lg font-semibold text-orange-900 flex items-center">
+                <h3 className="text-lg font-semibold text-justice-900 flex items-center">
                   <AlertCircle size={20} className="mr-2" />
                   Alertas
                 </h3>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <div className="p-3 bg-white rounded border border-orange-200">
-                    <p className="text-sm font-medium text-orange-900">Proceso próximo a vencer</p>
-                    <p className="text-xs text-orange-700">Comisión CA - 5 días restantes</p>
+                  <div className="p-3 bg-white rounded border border-justice-200">
+                    <p className="text-sm font-medium text-justice-900">Proceso próximo a vencer</p>
+                    <p className="text-xs text-justice-700">Comisión CA - 5 días restantes</p>
                   </div>
-                  <div className="p-3 bg-white rounded border border-blue-200">
-                    <p className="text-sm font-medium text-blue-900">Nueva documentación</p>
-                    <p className="text-xs text-blue-700">3 documentos pendientes de revisión</p>
+                  <div className="p-3 bg-white rounded border border-justice-200">
+                    <p className="text-sm font-medium text-justice-900">Nueva documentación</p>
+                    <p className="text-xs text-justice-700">3 documentos pendientes de revisión</p>
                   </div>
                 </div>
               </CardContent>
@@ -311,15 +311,15 @@ const Dashboard: React.FC = () => {
                   const percentage = Math.round((count / candidates.length) * 100);
                   return (
                     <div key={spec} className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-900">{spec}</span>
+                      <span className="text-sm font-medium text-justice-900">{spec}</span>
                       <div className="flex items-center space-x-2">
-                        <div className="w-24 bg-gray-200 rounded-full h-2">
+                        <div className="w-24 bg-justice-200 rounded-full h-2">
                           <div
                             className="bg-primary-600 h-2 rounded-full"
                             style={{ width: `${percentage}%` }}
                           ></div>
                         </div>
-                        <span className="text-sm text-gray-600 w-12 text-right">{count}</span>
+                        <span className="text-sm text-justice-600 w-12 text-right">{count}</span>
                       </div>
                     </div>
                   );
@@ -340,10 +340,10 @@ const Dashboard: React.FC = () => {
                   return (
                     <div key={commission.id} className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-gray-900 truncate">{commission.name}</span>
-                        <span className="text-sm text-gray-600">{progress}%</span>
+                        <span className="text-sm font-medium text-justice-900 truncate">{commission.name}</span>
+                        <span className="text-sm text-justice-600">{progress}%</span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-justice-200 rounded-full h-2">
                         <div
                           className="bg-primary-600 h-2 rounded-full transition-all duration-300"
                           style={{ width: `${progress}%` }}
@@ -361,3 +361,4 @@ const Dashboard: React.FC = () => {
 };
 
 export default Dashboard;
+

@@ -124,9 +124,9 @@ const Documentation: React.FC = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Buscar en la documentación..."
-            className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm"
+            className="w-full px-4 py-3 pl-12 border border-justice-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm"
           />
-          <Search size={20} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <Search size={20} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-justice-400" />
         </div>
       </div>
 
@@ -169,18 +169,18 @@ const Documentation: React.FC = () => {
               <Button
                 variant="ghost"
                 onClick={() => setExpandedSection(expandedSection === section.id ? null : section.id)}
-                className="w-full p-6 flex items-center justify-between text-left hover:bg-gray-50"
+                className="w-full p-6 flex items-center justify-between text-left hover:bg-justice-50"
               >
                 <div className="flex items-center">
                   <section.icon size={24} className="text-primary-600 mr-4" />
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{section.title}</h3>
-                    <p className="text-gray-600">{section.content}</p>
+                    <h3 className="text-lg font-semibold text-justice-900">{section.title}</h3>
+                    <p className="text-justice-600">{section.content}</p>
                   </div>
                 </div>
                 <ChevronDown
                   size={20}
-                  className={`text-gray-400 transition-transform ${
+                  className={`text-justice-400 transition-transform ${
                     expandedSection === section.id ? 'transform rotate-180' : ''
                   }`}
                 />
@@ -191,12 +191,12 @@ const Documentation: React.FC = () => {
                   {section.subsections.map((subsection, index) => (
                     <div
                       key={index}
-                      className="p-6 border-b last:border-b-0 bg-gray-50"
+                      className="p-6 border-b last:border-b-0 bg-justice-50"
                     >
-                      <h4 className="text-md font-semibold text-gray-900 mb-2">
+                      <h4 className="text-md font-semibold text-justice-900 mb-2">
                         {subsection.title}
                       </h4>
-                      <p className="text-gray-600">{subsection.content}</p>
+                      <p className="text-justice-600">{subsection.content}</p>
                     </div>
                   ))}
                 </div>
@@ -208,9 +208,9 @@ const Documentation: React.FC = () => {
 
       {/* Empty State */}
       {filteredSections.length === 0 && (
-        <div className="text-center py-12 bg-gray-50 rounded-lg">
-          <Book size={48} className="mx-auto text-gray-400 mb-4" />
-          <p className="text-lg text-gray-600 mb-4">
+        <div className="text-center py-12 bg-justice-50 rounded-lg">
+          <Book size={48} className="mx-auto text-justice-400 mb-4" />
+          <p className="text-lg text-justice-600 mb-4">
             No se encontraron resultados para tu búsqueda.
           </p>
           <Button

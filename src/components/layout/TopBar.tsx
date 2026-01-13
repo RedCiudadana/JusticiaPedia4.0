@@ -27,16 +27,16 @@ const TopBar: React.FC = () => {
   };
 
   return (
-    <div className="bg-slate-900 text-white py-2.5 text-sm border-b border-slate-700 fixed top-0 left-0 right-0 z-50">
+    <div className="bg-neutral-900 text-white py-2.5 text-sm border-b border-neutral-700 fixed top-0 left-0 right-0 z-50">
       <Container>
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <img src={LogoPequeno} alt="Red Ciudadana" className="h-5 w-auto" style={{ filter: 'invert(100%)' }} />
-            <span className="text-slate-300 text-xs font-medium">Sitio oficial de la Asociación Civil Red Ciudadana</span>
+            <span className="text-neutral-300 text-xs font-medium">Sitio oficial de la Asociación Civil Red Ciudadana</span>
           </div>
 
           <div className="flex items-center space-x-4">
-            <span className="text-slate-300 text-xs mr-2 hidden md:inline font-medium">Síguenos:</span>
+            <span className="text-neutral-300 text-xs mr-2 hidden md:inline font-medium">Síguenos:</span>
             <div className="flex items-center space-x-3">
               {SOCIAL_LINKS.map((social) => {
                 const Icon = getSocialIcon(social.platform);
@@ -44,7 +44,7 @@ const TopBar: React.FC = () => {
                   <a
                     key={social.platform}
                     href={social.href}
-                    className="hover:text-blue-300 transition-all duration-200 transform hover:scale-110 p-1.5 rounded-md hover:bg-slate-800"
+                    className="hover:text-justice-300 transition-all duration-200 transform hover:scale-110 p-1.5 rounded-md hover:bg-slate-800"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Seguir a Red Ciudadana en ${social.platform}`}

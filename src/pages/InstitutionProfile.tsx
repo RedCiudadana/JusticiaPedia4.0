@@ -28,9 +28,9 @@ const InstitutionProfile: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <Building2 size={64} className="mx-auto text-gray-400 mb-4" />
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Institución no encontrada</h1>
-          <p className="text-gray-600 mb-4">La institución que buscas no existe o ha sido removida.</p>
+          <Building2 size={64} className="mx-auto text-justice-400 mb-4" />
+          <h1 className="text-2xl font-bold text-justice-900 mb-2">Institución no encontrada</h1>
+          <p className="text-justice-600 mb-4">La institución que buscas no existe o ha sido removida.</p>
           <Link
             to="/instituciones"
             className="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors"
@@ -54,7 +54,7 @@ const InstitutionProfile: React.FC = () => {
           <Card>
             <CardContent>
               <h2 className="text-xl font-semibold mb-4">Descripción</h2>
-              <p className="text-gray-600 leading-relaxed">{institution.description}</p>
+              <p className="text-justice-600 leading-relaxed">{institution.description}</p>
             </CardContent>
           </Card>
 
@@ -68,7 +68,7 @@ const InstitutionProfile: React.FC = () => {
                       <Landmark size={20} className="mr-2 text-primary-600" />
                       Misión
                     </h2>
-                    <p className="text-gray-600 leading-relaxed">{institution.mission}</p>
+                    <p className="text-justice-600 leading-relaxed">{institution.mission}</p>
                   </CardContent>
                 </Card>
               )}
@@ -79,7 +79,7 @@ const InstitutionProfile: React.FC = () => {
                       <Landmark size={20} className="mr-2 text-primary-600" />
                       Visión
                     </h2>
-                    <p className="text-gray-600 leading-relaxed">{institution.vision}</p>
+                    <p className="text-justice-600 leading-relaxed">{institution.vision}</p>
                   </CardContent>
                 </Card>
               )}
@@ -96,7 +96,7 @@ const InstitutionProfile: React.FC = () => {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {institution.authorities.map((authority, index) => (
-                    <div key={index} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                    <div key={index} className="flex items-center space-x-4 p-4 bg-justice-50 rounded-lg">
                       {authority.imageUrl ? (
                         <img
                           src={authority.imageUrl}
@@ -104,13 +104,13 @@ const InstitutionProfile: React.FC = () => {
                           className="w-16 h-16 rounded-full object-cover"
                         />
                       ) : (
-                        <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center">
-                          <Users size={24} className="text-gray-400" />
+                        <div className="w-16 h-16 rounded-full bg-justice-200 flex items-center justify-center">
+                          <Users size={24} className="text-justice-400" />
                         </div>
                       )}
                       <div>
-                        <h3 className="font-medium text-gray-900">{authority.name}</h3>
-                        <p className="text-sm text-gray-600">{authority.position}</p>
+                        <h3 className="font-medium text-justice-900">{authority.name}</h3>
+                        <p className="text-sm text-justice-600">{authority.position}</p>
                       </div>
                     </div>
                   ))}
@@ -125,24 +125,24 @@ const InstitutionProfile: React.FC = () => {
               <CardContent>
                 <h2 className="text-xl font-semibold mb-4">Presupuesto</h2>
                 <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
+                  <table className="min-w-full divide-y divide-justice-200">
+                    <thead className="bg-justice-50">
                       <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-justice-500 uppercase tracking-wider">
                           Año
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-justice-500 uppercase tracking-wider">
                           Monto
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
+                    <tbody className="bg-white divide-y divide-justice-200">
                       {institution.budget.map((item, index) => (
-                        <tr key={index} className="hover:bg-gray-50">
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        <tr key={index} className="hover:bg-justice-50">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-justice-900">
                             {item.year}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-justice-900">
                             {new Intl.NumberFormat('es-GT', {
                               style: 'currency',
                               currency: item.currency,
@@ -168,9 +168,9 @@ const InstitutionProfile: React.FC = () => {
                   <div className="flex items-start space-x-3">
                     <Clock size={20} className="text-primary-600 mt-1" />
                     <div>
-                      <p className="font-medium text-gray-900">Horario de Atención</p>
-                      <p className="text-gray-600">{institution.schedule}</p>
-                      <p className="text-gray-600">{institution.workDays}</p>
+                      <p className="font-medium text-justice-900">Horario de Atención</p>
+                      <p className="text-justice-600">{institution.schedule}</p>
+                      <p className="text-justice-600">{institution.workDays}</p>
                     </div>
                   </div>
                 )}

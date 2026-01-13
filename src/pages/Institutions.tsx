@@ -73,7 +73,7 @@ const Institutions: React.FC = () => {
   ].filter(Boolean).length;
 
   const InstitutionCard: React.FC<{ institution: typeof institutions[0] }> = ({ institution }) => (
-    <Card className="group h-full flex flex-col overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200">
+    <Card className="group h-full flex flex-col overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-justice-200">
       <div className="h-56 overflow-hidden relative">
         <img
           src={institution.imageUrl}
@@ -92,31 +92,31 @@ const Institutions: React.FC = () => {
       </div>
 
       <CardContent className="flex-1 flex flex-col p-6">
-        <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-teal-700 transition-colors line-clamp-2 min-h-[3.5rem]">
+        <h3 className="text-xl font-bold mb-3 text-justice-900 group-hover:text-teal-700 transition-colors line-clamp-2 min-h-[3.5rem]">
           {institution.name}
         </h3>
 
-        <p className="text-sm text-gray-600 mb-4 flex-1 line-clamp-3 leading-relaxed">{institution.description}</p>
+        <p className="text-sm text-justice-600 mb-4 flex-1 line-clamp-3 leading-relaxed">{institution.description}</p>
 
-        <div className="space-y-2.5 mb-5 pb-5 border-b border-gray-100">
+        <div className="space-y-2.5 mb-5 pb-5 border-b border-justice-100">
           {institution.schedule && (
-            <div className="flex items-center text-gray-700">
-              <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center mr-3 flex-shrink-0">
-                <Clock size={14} className="text-blue-600" />
+            <div className="flex items-center text-justice-700">
+              <div className="w-8 h-8 rounded-lg bg-justice-50 flex items-center justify-center mr-3 flex-shrink-0">
+                <Clock size={14} className="text-justice-600" />
               </div>
               <span className="text-xs font-medium truncate">{institution.schedule}</span>
             </div>
           )}
           {institution.phone && (
-            <div className="flex items-center text-gray-700">
-              <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center mr-3 flex-shrink-0">
-                <Phone size={14} className="text-green-600" />
+            <div className="flex items-center text-justice-700">
+              <div className="w-8 h-8 rounded-lg bg-justice-50 flex items-center justify-center mr-3 flex-shrink-0">
+                <Phone size={14} className="text-justice-600" />
               </div>
               <span className="text-xs font-medium truncate">{institution.phone}</span>
             </div>
           )}
           {institution.website && (
-            <div className="flex items-center text-gray-700">
+            <div className="flex items-center text-justice-700">
               <div className="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center mr-3 flex-shrink-0">
                 <Globe size={14} className="text-purple-600" />
               </div>
@@ -137,7 +137,7 @@ const Institutions: React.FC = () => {
   );
 
   const InstitutionListItem: React.FC<{ institution: typeof institutions[0] }> = ({ institution }) => (
-    <Card className="hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden group">
+    <Card className="hover:shadow-xl transition-all duration-300 border border-justice-200 overflow-hidden group">
       <CardContent className="p-6">
         <div className="flex flex-col md:flex-row gap-6">
           <div className="w-full md:w-40 h-32 overflow-hidden rounded-xl flex-shrink-0 relative">
@@ -159,8 +159,8 @@ const Institutions: React.FC = () => {
           <div className="flex-1 min-w-0">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
               <div className="flex-1 min-w-0">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-700 transition-colors">{institution.name}</h3>
-                <p className="text-sm text-gray-600 mb-3 line-clamp-2 leading-relaxed">{institution.description}</p>
+                <h3 className="text-xl font-bold text-justice-900 mb-2 group-hover:text-teal-700 transition-colors">{institution.name}</h3>
+                <p className="text-sm text-justice-600 mb-3 line-clamp-2 leading-relaxed">{institution.description}</p>
               </div>
 
               <Button
@@ -176,23 +176,23 @@ const Institutions: React.FC = () => {
 
             <div className="flex flex-wrap gap-4">
               {institution.schedule && (
-                <div className="flex items-center text-gray-700">
-                  <div className="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center mr-2">
-                    <Clock size={12} className="text-blue-600" />
+                <div className="flex items-center text-justice-700">
+                  <div className="w-7 h-7 rounded-lg bg-justice-50 flex items-center justify-center mr-2">
+                    <Clock size={12} className="text-justice-600" />
                   </div>
                   <span className="text-sm font-medium">{institution.schedule}</span>
                 </div>
               )}
               {institution.phone && (
-                <div className="flex items-center text-gray-700">
-                  <div className="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center mr-2">
-                    <Phone size={12} className="text-green-600" />
+                <div className="flex items-center text-justice-700">
+                  <div className="w-7 h-7 rounded-lg bg-justice-50 flex items-center justify-center mr-2">
+                    <Phone size={12} className="text-justice-600" />
                   </div>
                   <span className="text-sm font-medium">{institution.phone}</span>
                 </div>
               )}
               {institution.email && (
-                <div className="flex items-center text-gray-700">
+                <div className="flex items-center text-justice-700">
                   <div className="w-7 h-7 rounded-lg bg-amber-50 flex items-center justify-center mr-2">
                     <Mail size={12} className="text-amber-600" />
                   </div>
@@ -200,7 +200,7 @@ const Institutions: React.FC = () => {
                 </div>
               )}
               {institution.address && (
-                <div className="flex items-center text-gray-700">
+                <div className="flex items-center text-justice-700">
                   <div className="w-7 h-7 rounded-lg bg-rose-50 flex items-center justify-center mr-2">
                     <MapPin size={12} className="text-rose-600" />
                   </div>
@@ -231,13 +231,13 @@ const Institutions: React.FC = () => {
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   placeholder="Buscar por nombre, tipo, descripción o ubicación..."
-                  className="w-full px-5 py-4 pl-14 pr-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent shadow-sm transition-all"
+                  className="w-full px-5 py-4 pl-14 pr-4 border-2 border-justice-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent shadow-sm transition-all"
                 />
-                <Search size={20} className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <Search size={20} className="absolute left-5 top-1/2 transform -translate-y-1/2 text-justice-400" />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-justice-400 hover:text-justice-600 transition-colors"
                   >
                     <X size={18} />
                   </button>
@@ -260,13 +260,13 @@ const Institutions: React.FC = () => {
                   <ChevronDown size={16} className={`transition-transform ${showFilters ? 'rotate-180' : ''}`} />
                 </Button>
 
-                <div className="flex border-2 border-gray-200 rounded-xl overflow-hidden">
+                <div className="flex border-2 border-justice-200 rounded-xl overflow-hidden">
                   <button
                     onClick={() => setViewMode('grid')}
                     className={`px-4 py-2 transition-all ${
                       viewMode === 'grid'
                         ? 'bg-teal-600 text-white'
-                        : 'bg-white text-gray-600 hover:bg-gray-50'
+                        : 'bg-white text-justice-600 hover:bg-justice-50'
                     }`}
                     title="Vista de cuadrícula"
                   >
@@ -277,7 +277,7 @@ const Institutions: React.FC = () => {
                     className={`px-4 py-2 transition-all ${
                       viewMode === 'list'
                         ? 'bg-teal-600 text-white'
-                        : 'bg-white text-gray-600 hover:bg-gray-50'
+                        : 'bg-white text-justice-600 hover:bg-justice-50'
                     }`}
                     title="Vista de lista"
                   >
@@ -290,7 +290,7 @@ const Institutions: React.FC = () => {
             {/* Active Filters Tags */}
             {activeFiltersCount > 0 && (
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm font-medium text-gray-600">Filtros activos:</span>
+                <span className="text-sm font-medium text-justice-600">Filtros activos:</span>
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
@@ -303,7 +303,7 @@ const Institutions: React.FC = () => {
                 {typeFilter !== 'all' && (
                   <button
                     onClick={() => setTypeFilter('all')}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-100 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-justice-50 text-justice-700 rounded-lg text-sm font-medium hover:bg-justice-100 transition-colors"
                   >
                     Tipo: {typeFilter}
                     <X size={14} />
@@ -311,7 +311,7 @@ const Institutions: React.FC = () => {
                 )}
                 <button
                   onClick={clearFilters}
-                  className="text-sm font-medium text-gray-600 hover:text-gray-900 underline"
+                  className="text-sm font-medium text-justice-600 hover:text-justice-900 underline"
                 >
                   Limpiar todos
                 </button>
@@ -324,14 +324,14 @@ const Institutions: React.FC = () => {
                 <CardContent className="p-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="type-filter" className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label htmlFor="type-filter" className="block text-sm font-semibold text-justice-700 mb-2">
                         Tipo de Institución
                       </label>
                       <select
                         id="type-filter"
                         value={typeFilter}
                         onChange={e => setTypeFilter(e.target.value)}
-                        className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+                        className="w-full px-4 py-2.5 border-2 border-justice-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
                       >
                         <option value="all">Todos los tipos</option>
                         {institutionTypes.map(type => (
@@ -341,14 +341,14 @@ const Institutions: React.FC = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="sort-by" className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label htmlFor="sort-by" className="block text-sm font-semibold text-justice-700 mb-2">
                         Ordenar por
                       </label>
                       <select
                         id="sort-by"
                         value={sortBy}
                         onChange={e => setSortBy(e.target.value)}
-                        className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+                        className="w-full px-4 py-2.5 border-2 border-justice-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
                       >
                         <option value="name">Nombre</option>
                         <option value="type">Tipo</option>
@@ -361,25 +361,25 @@ const Institutions: React.FC = () => {
           </div>
 
           {/* Results Bar */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-gradient-to-r from-teal-50 to-blue-50 px-6 py-4 rounded-xl border border-teal-100">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-gradient-to-r from-teal-50 to-justice-50 px-6 py-4 rounded-xl border border-teal-100">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-teal-600 flex items-center justify-center">
                 <Building2 size={20} className="text-white" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-gray-900">
+                <p className="text-sm font-semibold text-justice-900">
                   {filteredInstitutions.length} institución{filteredInstitutions.length !== 1 ? 'es' : ''} encontrada{filteredInstitutions.length !== 1 ? 's' : ''}
                 </p>
-                <p className="text-xs text-gray-600">de {institutions.length} totales</p>
+                <p className="text-xs text-justice-600">de {institutions.length} totales</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="text-sm font-medium text-gray-700">Ordenar por:</span>
+              <span className="text-sm font-medium text-justice-700">Ordenar por:</span>
               <select
                 value={sortBy}
                 onChange={e => setSortBy(e.target.value)}
-                className="px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm font-medium transition-all"
+                className="px-4 py-2 border-2 border-justice-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm font-medium transition-all"
               >
                 <option value="name">Nombre</option>
                 <option value="type">Tipo</option>
@@ -403,15 +403,15 @@ const Institutions: React.FC = () => {
               </div>
             )
           ) : (
-            <Card className="border-2 border-dashed border-gray-300">
+            <Card className="border-2 border-dashed border-justice-300">
               <CardContent className="text-center py-16">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gray-100 flex items-center justify-center">
-                  <Building2 size={40} className="text-gray-400" />
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-justice-100 flex items-center justify-center">
+                  <Building2 size={40} className="text-justice-400" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-justice-900 mb-2">
                   No se encontraron instituciones
                 </h3>
-                <p className="text-gray-600 mb-6 max-w-md mx-auto">
+                <p className="text-justice-600 mb-6 max-w-md mx-auto">
                   No hay instituciones que coincidan con los criterios de búsqueda. Intenta ajustar los filtros.
                 </p>
                 <Button
@@ -426,7 +426,7 @@ const Institutions: React.FC = () => {
           )}
 
           {/* Statistics Section */}
-          <div className="mt-16 bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-600 text-white rounded-2xl p-10 md:p-12 shadow-2xl">
+          <div className="mt-16 bg-gradient-to-br from-teal-600 via-justice-600 to-justice-600 text-white rounded-2xl p-10 md:p-12 shadow-2xl">
             <div className="flex items-center justify-center gap-3 mb-8">
               <TrendingUp size={32} className="text-white" />
               <h2 className="text-3xl md:text-4xl font-bold text-center">
@@ -457,8 +457,8 @@ const Institutions: React.FC = () => {
 
           {/* Institution Types Overview */}
           {institutionTypes.length > 0 && (
-            <div className="mt-16 bg-gradient-to-br from-white to-gray-50 rounded-2xl p-10 border-2 border-gray-200 shadow-xl">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            <div className="mt-16 bg-gradient-to-br from-white to-justice-50 rounded-2xl p-10 border-2 border-justice-200 shadow-xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-justice-900 mb-8 text-center">
                 Instituciones por Tipo
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -472,11 +472,11 @@ const Institutions: React.FC = () => {
                         setTypeFilter(type);
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
-                      className="bg-white p-6 rounded-xl hover:shadow-lg transition-all duration-300 border-2 border-gray-200 hover:border-teal-500 text-left group"
+                      className="bg-white p-6 rounded-xl hover:shadow-lg transition-all duration-300 border-2 border-justice-200 hover:border-teal-500 text-left group"
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex-1">
-                          <h3 className="font-bold text-gray-900 group-hover:text-teal-700 transition-colors mb-2 line-clamp-2">{type}</h3>
+                          <h3 className="font-bold text-justice-900 group-hover:text-teal-700 transition-colors mb-2 line-clamp-2">{type}</h3>
                           <span className="text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full inline-block">{percentage}%</span>
                         </div>
                         <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center group-hover:bg-teal-100 transition-colors ml-2 flex-shrink-0">
@@ -484,14 +484,14 @@ const Institutions: React.FC = () => {
                         </div>
                       </div>
                       <div className="mb-3">
-                        <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                        <div className="w-full bg-justice-200 rounded-full h-3 overflow-hidden">
                           <div
-                            className="bg-gradient-to-r from-teal-500 to-cyan-500 h-3 rounded-full transition-all duration-500 group-hover:from-teal-600 group-hover:to-cyan-600"
+                            className="bg-gradient-to-r from-teal-500 to-justice-500 h-3 rounded-full transition-all duration-500 group-hover:from-teal-600 group-hover:to-justice-600"
                             style={{ width: `${percentage}%` }}
                           ></div>
                         </div>
                       </div>
-                      <p className="text-sm text-gray-600 font-medium">
+                      <p className="text-sm text-justice-600 font-medium">
                         {count} institución{count !== 1 ? 'es' : ''}
                       </p>
                     </button>
@@ -507,3 +507,5 @@ const Institutions: React.FC = () => {
 };
 
 export default Institutions;
+
+

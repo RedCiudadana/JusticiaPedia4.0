@@ -76,7 +76,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
               >
                 <source src={slide.videoUrl} type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/70 to-secondary-900/60" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/70 to-justice-900/60" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent" />
             </div>
           ) : slide.imageUrl ? (
@@ -84,11 +84,11 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.imageUrl})` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/70 to-secondary-900/60" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/70 to-justice-900/60" />
             </div>
           ) : (
             <div
-              className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900"
+              className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-justice-900"
             />
           )}
 
@@ -165,3 +165,4 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
 };
 
 export default HeroSlider;
+

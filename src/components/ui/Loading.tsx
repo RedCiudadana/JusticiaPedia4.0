@@ -32,7 +32,7 @@ const Loading: React.FC<LoadingProps> = ({
     <div className={`flex flex-col items-center justify-center space-y-4 ${className}`}>
       <img src={loader} alt="Loading" className={`${sizeClasses[size]}`} />
       {text && (
-        <p className={`${textSizeClasses[size]} text-gray-600 font-medium`}>
+        <p className={`${textSizeClasses[size]} text-justice-600 font-medium`}>
           {text}
         </p>
       )}
@@ -41,7 +41,7 @@ const Loading: React.FC<LoadingProps> = ({
 
   if (fullScreen) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-justice-50">
         {content}
       </div>
     );
@@ -51,3 +51,4 @@ const Loading: React.FC<LoadingProps> = ({
 };
 
 export default Loading;
+

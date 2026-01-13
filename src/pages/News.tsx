@@ -110,10 +110,10 @@ const News: React.FC = () => {
   const getCategoryColor = (category: string) => {
     const colors = {
       'Procesos de Selección': 'bg-primary-100 text-primary-800',
-      'Análisis': 'bg-secondary-100 text-secondary-800',
-      'Entrevistas': 'bg-accent-100 text-accent-800',
+      'Análisis': 'bg-justice-100 text-justice-800',
+      'Entrevistas': 'bg-justice-100 text-justice-800',
       'Noticias': 'bg-justice-100 text-justice-800',
-      'Reportajes': 'bg-error-100 text-error-800',
+      'Reportajes': 'bg-justice-100 text-justice-800',
       'Opinión': 'bg-primary-100 text-primary-800',
     };
     return colors[category as keyof typeof colors] || 'bg-neutral-100 text-neutral-800';
@@ -134,7 +134,7 @@ const News: React.FC = () => {
         </div>
         {article.featured && (
           <div className="absolute top-4 right-4">
-            <div className="bg-yellow-500 text-white px-2 py-1 rounded text-xs font-bold">
+            <div className="bg-justice-500 text-white px-2 py-1 rounded text-xs font-bold">
               DESTACADO
             </div>
           </div>
@@ -160,11 +160,11 @@ const News: React.FC = () => {
         <h3 className="text-xl font-semibold mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors">
           {article.title}
         </h3>
-        <p className="text-gray-600 mb-4 flex-1 line-clamp-3">{article.excerpt}</p>
+        <p className="text-neutral-600 mb-4 flex-1 line-clamp-3">{article.excerpt}</p>
         
         <div className="space-y-3">
           {article.author && (
-            <div className="flex items-center text-sm text-gray-600">
+            <div className="flex items-center text-sm text-neutral-600">
               <User size={14} className="mr-2" />
               <span>Por {article.author}</span>
             </div>
@@ -173,18 +173,18 @@ const News: React.FC = () => {
           {article.tags && article.tags.length > 0 && (
             <div className="flex flex-wrap gap-1">
               {article.tags.slice(0, 3).map((tag, index) => (
-                <span key={index} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+                <span key={index} className="bg-justice-100 text-justice-600 px-2 py-1 rounded text-xs">
                   #{tag}
                 </span>
               ))}
               {article.tags.length > 3 && (
-                <span className="text-gray-500 text-xs">+{article.tags.length - 3} más</span>
+                <span className="text-justice-500 text-xs">+{article.tags.length - 3} más</span>
               )}
             </div>
           )}
 
           <div className="flex items-center justify-between pt-2">
-            <div className="flex items-center text-sm text-gray-500">
+            <div className="flex items-center text-sm text-justice-500">
               {article.views && (
                 <div className="flex items-center mr-4">
                   <Eye size={14} className="mr-1" />
@@ -230,12 +230,12 @@ const News: React.FC = () => {
           <div className="flex-1">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
               <div className="flex-1">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 hover:text-primary-600 transition-colors cursor-pointer">
+                <h3 className="text-xl font-semibold text-justice-900 mb-2 hover:text-primary-600 transition-colors cursor-pointer">
                   {article.title}
                 </h3>
-                <p className="text-gray-600 mb-3 line-clamp-2">{article.excerpt}</p>
+                <p className="text-justice-600 mb-3 line-clamp-2">{article.excerpt}</p>
                 
-                <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                <div className="flex flex-wrap items-center gap-4 text-sm text-justice-600 mb-3">
                   <div className="flex items-center">
                     <Calendar size={14} className="mr-1" />
                     <span>{formatDate(article.date)}</span>
@@ -263,7 +263,7 @@ const News: React.FC = () => {
                 {article.tags && article.tags.length > 0 && (
                   <div className="flex flex-wrap gap-1 mb-3">
                     {article.tags.slice(0, 4).map((tag, index) => (
-                      <span key={index} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+                      <span key={index} className="bg-justice-100 text-justice-600 px-2 py-1 rounded text-xs">
                         #{tag}
                       </span>
                     ))}
@@ -294,6 +294,7 @@ const News: React.FC = () => {
 
   return (
     <PageLayout
+      title=""
     >
       <HeroSlider slides={slides} />
 
@@ -306,9 +307,9 @@ const News: React.FC = () => {
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             placeholder="Buscar por título, contenido, autor o etiquetas..."
-            className="w-full px-4 py-3 pl-12 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm"
+            className="w-full px-4 py-3 pl-12 pr-4 border border-justice-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm"
           />
-          <Search size={20} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <Search size={20} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-justice-400" />
         </div>
 
         {/* Filter Toggle */}
@@ -318,7 +319,6 @@ const News: React.FC = () => {
             onClick={() => setShowFilters(!showFilters)}
             className="flex items-center"
           >
-            <Filter size={16} className="mr-2" />
             Filtros avanzados
             <ChevronDown size={16} className={`ml-2 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
           </Button>
@@ -330,14 +330,14 @@ const News: React.FC = () => {
             <CardContent className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div>
-                  <label htmlFor="category-filter" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="category-filter" className="block text-sm font-medium text-justice-700 mb-2">
                     Categoría
                   </label>
                   <select
                     id="category-filter"
                     value={categoryFilter}
                     onChange={e => setCategoryFilter(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 border border-justice-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="all">Todas las categorías</option>
                     {categories.map(category => (
@@ -347,14 +347,14 @@ const News: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="sort-by" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="sort-by" className="block text-sm font-medium text-justice-700 mb-2">
                     Ordenar por
                   </label>
                   <select
                     id="sort-by"
                     value={sortBy}
                     onChange={e => setSortBy(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-3 py-2 border border-justice-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="date">Fecha (más reciente)</option>
                     <option value="title">Título</option>
@@ -364,16 +364,16 @@ const News: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-justice-700 mb-2">
                     Vista
                   </label>
-                  <div className="flex rounded-md border border-gray-300 overflow-hidden">
+                  <div className="flex rounded-md border border-justice-300 overflow-hidden">
                     <button
                       onClick={() => setViewMode('grid')}
                       className={`flex-1 px-3 py-2 text-sm font-medium transition-colors ${
                         viewMode === 'grid'
                           ? 'bg-primary-600 text-white'
-                          : 'bg-white text-gray-700 hover:bg-gray-50'
+                          : 'bg-white text-justice-700 hover:bg-justice-50'
                       }`}
                     >
                       Cuadrícula
@@ -383,7 +383,7 @@ const News: React.FC = () => {
                       className={`flex-1 px-3 py-2 text-sm font-medium transition-colors ${
                         viewMode === 'list'
                           ? 'bg-primary-600 text-white'
-                          : 'bg-white text-gray-700 hover:bg-gray-50'
+                          : 'bg-white text-justice-700 hover:bg-justice-50'
                       }`}
                     >
                       Lista
@@ -411,7 +411,7 @@ const News: React.FC = () => {
 
       {/* Results Summary */}
       <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between">
-        <p className="text-gray-600 mb-4 md:mb-0">
+        <p className="text-justice-600 mb-4 md:mb-0">
           Mostrando {paginatedArticles.length} de {filteredArticles.length} artículos
           {(searchQuery || categoryFilter !== 'all') && (
             <span className="ml-1">
@@ -430,7 +430,7 @@ const News: React.FC = () => {
               className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                 categoryFilter === category
                   ? 'bg-primary-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-justice-100 text-justice-700 hover:bg-justice-200'
               }`}
             >
               {category}
@@ -442,7 +442,7 @@ const News: React.FC = () => {
       {/* Featured Articles */}
       {currentPage === 1 && categoryFilter === 'all' && !searchQuery && (
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+          <h2 className="text-2xl font-bold text-justice-900 mb-6 flex items-center">
             <TrendingUp size={24} className="mr-2 text-primary-600" />
             Artículos Destacados
           </h2>
@@ -457,7 +457,7 @@ const News: React.FC = () => {
       {/* Articles Display */}
       <div className="mb-8">
         {currentPage === 1 && categoryFilter === 'all' && !searchQuery && (
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+          <h2 className="text-2xl font-bold text-justice-900 mb-6 flex items-center">
             <BookOpen size={24} className="mr-2 text-primary-600" />
             Todos los Artículos
           </h2>
@@ -510,7 +510,7 @@ const News: React.FC = () => {
                   className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
                     currentPage === pageNum
                       ? 'bg-primary-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      : 'bg-justice-100 text-justice-700 hover:bg-justice-200'
                   }`}
                 >
                   {pageNum}
@@ -532,12 +532,12 @@ const News: React.FC = () => {
 
       {/* Empty State */}
       {filteredArticles.length === 0 && (
-        <div className="text-center py-12 bg-gray-50 rounded-lg">
-          <BookOpen size={48} className="mx-auto text-gray-400 mb-4" />
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+        <div className="text-center py-12 bg-justice-50 rounded-lg">
+          <BookOpen size={48} className="mx-auto text-justice-400 mb-4" />
+          <h3 className="text-lg font-semibold text-justice-900 mb-2">
             No se encontraron artículos
           </h3>
-          <p className="text-gray-600 mb-4">
+          <p className="text-justice-600 mb-4">
             No hay artículos que coincidan con los criterios de búsqueda.
           </p>
           <Button
@@ -550,8 +550,8 @@ const News: React.FC = () => {
       )}
 
       {/* Categories Overview */}
-      <div className="mt-20 bg-gradient-to-br from-gray-50 to-white rounded-2xl p-10 border border-gray-200 shadow-lg">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+      <div className="mt-20 bg-gradient-to-br from-justice-50 to-white rounded-2xl p-10 border border-justice-200 shadow-lg">
+        <h2 className="text-3xl md:text-4xl font-bold text-justice-900 mb-8 text-center">
           Artículos por Categoría
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -561,16 +561,16 @@ const News: React.FC = () => {
             return (
               <div
                 key={category}
-                className="bg-white p-4 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
+                className="bg-white p-4 rounded-lg hover:bg-justice-100 transition-colors cursor-pointer"
                 onClick={() => setCategoryFilter(category)}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-medium text-gray-900">{category}</h3>
-                  <span className="text-sm text-gray-600">{percentage}%</span>
+                  <h3 className="font-medium text-justice-900">{category}</h3>
+                  <span className="text-sm text-justice-600">{percentage}%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">{count} artículo{count !== 1 ? 's' : ''}</span>
-                  <div className="w-16 bg-gray-200 rounded-full h-2">
+                  <span className="text-sm text-justice-600">{count} artículo{count !== 1 ? 's' : ''}</span>
+                  <div className="w-16 bg-justice-200 rounded-full h-2">
                     <div
                       className="bg-primary-600 h-2 rounded-full"
                       style={{ width: `${percentage}%` }}
@@ -584,20 +584,20 @@ const News: React.FC = () => {
       </div>
 
       {/* Newsletter Subscription */}
-      <div className="mt-20 bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600 text-white rounded-2xl p-10 md:p-12 text-center shadow-2xl">
+      <div className="mt-20 bg-gradient-to-br from-justice-600 via-justice-700 to-teal-600 text-white rounded-2xl p-10 md:p-12 text-center shadow-2xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Mantente Informado</h2>
-        <p className="text-blue-50 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+        <p className="text-justice-50 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
           Suscríbete a nuestro boletín para recibir las últimas noticias y análisis sobre el sistema judicial guatemalteco.
         </p>
         <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
           <input
             type="email"
             placeholder="Tu correo electrónico"
-            className="flex-1 px-5 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white shadow-md"
+            className="flex-1 px-5 py-3 rounded-lg text-justice-900 focus:outline-none focus:ring-2 focus:ring-white shadow-md"
           />
           <Button
             variant="secondary"
-            className="bg-white text-blue-600 hover:bg-blue-50 shadow-md hover:shadow-lg transition-all font-semibold px-6 py-3"
+            className="bg-white text-justice-600 hover:bg-justice-50 shadow-md hover:shadow-lg transition-all font-semibold px-6 py-3"
           >
             Suscribirse
           </Button>
@@ -608,3 +608,4 @@ const News: React.FC = () => {
 };
 
 export default News;
+

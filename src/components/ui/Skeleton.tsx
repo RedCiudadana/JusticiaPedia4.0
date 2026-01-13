@@ -15,7 +15,7 @@ const Skeleton: React.FC<SkeletonProps> = ({
   height,
   lines = 1,
 }) => {
-  const baseClasses = 'animate-pulse bg-gray-200';
+  const baseClasses = 'animate-pulse bg-justice-200';
 
   const variantClasses = {
     text: 'rounded h-4',
@@ -90,3 +90,4 @@ export const SkeletonTable: React.FC<{ rows?: number; columns?: number }> = ({
 };
 
 export default Skeleton;
+

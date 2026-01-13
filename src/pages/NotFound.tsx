@@ -54,28 +54,28 @@ const NotFound: React.FC = () => {
       description: 'Volver a la página principal',
       action: () => window.location.href = '/',
       icon: Home,
-      color: 'bg-blue-500 hover:bg-blue-600'
+      color: 'bg-justice-500 hover:bg-justice-600'
     },
     {
       title: 'Buscar',
       description: 'Buscar en todo el sitio',
       action: () => document.getElementById('search-input')?.focus(),
       icon: Search,
-      color: 'bg-green-500 hover:bg-green-600'
+      color: 'bg-justice-500 hover:bg-justice-600'
     },
     {
       title: 'Recargar',
       description: 'Intentar recargar la página',
       action: () => window.location.reload(),
       icon: RefreshCw,
-      color: 'bg-orange-500 hover:bg-orange-600'
+      color: 'bg-justice-500 hover:bg-justice-600'
     },
     {
       title: 'Reportar',
       description: 'Reportar enlace roto',
       action: () => window.location.href = '/contacto',
       icon: Mail,
-      color: 'bg-red-500 hover:bg-red-600'
+      color: 'bg-justice-500 hover:bg-justice-600'
     }
   ];
 
@@ -100,23 +100,23 @@ const NotFound: React.FC = () => {
       title="Página no encontrada - JusticiapedIA"
       description="La página que buscas no existe. Explora nuestro contenido sobre el sistema judicial guatemalteco."
     >
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
+      <div className="min-h-screen bg-gradient-to-br from-justice-50 to-justice-100 py-12">
         <Container>
           <div className="max-w-4xl mx-auto">
             {/* Main Error Section */}
             <div className="text-center mb-12">
               <img src={notFoundImage} alt="404 Not Found" className="mx-auto mb-6 w-100 h-auto" />
               
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h1 className="text-3xl md:text-4xl font-bold text-justice-900 mb-4">
                 ¡Oops! Página no encontrada
               </h1>
               
-              <p className="text-xl text-gray-600 mb-2">
+              <p className="text-xl text-justice-600 mb-2">
                 {getErrorMessage()}
               </p>
               
-              <p className="text-gray-500 mb-8">
-                URL solicitada: <code className="bg-gray-200 px-2 py-1 rounded text-sm">{currentPath}</code>
+              <p className="text-justice-500 mb-8">
+                URL solicitada: <code className="bg-justice-200 px-2 py-1 rounded text-sm">{currentPath}</code>
               </p>
 
               {/* Quick Actions */}
@@ -135,3 +135,4 @@ const NotFound: React.FC = () => {
 };
 
 export default NotFound;
+

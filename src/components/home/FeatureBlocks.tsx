@@ -37,16 +37,16 @@ const FeatureBlocks: React.FC = () => {
   const getColorClasses = (color: string) => {
     const colors: Record<string, { bg: string; icon: string; hover: string; border: string }> = {
       primary: {
-        bg: 'from-primary-50 to-primary-100',
-        icon: 'text-primary-600',
-        hover: 'group-hover:text-primary-700',
-        border: 'hover:border-primary-300',
+        bg: 'from-justice-50 to-justice-100',
+        icon: 'text-justice-600',
+        hover: 'group-hover:text-justice-700',
+        border: 'hover:border-justice-300',
       },
       accent: {
-        bg: 'from-accent-50 to-accent-100',
-        icon: 'text-accent-600',
-        hover: 'group-hover:text-accent-700',
-        border: 'hover:border-accent-300',
+        bg: 'from-justice-50 to-justice-100',
+        icon: 'text-justice-600',
+        hover: 'group-hover:text-justice-700',
+        border: 'hover:border-justice-300',
       },
       justice: {
         bg: 'from-justice-50 to-justice-100',
@@ -55,10 +55,10 @@ const FeatureBlocks: React.FC = () => {
         border: 'hover:border-justice-300',
       },
       secondary: {
-        bg: 'from-secondary-50 to-secondary-100',
-        icon: 'text-secondary-600',
-        hover: 'group-hover:text-secondary-700',
-        border: 'hover:border-secondary-300',
+        bg: 'from-justice-50 to-justice-100',
+        icon: 'text-justice-700',
+        hover: 'group-hover:text-justice-700',
+        border: 'hover:border-justice-300',
       },
     };
     return colors[color] || colors.primary;

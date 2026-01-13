@@ -21,19 +21,19 @@ const ActiveProcessesNotification: React.FC = () => {
       id: '7',
       name: 'Tribunal Supremo Electoral',
       shortName: 'TSE',
-      color: 'text-blue-700',
-      bgColor: 'bg-blue-50',
-      borderColor: 'border-blue-300',
-      icon: <Calendar className="text-blue-600" size={20} />
+      color: 'text-justice-700',
+      bgColor: 'bg-justice-50',
+      borderColor: 'border-justice-300',
+      icon: <Calendar className="text-justice-600" size={20} />
     },
     {
       id: '2',
       name: 'Ministerio Público',
       shortName: 'MP',
-      color: 'text-green-700',
-      bgColor: 'bg-green-50',
-      borderColor: 'border-green-300',
-      icon: <TrendingUp className="text-green-600" size={20} />
+      color: 'text-justice-700',
+      bgColor: 'bg-justice-50',
+      borderColor: 'border-justice-300',
+      icon: <TrendingUp className="text-justice-600" size={20} />
     },
     {
       id: '8',
@@ -84,7 +84,7 @@ const ActiveProcessesNotification: React.FC = () => {
     }`}>
       <div className="bg-white rounded-2xl shadow-2xl border-2 border-primary-200 overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-primary-600 to-blue-600 p-4 relative">
+        <div className="bg-gradient-to-r from-primary-600 to-justice-600 p-4 relative">
           <button
             onClick={handleClose}
             className="absolute top-3 right-3 text-white/80 hover:text-white transition-colors"
@@ -94,7 +94,7 @@ const ActiveProcessesNotification: React.FC = () => {
           </button>
           <div className="pr-8">
             <div className="flex items-center gap-2 mb-1">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-justice-400 rounded-full animate-pulse"></div>
               <span className="text-white/90 text-xs font-bold uppercase tracking-wide">En Proceso Ahora</span>
             </div>
             <h3 className="text-white text-lg font-bold">
@@ -105,7 +105,7 @@ const ActiveProcessesNotification: React.FC = () => {
 
         {/* Content */}
         <div className="p-4 space-y-3">
-          <p className="text-sm text-gray-600 font-medium mb-3">
+          <p className="text-sm text-justice-600 font-medium mb-3">
             Sigue de cerca estos 3 procesos de postulación activos:
           </p>
 
@@ -122,18 +122,18 @@ const ActiveProcessesNotification: React.FC = () => {
                 <div className={`text-xs font-bold ${process.color} mb-0.5`}>
                   {process.shortName}
                 </div>
-                <div className="text-sm font-bold text-gray-900 truncate">
+                <div className="text-sm font-bold text-justice-900 truncate">
                   {process.name}
                 </div>
               </div>
-              <ChevronRight size={18} className="text-gray-400 group-hover:text-primary-600 transition-colors flex-shrink-0" />
+              <ChevronRight size={18} className="text-justice-400 group-hover:text-primary-600 transition-colors flex-shrink-0" />
             </button>
           ))}
 
           <Button
             variant="primary"
             onClick={handleViewAll}
-            className="w-full bg-gradient-to-r from-primary-600 to-blue-600 hover:from-primary-700 hover:to-blue-700 text-white font-bold shadow-lg hover:shadow-xl transition-all mt-4"
+            className="w-full bg-gradient-to-r from-primary-600 to-justice-600 hover:from-primary-700 hover:to-justice-700 text-white font-bold shadow-lg hover:shadow-xl transition-all mt-4"
           >
             Ver Todos los Procesos
             <ChevronRight size={18} className="ml-1" />
@@ -141,8 +141,8 @@ const ActiveProcessesNotification: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <div className="bg-gray-50 px-4 py-2 border-t border-gray-200">
-          <p className="text-xs text-gray-500 text-center">
+        <div className="bg-justice-50 px-4 py-2 border-t border-justice-200">
+          <p className="text-xs text-justice-500 text-center">
             Información actualizada • Justiciapedia
           </p>
         </div>
@@ -152,3 +152,4 @@ const ActiveProcessesNotification: React.FC = () => {
 };
 
 export default ActiveProcessesNotification;
+

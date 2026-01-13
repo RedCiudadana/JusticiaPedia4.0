@@ -106,7 +106,7 @@ const OpenData: React.FC = () => {
       description="Accede a datos públicos del sector justicia para análisis, investigación y control ciudadano."
     >
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-primary-800 via-primary-900 to-secondary-900 rounded-2xl p-8 md:p-12 lg:p-16 mb-16 shadow-2xl overflow-hidden">
+      <div className="relative bg-gradient-to-br from-primary-800 via-primary-900 to-justice-900 rounded-2xl p-8 md:p-12 lg:p-16 mb-16 shadow-2xl overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-justice-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-400/10 rounded-full blur-3xl -ml-24 -mb-24"></div>
         <div className="max-w-4xl mx-auto text-center relative">
@@ -152,7 +152,7 @@ const OpenData: React.FC = () => {
             const Icon = dataset.icon;
             return (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-neutral-100 hover:border-primary-300">
-                <CardHeader className="bg-gradient-to-r from-primary-50 to-accent-50">
+                <CardHeader className="bg-gradient-to-r from-primary-50 to-justice-50">
                   <div className="flex items-start justify-between">
                     <div className="flex items-start">
                       <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -206,12 +206,12 @@ const OpenData: React.FC = () => {
       {/* Documents Section */}
       <div className="mb-16">
         <Card className="overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-green-50 to-blue-50">
+          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50">
             <div className="flex items-center">
-              <FileText size={32} className="text-green-600 mr-4" />
+              <FileText size={32} className="text-justice-600 mr-4" />
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">Documentos oficiales</h2>
-                <p className="text-lg text-gray-700 mt-1">
+                <h2 className="text-3xl font-bold text-neutral-900">Documentos oficiales</h2>
+                <p className="text-lg text-neutral-700 mt-1">
                   Consulta resoluciones, actas, leyes, acuerdos y otros documentos públicos
                 </p>
               </div>
@@ -224,16 +224,16 @@ const OpenData: React.FC = () => {
                 return (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow cursor-pointer"
+                    className="bg-gradient-to-br from-justice-50 to-white border border-justice-200 rounded-lg p-6 hover:shadow-md transition-shadow cursor-pointer"
                   >
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                      <Icon size={24} className="text-green-600" />
+                    <div className="w-12 h-12 bg-justice-100 rounded-full flex items-center justify-center mb-4">
+                      <Icon size={24} className="text-justice-600" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{category.title}</h3>
-                    <p className="text-gray-600 text-sm mb-3">{category.description}</p>
+                    <h3 className="font-semibold text-neutral-900 mb-2">{category.title}</h3>
+                    <p className="text-neutral-600 text-sm mb-3">{category.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">{category.count} documentos</span>
-                      <ExternalLink size={16} className="text-green-600" />
+                      <span className="text-sm text-neutral-500">{category.count} documentos</span>
+                      <ExternalLink size={16} className="text-justice-600" />
                     </div>
                   </div>
                 );
@@ -252,19 +252,19 @@ const OpenData: React.FC = () => {
       {/* Methodology Section */}
       <div className="mb-16">
         <Card className="overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-blue-50 to-green-50">
+          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50">
             <div className="flex items-center">
-              <BookOpen size={32} className="text-blue-600 mr-4" />
+              <BookOpen size={32} className="text-justice-600 mr-4" />
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">Metodología</h2>
-                <p className="text-lg text-gray-700 mt-1">
+                <h2 className="text-3xl font-bold text-neutral-900">Metodología</h2>
+                <p className="text-lg text-neutral-700 mt-1">
                   Cómo recopilamos, verificamos y actualizamos la información
                 </p>
               </div>
             </div>
           </CardHeader>
           <CardContent className="p-8">
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg text-neutral-700 mb-8 leading-relaxed">
               La transparencia también implica explicar cómo se construye la información. Nuestro proceso garantiza calidad, precisión y actualización constante.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -273,17 +273,17 @@ const OpenData: React.FC = () => {
                 return (
                   <div
                     key={index}
-                    className="bg-white border-2 border-blue-100 rounded-lg p-6 hover:border-blue-300 transition-colors"
+                    className="bg-white border-2 border-justice-100 rounded-lg p-6 hover:border-justice-300 transition-colors"
                   >
                     <div className="flex items-start">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                        <Icon size={24} className="text-blue-600" />
+                      <div className="w-12 h-12 bg-justice-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                        <Icon size={24} className="text-justice-600" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        <h3 className="text-xl font-bold text-neutral-900 mb-2">
                           {index + 1}. {step.title}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                        <p className="text-neutral-600 leading-relaxed">{step.description}</p>
                       </div>
                     </div>
                   </div>
@@ -297,35 +297,35 @@ const OpenData: React.FC = () => {
       {/* Sources Section */}
       <div className="mb-16">
         <Card className="overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-green-50 to-blue-50">
+          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50">
             <div className="flex items-center">
-              <CheckCircle size={32} className="text-green-600 mr-4" />
+              <CheckCircle size={32} className="text-justice-600 mr-4" />
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">Fuentes de información</h2>
-                <p className="text-lg text-gray-700 mt-1">
+                <h2 className="text-3xl font-bold text-neutral-900">Fuentes de información</h2>
+                <p className="text-lg text-neutral-700 mt-1">
                   Toda nuestra información proviene de fuentes oficiales y públicas
                 </p>
               </div>
             </div>
           </CardHeader>
           <CardContent className="p-8">
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            <p className="text-lg text-neutral-700 mb-6 leading-relaxed">
               Toda la información publicada en Justiciapedia proviene de:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {sources.map((source, index) => (
                 <div
                   key={index}
-                  className="flex items-center bg-gradient-to-r from-green-50 to-blue-50 border border-green-100 rounded-lg p-4"
+                  className="flex items-center bg-gradient-to-r from-justice-50 to-justice-50 border border-justice-100 rounded-lg p-4"
                 >
-                  <CheckCircle size={20} className="text-green-600 mr-3 flex-shrink-0" />
-                  <span className="text-gray-800 font-medium">{source}</span>
+                  <CheckCircle size={20} className="text-justice-600 mr-3 flex-shrink-0" />
+                  <span className="text-neutral-800 font-medium">{source}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-8 bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
-              <p className="text-gray-800 leading-relaxed">
-                <strong className="text-blue-700">Ley de Acceso a la Información Pública:</strong> Todos los datos se obtienen en cumplimiento del derecho constitucional de acceso a la información pública, garantizando la legitimidad y legalidad de cada dato publicado.
+            <div className="mt-8 bg-justice-50 border-l-4 border-justice-600 p-6 rounded-r-lg">
+              <p className="text-neutral-800 leading-relaxed">
+                <strong className="text-neutral-700">Ley de Acceso a la Información Pública:</strong> Todos los datos se obtienen en cumplimiento del derecho constitucional de acceso a la información pública, garantizando la legitimidad y legalidad de cada dato publicado.
               </p>
             </div>
           </CardContent>
@@ -333,31 +333,35 @@ const OpenData: React.FC = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600 rounded-2xl p-10 md:p-14 text-center shadow-2xl">
+      <div className="bg-gradient-to-br from-justice-600 via-justice-700 to-neutral-600 rounded-2xl p-10 md:p-14 text-center shadow-2xl">
         <div className="max-w-3xl mx-auto text-white">
-          <Database size={56} className="mx-auto mb-6 text-blue-100" />
+          <Database size={56} className="mx-auto mb-6 text-justice-100" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Accede a todos los datos
           </h2>
-          <p className="text-lg md:text-xl text-blue-50 mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-justice-50 mb-10 leading-relaxed">
             Descarga conjuntos de datos completos en múltiples formatos. Úsalos para investigación, análisis, periodismo de datos o desarrollo de aplicaciones.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               variant="secondary"
               size="lg"
-              className="bg-white text-blue-600 hover:bg-blue-50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all font-semibold px-8 py-4"
+              className="inline-flex items-center gap-2 bg-white text-justice-600 hover:bg-justice-50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all font-semibold px-8 py-4"
             >
-              <Download size={24} className="mr-2" />
-              Descargar todos los datos
+              <span className="inline-flex items-center gap-2">
+                <Download size={24} />
+                Descargar todos los datos
+              </span>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-all font-semibold px-8 py-4"
+              className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-justice-600 transition-all font-semibold px-8 py-4"
             >
-              <BookOpen size={24} className="mr-2" />
-              Ver documentación API
+              <span className="inline-flex items-center gap-2">
+                <BookOpen size={24} />
+                Ver documentación API
+              </span>
             </Button>
           </div>
         </div>
@@ -367,3 +371,5 @@ const OpenData: React.FC = () => {
 };
 
 export default OpenData;
+
+

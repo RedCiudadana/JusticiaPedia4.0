@@ -119,13 +119,13 @@ const SearchPage: React.FC = () => {
   const getTypeIcon = (type: string) => {
     switch (type) {
       case 'candidate':
-        return <UserCircle size={16} className="text-blue-600" />;
+        return <UserCircle size={16} className="text-justice-600" />;
       case 'institution':
-        return <Building2 size={16} className="text-green-600" />;
+        return <Building2 size={16} className="text-justice-600" />;
       case 'commission':
         return <Users size={16} className="text-purple-600" />;
       case 'news':
-        return <FileText size={16} className="text-orange-600" />;
+        return <FileText size={16} className="text-justice-600" />;
       default:
         return null;
     }
@@ -167,13 +167,13 @@ const SearchPage: React.FC = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Buscar aspirantes, instituciones, noticias..."
-            className="w-full px-4 py-3 pl-12 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm"
+            className="w-full px-4 py-3 pl-12 pr-12 border border-justice-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm"
           />
-          <Search size={20} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <Search size={20} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-justice-400" />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-justice-400 hover:text-justice-600"
             >
               <X size={20} />
             </button>
@@ -192,7 +192,7 @@ const SearchPage: React.FC = () => {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 selectedType === filter.value
                   ? 'bg-primary-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-justice-100 text-justice-700 hover:bg-justice-200'
               }`}
             >
               {filter.label} ({filter.count})
@@ -206,7 +206,7 @@ const SearchPage: React.FC = () => {
         <div>
           {/* Results Summary */}
           <div className="mb-6">
-            <p className="text-gray-600">
+            <p className="text-justice-600">
               {filteredResults.length > 0 ? (
                 <>
                   Mostrando {paginatedResults.length} de {filteredResults.length} resultados para 
@@ -240,20 +240,20 @@ const SearchPage: React.FC = () => {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-2">
                           {getTypeIcon(result.type)}
-                          <span className="text-sm font-medium text-gray-600">
+                          <span className="text-sm font-medium text-justice-600">
                             {getTypeLabel(result.type)}
                           </span>
                           {result.metadata && (
                             <>
-                              <span className="text-gray-400">•</span>
-                              <span className="text-sm text-gray-600">{result.metadata}</span>
+                              <span className="text-justice-400">•</span>
+                              <span className="text-sm text-justice-600">{result.metadata}</span>
                             </>
                           )}
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2 hover:text-primary-600 transition-colors">
+                        <h3 className="text-xl font-semibold text-justice-900 mb-2 hover:text-primary-600 transition-colors">
                           <a href={result.url}>{result.title}</a>
                         </h3>
-                        <p className="text-gray-600 mb-3 line-clamp-2">{result.description}</p>
+                        <p className="text-justice-600 mb-3 line-clamp-2">{result.description}</p>
                         <Button
                           variant="outline"
                           size="sm"
@@ -268,32 +268,32 @@ const SearchPage: React.FC = () => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12 bg-gray-50 rounded-lg">
-              <Search size={48} className="mx-auto text-gray-400 mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="text-center py-12 bg-justice-50 rounded-lg">
+              <Search size={48} className="mx-auto text-justice-400 mb-4" />
+              <h3 className="text-lg font-semibold text-justice-900 mb-2">
                 No se encontraron resultados
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-justice-600 mb-4">
                 Intenta con otros términos de búsqueda o revisa la ortografía.
               </p>
               <div className="space-y-2">
-                <p className="text-sm text-gray-500">Sugerencias:</p>
+                <p className="text-sm text-justice-500">Sugerencias:</p>
                 <div className="flex flex-wrap justify-center gap-2">
                   <button
                     onClick={() => setSearchQuery('magistrado')}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                    className="px-3 py-1 bg-justice-100 text-justice-700 rounded-full text-sm hover:bg-justice-200 transition-colors"
                   >
                     magistrado
                   </button>
                   <button
                     onClick={() => setSearchQuery('corte suprema')}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                    className="px-3 py-1 bg-justice-100 text-justice-700 rounded-full text-sm hover:bg-justice-200 transition-colors"
                   >
                     corte suprema
                   </button>
                   <button
                     onClick={() => setSearchQuery('comisión')}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                    className="px-3 py-1 bg-justice-100 text-justice-700 rounded-full text-sm hover:bg-justice-200 transition-colors"
                   >
                     comisión
                   </button>
@@ -334,7 +334,7 @@ const SearchPage: React.FC = () => {
                       className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
                         currentPage === pageNum
                           ? 'bg-primary-600 text-white'
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          : 'bg-justice-100 text-justice-700 hover:bg-justice-200'
                       }`}
                     >
                       {pageNum}
@@ -355,19 +355,19 @@ const SearchPage: React.FC = () => {
           )}
         </div>
       ) : (
-        <div className="text-center py-12 bg-gray-50 rounded-lg">
-          <Search size={48} className="mx-auto text-gray-400 mb-4" />
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+        <div className="text-center py-12 bg-justice-50 rounded-lg">
+          <Search size={48} className="mx-auto text-justice-400 mb-4" />
+          <h3 className="text-lg font-semibold text-justice-900 mb-2">
             Buscar en JusticiapedIA
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-justice-600 mb-6">
             Encuentra aspirantes, instituciones, comisiones y noticias del sistema judicial.
           </p>
           <div className="max-w-md mx-auto">
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="text-left">
-                <h4 className="font-medium text-gray-900 mb-2">Ejemplos de búsqueda:</h4>
-                <ul className="space-y-1 text-gray-600">
+                <h4 className="font-medium text-justice-900 mb-2">Ejemplos de búsqueda:</h4>
+                <ul className="space-y-1 text-justice-600">
                   <li>• "María Morales"</li>
                   <li>• "Corte Suprema"</li>
                   <li>• "magistrado"</li>
@@ -375,8 +375,8 @@ const SearchPage: React.FC = () => {
                 </ul>
               </div>
               <div className="text-left">
-                <h4 className="font-medium text-gray-900 mb-2">Puedes buscar:</h4>
-                <ul className="space-y-1 text-gray-600">
+                <h4 className="font-medium text-justice-900 mb-2">Puedes buscar:</h4>
+                <ul className="space-y-1 text-justice-600">
                   <li>• Nombres de aspirantes</li>
                   <li>• Instituciones</li>
                   <li>• Especializaciones</li>
@@ -392,3 +392,4 @@ const SearchPage: React.FC = () => {
 };
 
 export default SearchPage;
+

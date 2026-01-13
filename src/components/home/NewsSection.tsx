@@ -19,12 +19,12 @@ const NewsSection: React.FC = () => {
 
   const getCategoryColor = (category: string) => {
     const colors: Record<string, string> = {
-      'Procesos de Selección': 'bg-primary-100 text-primary-800 border-primary-200',
-      'Análisis': 'bg-secondary-100 text-secondary-800 border-secondary-200',
-      'Entrevistas': 'bg-accent-100 text-accent-800 border-accent-200',
+      'Procesos de Selección': 'bg-justice-100 text-primary-800 border-justice-200',
+      'Análisis': 'bg-justice-100 text-justice-800 border-justice-200',
+      'Entrevistas': 'bg-justice-100 text-justice-800 border-justice-200',
       'Noticias': 'bg-justice-100 text-justice-800 border-justice-200',
-      'Reportajes': 'bg-error-100 text-error-800 border-error-200',
-      'Opinión': 'bg-primary-100 text-primary-800 border-primary-200',
+      'Reportajes': 'bg-justice-100 text-justice-800 border-justice-200',
+      'Opinión': 'bg-justice-100 text-justice-800 border-justice-200',
     };
     return colors[category] || 'bg-neutral-100 text-neutral-800 border-neutral-200';
   };

@@ -170,7 +170,7 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
       description="Conoce más sobre nuestra plataforma y nuestra misión de transparentar el sector justicia en Guatemala."
     >
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-primary-800 via-primary-900 to-secondary-900 rounded-2xl p-8 md:p-12 lg:p-16 mb-16 shadow-2xl overflow-hidden">
+      <div className="relative bg-gradient-to-br from-primary-800 via-primary-900 to-justice-900 rounded-2xl p-8 md:p-12 lg:p-16 mb-16 shadow-2xl overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-justice-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-400/10 rounded-full blur-3xl -ml-24 -mb-24"></div>
         <div className="max-w-4xl mx-auto text-center relative">
@@ -194,19 +194,19 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
       {/* Problem Section */}
       <div className="mb-16">
         <Card className="overflow-hidden border-2 border-neutral-100">
-          <CardHeader className="bg-gradient-to-r from-error-50 to-warning-50 border-b border-error-100">
+          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50 border-b border-justice-100">
             <div className="flex items-center">
-              <div className="w-14 h-14 bg-error-100 rounded-xl flex items-center justify-center mr-4">
-                <AlertCircle size={28} className="text-error-600" />
+              <div className="w-14 h-14 bg-justice-100 rounded-xl flex items-center justify-center mr-4">
+                <AlertCircle size={28} className="text-justice-600" />
               </div>
               <div>
                 <h2 className="text-3xl font-bold text-neutral-900">¿Qué problema aborda?</h2>
-                <p className="text-lg text-gray-700 mt-1">Un sistema complejo, una ciudadanía excluida</p>
+                <p className="text-lg text-neutral-700 mt-1">Un sistema complejo, una ciudadanía excluida</p>
               </div>
             </div>
           </CardHeader>
           <CardContent className="p-8 md:p-10">
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg text-neutral-700 mb-8 leading-relaxed">
               La falta de información clara y accesible sobre el sector justicia genera múltiples consecuencias negativas:
             </p>
 
@@ -216,21 +216,21 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
                 return (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
+                    className="bg-gradient-to-br from-justice-50 to-justice-100 p-6 rounded-lg border border-justice-200 hover:shadow-md transition-shadow"
                   >
-                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                      <Icon size={24} className="text-red-600" />
+                    <div className="w-12 h-12 bg-justice-100 rounded-full flex items-center justify-center mb-4">
+                      <Icon size={24} className="text-justice-600" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{problem.title}</h3>
-                    <p className="text-gray-600 text-sm">{problem.description}</p>
+                    <h3 className="font-semibold text-neutral-900 mb-2">{problem.title}</h3>
+                    <p className="text-neutral-600 text-sm">{problem.description}</p>
                   </div>
                 );
               })}
             </div>
 
-            <div className="bg-red-50 border-l-4 border-red-600 p-6 rounded-r-lg">
-              <p className="text-lg text-gray-800 leading-relaxed">
-                <strong>Cuando la ciudadanía no entiende cómo funciona la justicia</strong>, es más difícil exigir rendición de cuentas y defender la democracia. <strong className="text-red-700">Justiciapedia nace para cerrar esa brecha de información y conocimiento.</strong>
+            <div className="bg-justice-50 border-l-4 border-justice-600 p-6 rounded-r-lg">
+              <p className="text-lg text-neutral-800 leading-relaxed">
+                <strong>Cuando la ciudadanía no entiende cómo funciona la justicia</strong>, es más difícil exigir rendición de cuentas y defender la democracia. <strong className="text-neutral-700">Justiciapedia nace para cerrar esa brecha de información y conocimiento.</strong>
               </p>
             </div>
           </CardContent>
@@ -240,17 +240,17 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
       {/* Objectives Section */}
       <div className="mb-16">
         <Card className="overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-blue-50 to-green-50 border-b border-blue-100">
+          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50 border-b border-justice-100">
             <div className="flex items-center">
-              <Target size={32} className="text-blue-600 mr-4" />
+              <Target size={32} className="text-justice-600 mr-4" />
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">¿Qué buscamos con Justiciapedia?</h2>
-                <p className="text-lg text-gray-700 mt-1">Nuestros objetivos</p>
+                <h2 className="text-3xl font-bold text-neutral-900">¿Qué buscamos con Justiciapedia?</h2>
+                <p className="text-lg text-neutral-700 mt-1">Nuestros objetivos</p>
               </div>
             </div>
           </CardHeader>
           <CardContent className="p-8 md:p-10">
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-lg text-neutral-700 mb-8 leading-relaxed">
               Justiciapedia busca:
             </p>
 
@@ -260,17 +260,17 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
                 return (
                   <div
                     key={index}
-                    className="flex items-start bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                    className="flex items-start bg-white border border-justice-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
                   >
-                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-100 to-green-100 rounded-full flex items-center justify-center mr-5">
-                      <Icon size={28} className="text-blue-700" />
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-justice-100 to-justice-100 rounded-full flex items-center justify-center mr-5">
+                      <Icon size={28} className="text-justice-700" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{objective.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{objective.description}</p>
+                      <h3 className="text-xl font-bold text-neutral-900 mb-2">{objective.title}</h3>
+                      <p className="text-neutral-600 leading-relaxed">{objective.description}</p>
                     </div>
                     <div className="flex-shrink-0 ml-4">
-                      <CheckCircle size={24} className="text-green-500" />
+                      <CheckCircle size={24} className="text-justice-500" />
                     </div>
                   </div>
                 );
@@ -282,7 +282,7 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
 
       {/* Guiding Principle Section - Highlighted */}
       <div className="mb-16">
-        <Card className="overflow-hidden bg-gradient-to-br from-teal-600 via-blue-700 to-blue-600 text-white shadow-2xl">
+        <Card className="overflow-hidden bg-gradient-to-br from-neutral-600 via-justice-700 to-justice-600 text-white shadow-2xl">
           <CardContent className="p-10 md:p-14 lg:p-20 text-center">
             <div className="max-w-3xl mx-auto">
               <div className="mb-8">
@@ -295,7 +295,7 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
               <p className="text-3xl md:text-4xl lg:text-6xl font-bold mb-10 leading-tight text-white">
                 A mayor transparencia,<br />menor impunidad.
               </p>
-              <p className="text-lg md:text-xl lg:text-2xl text-blue-50 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl lg:text-2xl text-justice-50 leading-relaxed max-w-2xl mx-auto">
                 Creemos que la información pública, cuando es clara y accesible, se convierte en una herramienta poderosa para combatir la impunidad y fortalecer una sociedad más justa, democrática y equitativa.
               </p>
             </div>
@@ -306,12 +306,12 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
       {/* FAQ Section */}
       <div className="mb-16">
         <Card className="overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-green-50 to-blue-50 border-b border-green-100">
+          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50 border-b border-justice-100">
             <div className="flex items-center">
-              <HelpCircle size={32} className="text-green-600 mr-4" />
+              <HelpCircle size={32} className="text-justice-600 mr-4" />
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">Preguntas Frecuentes</h2>
-                <p className="text-lg text-gray-700 mt-1">Todo lo que necesitas saber sobre Justiciapedia</p>
+                <h2 className="text-3xl font-bold text-neutral-900">Preguntas Frecuentes</h2>
+                <p className="text-lg text-neutral-700 mt-1">Todo lo que necesitas saber sobre Justiciapedia</p>
               </div>
             </div>
           </CardHeader>
@@ -320,24 +320,24 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                  className="border border-justice-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
                 >
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full flex items-center justify-between p-5 bg-white hover:bg-gray-50 transition-colors text-left"
+                    className="w-full flex items-center justify-between p-5 bg-white hover:bg-justice-50 transition-colors text-left"
                   >
-                    <span className="text-lg font-semibold text-gray-900 pr-4">
+                    <span className="text-lg font-semibold text-neutral-900 pr-4">
                       {faq.question}
                     </span>
                     {openFaqIndex === index ? (
-                      <ChevronUp className="flex-shrink-0 text-blue-600" size={24} />
+                      <ChevronUp className="flex-shrink-0 text-justice-600" size={24} />
                     ) : (
-                      <ChevronDown className="flex-shrink-0 text-gray-400" size={24} />
+                      <ChevronDown className="flex-shrink-0 text-justice-400" size={24} />
                     )}
                   </button>
                   {openFaqIndex === index && (
-                    <div className="px-5 pb-5 bg-gray-50 border-t border-gray-200">
-                      <div className="pt-4 text-gray-700 leading-relaxed whitespace-pre-line">
+                    <div className="px-5 pb-5 bg-justice-50 border-t border-justice-200">
+                      <div className="pt-4 text-justice-700 leading-relaxed whitespace-pre-line">
                         {faq.answer}
                       </div>
                     </div>
@@ -350,23 +350,23 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
       </div>
 
       {/* Call to Action */}
-      <div className="bg-gradient-to-br from-blue-50 via-teal-50 to-blue-50 rounded-2xl p-10 md:p-12 text-center border border-blue-200 shadow-lg">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+      <div className="bg-gradient-to-br from-justice-50 via-teal-50 to-justice-50 rounded-2xl p-10 md:p-12 text-center border border-justice-200 shadow-lg">
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
           Explora Justiciapedia
         </h2>
-        <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl text-neutral-700 mb-8 max-w-2xl mx-auto leading-relaxed">
           Descubre cómo funcionan las instituciones, conoce a los aspirantes y accede a información transparente sobre el sector justicia en Guatemala.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => window.location.href = '/instituciones'}
-            className="px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-xl transform hover:scale-105"
+            className="px-8 py-4 bg-justice-600 text-white rounded-xl font-semibold hover:bg-justice-700 transition-all shadow-md hover:shadow-xl transform hover:scale-105"
           >
             Ver Instituciones
           </button>
           <button
             onClick={() => window.location.href = '/candidatos'}
-            className="px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-all shadow-md hover:shadow-lg"
+            className="px-8 py-4 bg-white text-justice-600 border-2 border-justice-600 rounded-xl font-semibold hover:bg-justice-50 transition-all shadow-md hover:shadow-lg"
           >
             Conocer Aspirantes
           </button>
@@ -377,3 +377,5 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
 };
 
 export default WhatIsJusticiapedia;
+
+

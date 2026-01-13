@@ -26,12 +26,12 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({
 
   const content = (
     <div className={`flex flex-col items-center justify-center text-center space-y-4 p-8 ${className}`}>
-      <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
-        <AlertCircle size={32} className="text-red-600" />
+      <div className="w-16 h-16 bg-justice-100 rounded-full flex items-center justify-center">
+        <AlertCircle size={32} className="text-justice-600" />
       </div>
       <div className="space-y-2">
-        <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
-        <p className="text-gray-600 max-w-md">{message}</p>
+        <h2 className="text-2xl font-bold text-justice-900">{title}</h2>
+        <p className="text-justice-600 max-w-md">{message}</p>
       </div>
       <div className="flex gap-3">
         {showRetryButton && onRetry && (
@@ -52,7 +52,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({
 
   if (fullScreen) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-justice-50">
         {content}
       </div>
     );
@@ -62,3 +62,4 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({
 };
 
 export default ErrorMessage;
+

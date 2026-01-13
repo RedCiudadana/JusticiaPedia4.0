@@ -144,9 +144,9 @@ const Resources: React.FC = () => {
           <CardContent className="p-6">
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-3">{item.description}</p>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                <h3 className="text-lg font-semibold text-justice-900 mb-2">{item.title}</h3>
+                <p className="text-justice-600 mb-3">{item.description}</p>
+                <div className="flex flex-wrap gap-4 text-sm text-justice-500">
                   <div className="flex items-center">
                     <Database size={14} className="mr-1" />
                     <span>{item.format}</span>
@@ -165,7 +165,7 @@ const Resources: React.FC = () => {
                 </div>
               </div>
               <div className="ml-4">
-                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
+                <span className="bg-justice-100 text-justice-800 px-2 py-1 rounded text-xs font-medium">
                   {item.category}
                 </span>
               </div>
@@ -199,9 +199,9 @@ const Resources: React.FC = () => {
           <CardContent className="p-6">
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-3">{item.description}</p>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                <h3 className="text-lg font-semibold text-justice-900 mb-2">{item.title}</h3>
+                <p className="text-justice-600 mb-3">{item.description}</p>
+                <div className="flex flex-wrap gap-4 text-sm text-justice-500">
                   <div className="flex items-center">
                     <Calendar size={14} className="mr-1" />
                     <span>{item.date}</span>
@@ -213,7 +213,7 @@ const Resources: React.FC = () => {
                 </div>
               </div>
               <div className="ml-4">
-                <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+                <span className="bg-justice-100 text-justice-800 px-2 py-1 rounded text-xs font-medium">
                   {item.category}
                 </span>
               </div>
@@ -247,9 +247,9 @@ const Resources: React.FC = () => {
           <CardContent className="p-6">
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-3">{item.description}</p>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                <h3 className="text-lg font-semibold text-justice-900 mb-2">{item.title}</h3>
+                <p className="text-justice-600 mb-3">{item.description}</p>
+                <div className="flex flex-wrap gap-4 text-sm text-justice-500">
                   <div className="flex items-center">
                     <BookOpen size={14} className="mr-1" />
                     <span>{item.type}</span>
@@ -297,7 +297,7 @@ const Resources: React.FC = () => {
     >
       {/* Tabs */}
       <div className="mb-8">
-        <div className="border-b border-gray-200">
+        <div className="border-b border-justice-200">
           <nav className="-mb-px flex space-x-8">
             {tabs.map((tab) => {
               const Icon = tab.icon;
@@ -313,7 +313,7 @@ const Resources: React.FC = () => {
                     flex items-center py-4 px-1 border-b-2 font-medium text-sm transition-colors
                     ${activeTab === tab.id
                       ? 'border-primary-500 text-primary-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                      : 'border-transparent text-justice-500 hover:text-justice-700 hover:border-justice-300'
                     }
                   `}
                 >
@@ -335,16 +335,16 @@ const Resources: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={`Buscar en ${tabs.find(t => t.id === activeTab)?.label.toLowerCase()}...`}
-              className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full px-4 py-3 pl-12 border border-justice-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
-            <Search size={20} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Search size={20} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-justice-400" />
           </div>
           <div className="flex items-center gap-2">
-            <Filter size={16} className="text-gray-400" />
+            <Filter size={16} className="text-justice-400" />
             <select
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value)}
-              className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="px-4 py-3 border border-justice-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
             >
               {categories[activeTab as keyof typeof categories].map(category => (
                 <option key={category} value={category}>
@@ -363,15 +363,15 @@ const Resources: React.FC = () => {
         ) : (
           <Card>
             <CardContent className="text-center py-12">
-              <div className="text-gray-400 mb-4">
+              <div className="text-justice-400 mb-4">
                 {activeTab === 'datos' && <Database size={48} className="mx-auto" />}
                 {activeTab === 'informes' && <FileText size={48} className="mx-auto" />}
                 {activeTab === 'biblioteca' && <BookOpen size={48} className="mx-auto" />}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-justice-900 mb-2">
                 No se encontraron recursos
               </h3>
-              <p className="text-gray-600">
+              <p className="text-justice-600">
                 No hay recursos que coincidan con los criterios de búsqueda.
               </p>
             </CardContent>

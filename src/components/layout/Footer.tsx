@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
             {/* About Site */}
             <div className="lg:col-span-1">
               <img src={Logo} alt={SITE_NAME} className="h-10 mb-4" style={{ filter: 'invert(100%)' }}/>
-              <p className="text-primary-200 mb-6 leading-relaxed">
+              <p className="text-primary-50 mb-6 leading-relaxed">
                 Plataforma cívica dedicada a promover la transparencia en los procesos de
                 designación de autoridades judiciales en Guatemala.
               </p>
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                     <li key={link.href}>
                       <a
                         href={link.href}
-                        className="text-primary-200 hover:text-white transition-colors duration-200 flex items-center group"
+                        className="text-primary-50 hover:text-white transition-colors duration-200 flex items-center group"
                       >
                         <span>{link.title}</span>
                         <ExternalLink size={14} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />

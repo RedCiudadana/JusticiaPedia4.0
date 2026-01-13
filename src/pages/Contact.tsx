@@ -8,24 +8,39 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
-    message: '',
-    type: 'general'
+    affair: '',
+    message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '', type: 'general' });
-    }, 3000);
+
+    const formUrl =
+      'https://docs.google.com/forms/d/e/1FAIpQLSe2DNIWZVQugZ_G-rQCzO9EKpWr66ZXe8rbBBHtKYduKIeXyQ/formResponse';
+
+    const formBody = new URLSearchParams();
+    formBody.append('entry.1064235632', formData.name);
+    formBody.append('entry.1330832081', formData.email);
+    formBody.append('entry.1233483376', formData.affair);
+    formBody.append('entry.608682247', formData.message);
+
+    try {
+      await fetch(formUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formBody.toString()
+      });
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error al enviar:', error);
+    }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -35,75 +50,65 @@ const Contact: React.FC = () => {
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Correo Electrónico',
+      title: 'Correo Electronico',
       details: 'contacto@justiciapedia.org.gt',
       action: 'mailto:contacto@justiciapedia.org.gt'
     },
     {
       icon: Phone,
-      title: 'Teléfono',
+      title: 'Telefono',
       details: '+502 2233-4455',
       action: 'tel:+50222334455'
     },
     {
       icon: MapPin,
-      title: 'Dirección',
+      title: 'Direccion',
       details: 'Ciudad de Guatemala, Guatemala',
       action: null
     },
     {
       icon: Clock,
-      title: 'Horario de Atención',
+      title: 'Horario de Atencion',
       details: 'Lunes a Viernes, 8:00 AM - 5:00 PM',
       action: null
     }
   ];
 
-  const contactTypes = [
-    { value: 'general', label: 'Consulta General' },
-    { value: 'press', label: 'Prensa y Medios' },
-    { value: 'partnership', label: 'Alianzas y Colaboraciones' },
-    { value: 'technical', label: 'Soporte Técnico' },
-    { value: 'data', label: 'Solicitud de Datos' },
-    { value: 'report', label: 'Reportar Error' }
-  ];
-
   return (
     <PageLayout
-      title="Contacto"
-      description="Ponte en contacto con el equipo de JusticiapedIA para consultas, colaboraciones o soporte."
+      title="Contáctanos"
+      description="Para más información de eventos, dudas o de nuestro trabajo llena el siguiente formulario y nuestro equipo te estará contactando."
     >
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Contact Form */}
         <div className="lg:col-span-2">
           <Card>
             <CardHeader>
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center">
+              <h2 className="text-2xl font-bold text-justice-900 flex items-center">
                 <MessageSquare size={24} className="mr-3 text-primary-600" />
-                Envíanos un Mensaje
+                Envianos un Mensaje
               </h2>
-              <p className="text-gray-600">
+              <p className="text-justice-600">
                 Completa el formulario y nos pondremos en contacto contigo lo antes posible.
               </p>
             </CardHeader>
             <CardContent>
               {isSubmitted ? (
                 <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle size={32} className="text-green-600" />
+                  <div className="w-16 h-16 bg-justice-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle size={32} className="text-justice-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    ¡Mensaje Enviado!
+                  <h3 className="text-xl font-semibold text-justice-900 mb-2">
+                    Mensaje enviado
                   </h3>
-                  <p className="text-gray-600">
-                    Gracias por contactarnos. Te responderemos dentro de las próximas 24 horas.
+                  <p className="text-justice-600">
+                    Gracias por contactarnos. Tu mensaje ha sido enviado.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-justice-700 mb-2">
                         Nombre Completo *
                       </label>
                       <input
@@ -113,13 +118,13 @@ const Contact: React.FC = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                        className="w-full px-4 py-3 border border-justice-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                         placeholder="Tu nombre completo"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Correo Electrónico *
+                      <label htmlFor="email" className="block text-sm font-medium text-justice-700 mb-2">
+                        Correo Electronico *
                       </label>
                       <input
                         type="email"
@@ -128,49 +133,29 @@ const Contact: React.FC = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                        className="w-full px-4 py-3 border border-justice-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                         placeholder="tu@email.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-2">
-                      Tipo de Consulta
-                    </label>
-                    <select
-                      id="type"
-                      name="type"
-                      value={formData.type}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    >
-                      {contactTypes.map(type => (
-                        <option key={type.value} value={type.value}>
-                          {type.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      Asunto *
+                    <label htmlFor="affair" className="block text-sm font-medium text-justice-700 mb-2">
+                      Asunto / Motivo de Contacto
                     </label>
                     <input
                       type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
+                      id="affair"
+                      name="affair"
+                      value={formData.affair}
                       onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                      placeholder="Breve descripción del tema"
+                      className="w-full px-4 py-3 border border-justice-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                      placeholder="Asunto / Motivo de Contacto"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-justice-700 mb-2">
                       Mensaje *
                     </label>
                     <textarea
@@ -180,21 +165,21 @@ const Contact: React.FC = () => {
                       onChange={handleInputChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
+                      className="w-full px-4 py-3 border border-justice-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
                       placeholder="Describe tu consulta o mensaje en detalle..."
                     />
                   </div>
 
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                  <div className="bg-justice-50 p-4 rounded-lg border border-justice-200">
                     <div className="flex items-start">
-                      <AlertCircle size={20} className="text-blue-600 mr-3 mt-0.5" />
-                      <div className="text-sm text-blue-800">
-                        <p className="font-medium mb-1">Política de Privacidad</p>
+                      <AlertCircle size={20} className="text-justice-600 mr-3 mt-0.5" />
+                      <div className="text-sm text-justice-800">
+                        <p className="font-medium mb-1">Politica de Privacidad</p>
                         <p>
-                          Al enviar este formulario, aceptas que procesemos tus datos personales 
+                          Al enviar este formulario, aceptas que procesemos tus datos personales
                           de acuerdo con nuestra{' '}
-                          <a href="/legal/privacidad" className="underline hover:text-blue-900">
-                            política de privacidad
+                          <a href="/legal/privacidad" className="underline hover:text-justice-900">
+                            politica de privacidad
                           </a>.
                         </p>
                       </div>
@@ -206,9 +191,8 @@ const Contact: React.FC = () => {
                     variant="primary"
                     size="lg"
                     className="w-full"
-                    disabled={!formData.name || !formData.email || !formData.subject || !formData.message}
+                    disabled={!formData.name || !formData.email || !formData.affair || !formData.message}
                   >
-                    <Send size={20} className="mr-2" />
                     Enviar Mensaje
                   </Button>
                 </form>
@@ -217,11 +201,10 @@ const Contact: React.FC = () => {
           </Card>
         </div>
 
-        {/* Contact Information */}
         <div className="space-y-6">
           <Card>
             <CardHeader>
-              <h3 className="text-xl font-semibold text-gray-900">Información de Contacto</h3>
+              <h3 className="text-xl font-semibold text-justice-900">Informacion de Contacto</h3>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -233,7 +216,7 @@ const Contact: React.FC = () => {
                         <Icon size={20} className="text-primary-600" />
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-900">{info.title}</h4>
+                        <h4 className="font-medium text-justice-900">{info.title}</h4>
                         {info.action ? (
                           <a
                             href={info.action}
@@ -242,7 +225,7 @@ const Contact: React.FC = () => {
                             {info.details}
                           </a>
                         ) : (
-                          <p className="text-gray-600">{info.details}</p>
+                          <p className="text-justice-600">{info.details}</p>
                         )}
                       </div>
                     </div>
@@ -252,52 +235,6 @@ const Contact: React.FC = () => {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <h3 className="text-xl font-semibold text-gray-900">Respuesta Rápida</h3>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4 text-sm">
-                <div>
-                  <h4 className="font-medium text-gray-900 mb-1">Consultas Generales</h4>
-                  <p className="text-gray-600">Respuesta en 24-48 horas</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900 mb-1">Soporte Técnico</h4>
-                  <p className="text-gray-600">Respuesta en 2-4 horas</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900 mb-1">Prensa y Medios</h4>
-                  <p className="text-gray-600">Respuesta en 1-2 horas</p>
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900 mb-1">Emergencias</h4>
-                  <p className="text-gray-600">Contacto inmediato por teléfono</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gradient-to-br from-primary-50 to-primary-100 border-primary-200">
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold text-primary-900 mb-3">
-                ¿Necesitas ayuda inmediata?
-              </h3>
-              <p className="text-primary-800 text-sm mb-4">
-                Si tienes una consulta urgente o necesitas asistencia inmediata, 
-                no dudes en llamarnos directamente.
-              </p>
-              <Button
-                variant="primary"
-                size="sm"
-                className="w-full"
-                onClick={() => window.open('tel:+50222334455')}
-              >
-                <Phone size={16} className="mr-2" />
-                Llamar Ahora
-              </Button>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </PageLayout>
@@ -305,3 +242,4 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+

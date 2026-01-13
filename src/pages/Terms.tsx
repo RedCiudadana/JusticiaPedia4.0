@@ -30,16 +30,16 @@ const Terms: React.FC = () => {
           <Card>
             <CardHeader>
               <h3 className="text-xl font-semibold flex items-center">
-                <FileText size={24} className="mr-3 text-blue-600" />
+                <FileText size={24} className="mr-3 text-justice-600" />
                 Aceptación de los Términos
               </h3>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-gray-700">
+                <p className="text-justice-700">
                   Al acceder y utilizar JusticiapedIA, confirmas que:
                 </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                <ul className="list-disc list-inside text-justice-700 space-y-2">
                   <li>Tienes al menos 18 años de edad o cuentas con el consentimiento de tus padres/tutores</li>
                   <li>Tienes la capacidad legal para celebrar estos términos</li>
                   <li>Utilizarás la plataforma de manera responsable y legal</li>
@@ -52,37 +52,37 @@ const Terms: React.FC = () => {
           <Card>
             <CardHeader>
               <h3 className="text-xl font-semibold flex items-center">
-                <Globe size={24} className="mr-3 text-green-600" />
+                <Globe size={24} className="mr-3 text-justice-600" />
                 Descripción del Servicio
               </h3>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-gray-700">
+                <p className="text-justice-700">
                   JusticiapedIA es una plataforma de transparencia judicial que proporciona:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <h4 className="font-semibold text-gray-900 mb-2">Información Pública</h4>
-                    <p className="text-gray-700 text-sm">
+                  <div className="p-4 bg-justice-50 rounded-lg">
+                    <h4 className="font-semibold text-justice-900 mb-2">Información Pública</h4>
+                    <p className="text-justice-700 text-sm">
                       Acceso a datos sobre procesos de selección judicial y candidatos.
                     </p>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <h4 className="font-semibold text-gray-900 mb-2">Análisis y Reportes</h4>
-                    <p className="text-gray-700 text-sm">
+                  <div className="p-4 bg-justice-50 rounded-lg">
+                    <h4 className="font-semibold text-justice-900 mb-2">Análisis y Reportes</h4>
+                    <p className="text-justice-700 text-sm">
                       Estudios y análisis sobre el sistema judicial guatemalteco.
                     </p>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <h4 className="font-semibold text-gray-900 mb-2">Herramientas de Búsqueda</h4>
-                    <p className="text-gray-700 text-sm">
+                  <div className="p-4 bg-justice-50 rounded-lg">
+                    <h4 className="font-semibold text-justice-900 mb-2">Herramientas de Búsqueda</h4>
+                    <p className="text-justice-700 text-sm">
                       Funcionalidades para encontrar información específica.
                     </p>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <h4 className="font-semibold text-gray-900 mb-2">Participación Ciudadana</h4>
-                    <p className="text-gray-700 text-sm">
+                  <div className="p-4 bg-justice-50 rounded-lg">
+                    <h4 className="font-semibold text-justice-900 mb-2">Participación Ciudadana</h4>
+                    <p className="text-justice-700 text-sm">
                       Canales para contribuir con información y retroalimentación.
                     </p>
                   </div>
@@ -101,8 +101,8 @@ const Terms: React.FC = () => {
             <CardContent>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Usos Permitidos</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <h4 className="font-semibold text-justice-900 mb-2">Usos Permitidos</h4>
+                  <ul className="list-disc list-inside text-justice-700 space-y-1">
                     <li>Consultar información pública sobre el sistema judicial</li>
                     <li>Realizar investigaciones académicas o periodísticas</li>
                     <li>Contribuir con información verificable y relevante</li>
@@ -110,8 +110,8 @@ const Terms: React.FC = () => {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Usos Prohibidos</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <h4 className="font-semibold text-justice-900 mb-2">Usos Prohibidos</h4>
+                  <ul className="list-disc list-inside text-justice-700 space-y-1">
                     <li>Publicar información falsa, difamatoria o maliciosa</li>
                     <li>Intentar acceder a sistemas o datos no autorizados</li>
                     <li>Usar la plataforma para actividades ilegales</li>
@@ -126,31 +126,31 @@ const Terms: React.FC = () => {
           <Card>
             <CardHeader>
               <h3 className="text-xl font-semibold flex items-center">
-                <Shield size={24} className="mr-3 text-orange-600" />
+                <Shield size={24} className="mr-3 text-justice-600" />
                 Propiedad Intelectual
               </h3>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Contenido de JusticiapedIA</h4>
-                  <p className="text-gray-700">
+                  <h4 className="font-semibold text-justice-900 mb-2">Contenido de JusticiapedIA</h4>
+                  <p className="text-justice-700">
                     El diseño, estructura, selección, coordinación, expresión, "aspecto y sensación" 
                     y disposición de todo el contenido incluido en la plataforma está protegido por 
                     derechos de autor y otras leyes de propiedad intelectual.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Contenido del Usuario</h4>
-                  <p className="text-gray-700">
+                  <h4 className="font-semibold text-justice-900 mb-2">Contenido del Usuario</h4>
+                  <p className="text-justice-700">
                     Al enviar contenido a JusticiapedIA, otorgas una licencia no exclusiva, 
                     libre de regalías, perpetua e irrevocable para usar, reproducir, modificar, 
                     adaptar, publicar, traducir y distribuir dicho contenido.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Datos Públicos</h4>
-                  <p className="text-gray-700">
+                  <h4 className="font-semibold text-justice-900 mb-2">Datos Públicos</h4>
+                  <p className="text-justice-700">
                     La información pública gubernamental presentada en la plataforma está 
                     disponible bajo los términos de acceso a la información pública de Guatemala.
                   </p>
@@ -162,16 +162,16 @@ const Terms: React.FC = () => {
           <Card>
             <CardHeader>
               <h3 className="text-xl font-semibold flex items-center">
-                <AlertTriangle size={24} className="mr-3 text-red-600" />
+                <AlertTriangle size={24} className="mr-3 text-justice-600" />
                 Limitación de Responsabilidad
               </h3>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                <div className="bg-justice-50 p-4 rounded-lg border border-justice-200">
                   <div className="flex items-start">
-                    <AlertTriangle size={20} className="text-yellow-600 mr-3 mt-0.5" />
-                    <div className="text-sm text-yellow-800">
+                    <AlertTriangle size={20} className="text-justice-600 mr-3 mt-0.5" />
+                    <div className="text-sm text-justice-800">
                       <p className="font-medium mb-1">Aviso Importante</p>
                       <p>
                         La información en JusticiapedIA se proporciona "tal como está" y 
@@ -181,16 +181,16 @@ const Terms: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Exención de Garantías</h4>
-                  <p className="text-gray-700">
+                  <h4 className="font-semibold text-justice-900 mb-2">Exención de Garantías</h4>
+                  <p className="text-justice-700">
                     No garantizamos que la información sea completamente precisa, actualizada 
                     o libre de errores. Los usuarios deben verificar independientemente 
                     cualquier información antes de tomar decisiones basadas en ella.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Limitación de Daños</h4>
-                  <p className="text-gray-700">
+                  <h4 className="font-semibold text-justice-900 mb-2">Limitación de Daños</h4>
+                  <p className="text-justice-700">
                     En ningún caso JusticiapedIA será responsable por daños directos, 
                     indirectos, incidentales, especiales o consecuentes que resulten 
                     del uso o la imposibilidad de usar la plataforma.
@@ -207,22 +207,22 @@ const Terms: React.FC = () => {
             <CardContent>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Modificaciones del Servicio</h4>
-                  <p className="text-gray-700">
+                  <h4 className="font-semibold text-justice-900 mb-2">Modificaciones del Servicio</h4>
+                  <p className="text-justice-700">
                     Nos reservamos el derecho de modificar, suspender o discontinuar 
                     cualquier aspecto de la plataforma en cualquier momento, con o sin previo aviso.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Modificaciones de los Términos</h4>
-                  <p className="text-gray-700">
+                  <h4 className="font-semibold text-justice-900 mb-2">Modificaciones de los Términos</h4>
+                  <p className="text-justice-700">
                     Podemos actualizar estos términos ocasionalmente. Los cambios significativos 
                     serán notificados a través de la plataforma o por correo electrónico.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Terminación</h4>
-                  <p className="text-gray-700">
+                  <h4 className="font-semibold text-justice-900 mb-2">Terminación</h4>
+                  <p className="text-justice-700">
                     Podemos terminar o suspender tu acceso a la plataforma inmediatamente, 
                     sin previo aviso, por cualquier motivo, incluyendo el incumplimiento 
                     de estos términos.
@@ -238,13 +238,13 @@ const Terms: React.FC = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-gray-700">
+                <p className="text-justice-700">
                   Estos términos se rigen por las leyes de Guatemala. Cualquier disputa 
                   relacionada con estos términos o el uso de la plataforma será resuelta 
                   en los tribunales competentes de Guatemala.
                 </p>
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                  <p className="text-blue-800 text-sm">
+                <div className="bg-justice-50 p-4 rounded-lg border border-justice-200">
+                  <p className="text-justice-800 text-sm">
                     <strong>Resolución de Disputas:</strong> Antes de iniciar cualquier 
                     procedimiento legal, las partes intentarán resolver las disputas 
                     mediante negociación directa y mediación.
@@ -274,3 +274,4 @@ const Terms: React.FC = () => {
 };
 
 export default Terms;
+

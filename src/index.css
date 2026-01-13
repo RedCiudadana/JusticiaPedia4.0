@@ -47,8 +47,8 @@
 
   /* Selection styling */
   ::selection {
-    background-color: theme('colors.primary.200');
-    color: theme('colors.primary.900');
+    background-color: theme('colors.justice.200');
+    color: theme('colors.neutral.900');
   }
 }
 
@@ -121,11 +121,11 @@
 
   /* Status indicators */
   .status-active {
-    @apply bg-success-100 text-success-800 border border-success-200;
+    @apply bg-justice-100 text-justice-800 border border-justice-200;
   }
   
   .status-pending {
-    @apply bg-warning-100 text-warning-800 border border-warning-200;
+    @apply bg-justice-100 text-justice-800 border border-justice-200;
   }
   
   .status-inactive {
@@ -133,7 +133,7 @@
   }
   
   .status-error {
-    @apply bg-error-100 text-error-800 border border-error-200;
+    @apply bg-justice-100 text-justice-800 border border-justice-200;
   }
 
   /* Typography utilities */
@@ -292,7 +292,7 @@
   /* Social share button styles */
   .social-share-light button {
     @apply bg-white/20 border-white/30 text-white;
-    @apply hover:bg-white hover:text-gray-900 hover:border-white;
+    @apply hover:bg-white hover:text-justice-900 hover:border-white;
     @apply backdrop-blur-sm;
   }
 
@@ -330,3 +330,5 @@
     @apply border-2 border-neutral-300;
   }
 }
+
+

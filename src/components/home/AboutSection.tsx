@@ -3,7 +3,7 @@ import { Scale, Shield, Eye, Users } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="relative bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-primary-900 via-primary-800 to-justice-900 overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-justice-500/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary-400/10 rounded-full blur-3xl -ml-40 -mb-40"></div>
 
@@ -31,8 +31,8 @@ const AboutSection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 group">
-              <div className="w-12 h-12 bg-accent-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Shield className="w-6 h-6 text-accent-400" />
+              <div className="w-12 h-12 bg-justice-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Shield className="w-6 h-6 text-justice-400" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Transparencia</h3>
               <p className="text-primary-200 text-sm leading-relaxed">
@@ -75,3 +75,4 @@ const AboutSection: React.FC = () => {
 };
 
 export default AboutSection;
+

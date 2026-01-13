@@ -29,7 +29,7 @@ const SocialShare: React.FC<SocialShareProps> = ({
       name: 'Facebook',
       icon: Facebook,
       url: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
-      color: 'hover:bg-blue-600 hover:text-white',
+      color: 'hover:bg-justice-600 hover:text-white',
     },
     {
       name: 'Twitter',
@@ -41,13 +41,13 @@ const SocialShare: React.FC<SocialShareProps> = ({
       name: 'LinkedIn',
       icon: Linkedin,
       url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
-      color: 'hover:bg-blue-700 hover:text-white',
+      color: 'hover:bg-justice-700 hover:text-white',
     },
     {
       name: 'WhatsApp',
       icon: MessageCircle,
       url: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
-      color: 'hover:bg-green-600 hover:text-white',
+      color: 'hover:bg-justice-600 hover:text-white',
     },
   ];
 
@@ -87,7 +87,7 @@ const SocialShare: React.FC<SocialShareProps> = ({
           variant="outline"
           size="sm"
           onClick={copyToClipboard}
-          className="transition-colors hover:bg-gray-600 hover:text-white"
+          className="transition-colors hover:bg-justice-600 hover:text-white"
           aria-label="Copiar enlace"
         >
           {copied ? <Check size={16} /> : <Link size={16} />}
@@ -97,15 +97,17 @@ const SocialShare: React.FC<SocialShareProps> = ({
   }
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative inline-flex items-center ${className}`}>
       <Button
         variant="outline"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center"
+        className="whitespace-nowrap"
       >
-        <Share2 size={16} className="mr-1" />
-        Compartir
+        <span className="inline-flex items-center gap-2">
+          <Share2 size={16} />
+          Compartir
+        </span>
       </Button>
 
       {isOpen && (
@@ -117,7 +119,7 @@ const SocialShare: React.FC<SocialShareProps> = ({
           />
           
           {/* Dropdown */}
-          <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-20">
+          <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-justice-200 z-20">
             <div className="py-1">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
@@ -128,7 +130,7 @@ const SocialShare: React.FC<SocialShareProps> = ({
                       openSocialLink(social.url);
                       setIsOpen(false);
                     }}
-                    className={`w-full flex items-center px-4 py-2 text-sm text-gray-700 transition-colors ${social.color}`}
+                    className={`w-full flex items-center px-4 py-2 text-sm text-justice-700 transition-colors ${social.color}`}
                   >
                     <Icon size={16} className="mr-3" />
                     Compartir en {social.name}
@@ -140,11 +142,11 @@ const SocialShare: React.FC<SocialShareProps> = ({
                   copyToClipboard();
                   setIsOpen(false);
                 }}
-                className="w-full flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                className="w-full flex items-center px-4 py-2 text-sm text-justice-700 hover:bg-justice-100 transition-colors"
               >
                 {copied ? (
                   <>
-                    <Check size={16} className="mr-3 text-green-600" />
+                    <Check size={16} className="mr-3 text-justice-600" />
                     ¡Enlace copiado!
                   </>
                 ) : (
