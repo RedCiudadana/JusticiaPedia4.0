@@ -135,8 +135,10 @@ const ActiveProcessesNotification: React.FC = () => {
             onClick={handleViewAll}
             className="w-full bg-gradient-to-r from-primary-600 to-justice-600 hover:from-primary-700 hover:to-justice-700 text-white font-bold shadow-lg hover:shadow-xl transition-all mt-4"
           >
-            Ver Todos los Procesos
-            <ChevronRight size={18} className="ml-1" />
+            <span className="inline-flex items-center gap-2">
+              Ver Todos los Procesos
+              <ChevronRight size={18} />
+            </span>
           </Button>
         </div>
 
