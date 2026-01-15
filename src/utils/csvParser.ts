@@ -43,15 +43,16 @@ export function parseCSV(csvContent: string): CandidateData[] {
     });
 
     const experienciaText = row.experienciaProfesional || '';
-    const experienceArray = experienciaText
-      .split('\n')
-      .filter(exp => exp.trim())
-      .map(exp => ({
-        position: exp.split('-')[0]?.trim() || exp.trim(),
-        institution: row.dependencia || row.institution || '',
-        period: '',
-        description: exp.trim()
-      }));
+    let experienceArray = experienciaText.split(/\s*\|\s*/).map(exp => exp.trim()).filter(exp => exp);
+    if (experienceArray.length <= 1) {
+      experienceArray = experienciaText.split(/\.\s+/).map(exp => exp.trim()).filter(exp => exp);
+    }
+    const experienceArrayMapped = experienceArray.map(exp => ({
+      position: exp.split('-')[0]?.trim() || exp.trim(),
+      institution: row.dependencia || row.institution || '',
+      period: '',
+      description: exp.trim()
+    }));
 
     const candidate: CandidateData = {
       id: row.id || `candidate-${i}`,
@@ -64,13 +65,16 @@ export function parseCSV(csvContent: string): CandidateData[] {
       commissionId: row.comission || row.seleccionarComisión || '',
       specialization: row.profesion || '',
       yearsOfExperience: parseInt(row.anosexperiencia) || 0,
-      education: row.experienciaAcademica ? [{
-        institution: row.experienciaAcademica.split('\n')[0] || '',
-        degree: row.profesion || '',
-        year: '',
-        honors: ''
-      }] : [],
-      experience: experienceArray.length > 0 ? experienceArray : [{
+      education: row.experienciaAcademica ? row.experienciaAcademica.split('|').map(edu => edu.trim()).filter(edu => edu).map(edu => {
+        const parts = edu.split(',');
+        return {
+          institution: parts.slice(1).join(',').trim() || '',
+          degree: parts[0].trim() || '',
+          year: '',
+          honors: ''
+        };
+      }) : [],
+      experience: experienceArrayMapped.length > 0 ? experienceArrayMapped : [{
         position: row.puesto || '',
         institution: row.dependencia || row.institution || '',
         period: '',

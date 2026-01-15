@@ -189,7 +189,18 @@ const CandidateProfile: React.FC = () => {
                   </h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-justice-800 leading-relaxed whitespace-pre-wrap text-lg">{candidate.humanProjection}</p>
+                  {(() => {
+                    const items = candidate.humanProjection.split(/[|\.]/).map(item => item.trim()).filter(item => item);
+                    if (items.length > 1) {
+                      return (
+                        <ul className="list-disc list-inside text-justice-800 leading-relaxed text-lg space-y-2">
+                          {items.map((item, index) => <li key={index}>{item}</li>)}
+                        </ul>
+                      );
+                    } else {
+                      return <p className="text-justice-800 leading-relaxed whitespace-pre-wrap text-lg">{candidate.humanProjection}</p>;
+                    }
+                  })()}
                 </CardContent>
               </Card>
             )}
@@ -229,7 +240,18 @@ const CandidateProfile: React.FC = () => {
             <CardContent>
               {candidate.professionalExperience ? (
                 <div className="prose max-w-none">
-                  <p className="text-justice-800 leading-relaxed whitespace-pre-wrap text-lg">{candidate.professionalExperience}</p>
+                  {(() => {
+                    const items = candidate.professionalExperience.split(/[|\.]/).map(item => item.trim()).filter(item => item);
+                    if (items.length > 1) {
+                      return (
+                        <ul className="list-disc list-inside text-justice-800 leading-relaxed text-lg space-y-2">
+                          {items.map((item, index) => <li key={index}>{item}</li>)}
+                        </ul>
+                      );
+                    } else {
+                      return <p className="text-justice-800 leading-relaxed whitespace-pre-wrap text-lg">{candidate.professionalExperience}</p>;
+                    }
+                  })()}
                 </div>
               ) : candidate.experience && candidate.experience.length > 0 ? (
                 <div className="space-y-8">
@@ -273,7 +295,18 @@ const CandidateProfile: React.FC = () => {
             <CardContent>
               {candidate.academicExperience ? (
                 <div className="prose max-w-none">
-                  <p className="text-justice-800 leading-relaxed whitespace-pre-wrap text-lg">{candidate.academicExperience}</p>
+                  {(() => {
+                    const items = candidate.academicExperience.split(/[|\.]/).map(item => item.trim()).filter(item => item);
+                    if (items.length > 1) {
+                      return (
+                        <ul className="list-disc list-inside text-justice-800 leading-relaxed text-lg space-y-2">
+                          {items.map((item, index) => <li key={index}>{item}</li>)}
+                        </ul>
+                      );
+                    } else {
+                      return <p className="text-justice-800 leading-relaxed whitespace-pre-wrap text-lg">{candidate.academicExperience}</p>;
+                    }
+                  })()}
                 </div>
               ) : candidate.education && candidate.education.length > 0 ? (
                 <div className="space-y-8">
@@ -577,8 +610,9 @@ const CandidateProfile: React.FC = () => {
                 <div className="flex flex-wrap gap-3">
                   <Button
                     variant="outline"
+                    className='flex items-center'
                     onClick={() => navigate(-1)}
-                  >
+                    >
                     <ArrowLeft size={18} className="mr-2" />
                     Volver
                   </Button>

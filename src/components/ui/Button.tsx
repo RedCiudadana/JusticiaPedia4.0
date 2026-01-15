@@ -47,7 +47,7 @@ const Button: React.FC<ButtonProps> = ({
           <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
-      <span className={loading ? 'opacity-0' : 'opacity-100'}>
+      <span className={loading ? 'opacity-0 flex items-center' : 'opacity-100 flex items-center'}>
         {children}
       </span>
     </button>
