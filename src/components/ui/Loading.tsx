@@ -14,13 +14,6 @@ const Loading: React.FC<LoadingProps> = ({
   fullScreen = false,
   className = ''
 }) => {
-  const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12',
-    xl: 'w-16 h-16',
-  };
-
   const textSizeClasses = {
     sm: 'text-sm',
     md: 'text-base',
@@ -30,7 +23,7 @@ const Loading: React.FC<LoadingProps> = ({
 
   const content = (
     <div className={`flex flex-col items-center justify-center space-y-4 ${className}`}>
-      <img src={loader} alt="Loading" className={`${sizeClasses[size]}`} />
+      <img src={loader} alt="Loading" style={{ width: '300px', height: 'auto' }} />
       {text && (
         <p className={`${textSizeClasses[size]} text-neutral-600 font-medium`}>
           {text}

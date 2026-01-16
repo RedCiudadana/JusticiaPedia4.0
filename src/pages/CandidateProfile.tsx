@@ -51,7 +51,7 @@ const CandidateProfile: React.FC = () => {
     { id: 'overview', label: 'Resumen General', icon: User },
     { id: 'experience', label: 'Experiencia', icon: Briefcase },
     { id: 'education', label: 'Formación Académica', icon: GraduationCap },
-    { id: 'achievements', label: 'Logros', icon: Award },
+    //{ id: 'achievements', label: 'Logros', icon: Award },
     { id: 'documents', label: 'Documentos', icon: FileText },
   ];
 
@@ -115,13 +115,24 @@ const CandidateProfile: React.FC = () => {
                       <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Cargo al que Aspira</label>
                       <p className="text-justice-900 font-medium">{candidate.role}</p>
                     </div>
-                    <div className="border-b border-justice-100 pb-4">
-                      <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Institución</label>
-                      <div className="flex items-center text-justice-900 font-medium">
-                        <Building2 size={16} className="mr-2 text-justice-600" />
-                        {candidate.institution}
+                    {candidate.institution && (
+                      <div className="border-b border-justice-100 pb-4">
+                        <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Institución</label>
+                        <div className="flex items-center text-justice-900 font-medium">
+                          <Building2 size={16} className="mr-2 text-justice-600" />
+                          {candidate.institution}
+                        </div>
                       </div>
-                    </div>
+                    )}
+                    {candidate.election && (
+                      <div className="border-b border-justice-100 pb-4">
+                        <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Elección</label>
+                        <div className="flex items-center text-justice-900 font-medium">
+                          <Calendar size={16} className="mr-2 text-justice-600" />
+                          {candidate.election}
+                        </div>
+                      </div>
+                    )}
                     {candidate.commission && (
                       <div className="border-b border-justice-100 pb-4">
                         <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Comisión</label>
@@ -276,7 +287,7 @@ const CandidateProfile: React.FC = () => {
               ) : (
                 <div className="text-center py-12">
                   <Briefcase size={48} className="mx-auto text-justice-300 mb-4" />
-                  <p className="text-justice-500 italic">No se ha proporcionado información de experiencia profesional.</p>
+                  <p className="text-justice-500 italic">No hay data de experiencia profesional para esta sección.</p>
                 </div>
               )}
             </CardContent>
@@ -527,7 +538,10 @@ const CandidateProfile: React.FC = () => {
 
   const profileUrl = window.location.href;
   const shareTitle = `${candidate.name} - ${candidate.role}`;
-  const shareDescription = `Perfil de ${candidate.name}, aspirante a ${candidate.role} en ${candidate.institution}`;
+  const shareTarget = candidate.institution || candidate.election;
+  const shareDescription = shareTarget
+    ? `Perfil de ${candidate.name}, aspirante a ${candidate.role} en ${shareTarget}`
+    : `Perfil de ${candidate.name}, aspirante a ${candidate.role}`;
 
   return (
     <ProfileLayout
@@ -537,18 +551,30 @@ const CandidateProfile: React.FC = () => {
       headerContent={
         <div className="space-y-4 mt-4">
           <div className="flex flex-wrap gap-4">
-            <div className="flex items-center text-white/90 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-              <Building2 size={18} className="mr-2" />
-              <span className="font-medium">{candidate.institution}</span>
-            </div>
-            <div className="flex items-center text-white/90 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-              <Award size={18} className="mr-2" />
-              <span className="font-medium">{candidate.specialization}</span>
-            </div>
-            <div className="flex items-center text-white/90 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-              <Calendar size={18} className="mr-2" />
-              <span className="font-medium">{candidate.yearsOfExperience} años de experiencia</span>
-            </div>
+            {candidate.institution && (
+              <div className="flex items-center text-white/90 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                <Building2 size={18} className="mr-2" />
+                <span className="font-medium">{candidate.institution}</span>
+              </div>
+            )}
+            {candidate.election && (
+              <div className="flex items-center text-white/90 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                <Calendar size={18} className="mr-2" />
+                <span className="font-medium">{candidate.election}</span>
+              </div>
+            )}
+            {candidate.specialization && (
+              <div className="flex items-center text-white/90 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                <Award size={18} className="mr-2" />
+                <span className="font-medium">{candidate.specialization}</span>
+              </div>
+            )}
+            {candidate.yearsOfExperience > 0 && (
+              <div className="flex items-center text-white/90 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                <Calendar size={18} className="mr-2" />
+                <span className="font-medium">{candidate.yearsOfExperience} años de experiencia</span>
+              </div>
+            )}
           </div>
           <div className="flex items-center gap-3">
             <span className="text-white/90 text-sm font-semibold">Compartir perfil:</span>
@@ -616,12 +642,14 @@ const CandidateProfile: React.FC = () => {
                     <ArrowLeft size={18} className="mr-2" />
                     Volver
                   </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() => navigate(`/comisiones/${candidate.commissionId}`)}
-                  >
-                    Ver comisión
-                  </Button>
+                  {candidate.commissionId && (
+                    <Button
+                      variant="outline"
+                      onClick={() => navigate(`/comisiones/${candidate.commissionId}`)}
+                    >
+                      Ver comisión
+                    </Button>
+                  )}
                   <Button
                     variant="primary"
                     onClick={() => navigate('/candidatos')}

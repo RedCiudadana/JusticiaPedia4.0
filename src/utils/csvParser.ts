@@ -26,15 +26,66 @@ export function parseCSVLine(line: string): string[] {
   return result;
 }
 
-export function parseCSV(csvContent: string): CandidateData[] {
-  const lines = csvContent.split('\n').filter(line => line.trim());
-  if (lines.length === 0) return [];
+function parseCSVRows(csvContent: string): string[][] {
+  const rows: string[][] = [];
+  let row: string[] = [];
+  let current = '';
+  let inQuotes = false;
 
-  const headers = parseCSVLine(lines[0]);
+  for (let i = 0; i < csvContent.length; i++) {
+    const char = csvContent[i];
+    const nextChar = csvContent[i + 1];
+
+    if (char === '"' && nextChar === '"') {
+      current += '"';
+      i++;
+      continue;
+    }
+
+    if (char === '"') {
+      inQuotes = !inQuotes;
+      continue;
+    }
+
+    if ((char === '\n' || char === '\r') && !inQuotes) {
+      if (char === '\r' && nextChar === '\n') {
+        i++;
+      }
+      row.push(current.trim());
+      if (row.some(cell => cell !== '')) {
+        rows.push(row);
+      }
+      row = [];
+      current = '';
+      continue;
+    }
+
+    if (char === ',' && !inQuotes) {
+      row.push(current.trim());
+      current = '';
+      continue;
+    }
+
+    current += char;
+  }
+
+  row.push(current.trim());
+  if (row.some(cell => cell !== '')) {
+    rows.push(row);
+  }
+
+  return rows;
+}
+
+export function parseCSV(csvContent: string): CandidateData[] {
+  const rows = parseCSVRows(csvContent);
+  if (rows.length === 0) return [];
+
+  const headers = rows[0];
   const candidates: CandidateData[] = [];
 
-  for (let i = 1; i < lines.length; i++) {
-    const values = parseCSVLine(lines[i]);
+  for (let i = 1; i < rows.length; i++) {
+    const values = rows[i];
     if (values.length < headers.length) continue;
 
     const row: Record<string, string> = {};
@@ -42,27 +93,72 @@ export function parseCSV(csvContent: string): CandidateData[] {
       row[header] = values[index] || '';
     });
 
-    const experienciaText = row.experienciaProfesional || '';
+    const pickPreferred = (...values: Array<string | undefined>) => {
+      return values.find(value => {
+        if (!value) return false;
+        const trimmed = value.trim();
+        return trimmed !== '' && trimmed.toLowerCase() !== 'yes';
+      }) || '';
+    };
+    const isMeaningfulValue = (value?: string) => {
+      if (!value) return false;
+      const trimmed = value.trim();
+      return trimmed !== '' && trimmed.toLowerCase() !== 'yes';
+    };
+
+    const selectedInstitution = pickPreferred(
+      row.seleccionarInstitucion,
+      row.seleccionInstitucion,
+      row.institution,
+      row.dependencia
+    );
+
+    const selectedCommission = pickPreferred(
+      row.seleccionarComision,
+      row.seleccionarComission,
+      row.seleccionComision,
+      row.seleccionComission,
+      row.comission
+    );
+
+    const selectedElection = pickPreferred(
+      row.seleccionarEleccion,
+      row.seleccionEleccion,
+      row.election
+    );
+
+    const experienciaText = isMeaningfulValue(row.experienciaProfesional) ? row.experienciaProfesional : '';
     let experienceArray = experienciaText.split(/\s*\|\s*/).map(exp => exp.trim()).filter(exp => exp);
     if (experienceArray.length <= 1) {
       experienceArray = experienciaText.split(/\.\s+/).map(exp => exp.trim()).filter(exp => exp);
     }
     const experienceArrayMapped = experienceArray.map(exp => ({
       position: exp.split('-')[0]?.trim() || exp.trim(),
-      institution: row.dependencia || row.institution || '',
+      institution: selectedInstitution || row.dependencia || row.institution || '',
       period: '',
       description: exp.trim()
     }));
+    const fallbackExperience = {
+      position: row.puesto || '',
+      institution: selectedInstitution || row.dependencia || row.institution || '',
+      period: '',
+      description: row.experienciaProfesional || ''
+    };
+    const hasFallbackExperience = [
+      fallbackExperience.position,
+      fallbackExperience.institution,
+      fallbackExperience.description
+    ].some(isMeaningfulValue);
 
     const candidate: CandidateData = {
       id: row.id || `candidate-${i}`,
       name: row.nombre || '',
       role: row.puesto || 'Aspirante',
-      institution: row.institution || row.seleccionarInstitución || '',
+      institution: selectedInstitution || row.dependencia || (row.institution !== 'Yes' ? row.institution : '') || '',
       imageUrl: row.fotoURL || 'https://images.pexels.com/photos/5669619/pexels-photo-5669619.jpeg',
       description: row.resumen || row.proyeccionHumana || '',
       status: (row.estado === 'Activo' ? 'Activo' : row.estado === 'Inactivo' ? 'Inactivo' : 'Activo') as 'Activo' | 'Inactivo' | 'Retirado',
-      commissionId: row.comission || row.seleccionarComisión || '',
+      commissionId: selectedCommission || '',
       specialization: row.profesion || '',
       yearsOfExperience: parseInt(row.anosexperiencia) || 0,
       education: row.experienciaAcademica ? row.experienciaAcademica.split('|').map(edu => edu.trim()).filter(edu => edu).map(edu => {
@@ -74,12 +170,7 @@ export function parseCSV(csvContent: string): CandidateData[] {
           honors: ''
         };
       }) : [],
-      experience: experienceArrayMapped.length > 0 ? experienceArrayMapped : [{
-        position: row.puesto || '',
-        institution: row.dependencia || row.institution || '',
-        period: '',
-        description: row.experienciaProfesional || ''
-      }],
+      experience: experienceArrayMapped.length > 0 ? experienceArrayMapped : (hasFallbackExperience ? [fallbackExperience] : []),
       publications: [],
       awards: [],
       languages: [],
@@ -101,8 +192,8 @@ export function parseCSV(csvContent: string): CandidateData[] {
       cvUrl: row.cv || '',
       fileUrl: row.expediente || '',
       summary: row.resumen || '',
-      commission: row.comission || row.seleccionarComisión || '',
-      election: row.election || row.seleccionarElección || ''
+      commission: selectedCommission || '',
+      election: selectedElection || ''
     };
 
     candidates.push(candidate);
