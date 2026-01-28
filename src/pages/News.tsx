@@ -6,6 +6,8 @@ import Button from '../components/ui/Button';
 import HeroSlider from '../components/ui/HeroSlider';
 import SocialShare from '../components/ui/SocialShare';
 import { newsArticles } from '../data/news';
+import slider from '../assets/SLIDER_BANNERS/JP-04.png';
+import registro from '../assets/SLIDER_BANNERS/JP-03.png';
 
 const News: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -20,17 +22,17 @@ const News: React.FC = () => {
     {
       title: 'Notas de Interés',
       description: 'Mantente informado sobre las últimas noticias del sistema judicial guatemalteco.',
-      imageUrl: 'https://images.pexels.com/photos/6077447/pexels-photo-6077447.jpeg',
+      imageUrl: slider,
     },
     {
       title: 'Análisis y Reportajes',
       description: 'Análisis profundos sobre los procesos de selección y el sistema de justicia.',
-      imageUrl: 'https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg',
+      imageUrl: slider,
     },
     {
       title: 'Transparencia Informativa',
       description: 'Información verificada y actualizada sobre el sistema judicial.',
-      imageUrl: 'https://images.pexels.com/photos/5669619/pexels-photo-5669619.jpeg',
+      imageUrl: slider,
     },
   ];
 
@@ -110,11 +112,11 @@ const News: React.FC = () => {
   const getCategoryColor = (category: string) => {
     const colors = {
       'Procesos de Selección': 'bg-primary-100 text-primary-800',
-      'Análisis': 'bg-justice-100 text-justice-800',
-      'Entrevistas': 'bg-justice-100 text-justice-800',
-      'Noticias': 'bg-justice-100 text-justice-800',
-      'Reportajes': 'bg-justice-100 text-justice-800',
-      'Opinión': 'bg-primary-100 text-primary-800',
+      'Análisis': 'bg-justice-50 text-justice-800',
+      'Entrevistas': 'bg-justice-50 text-justice-800',
+      'Noticias': 'bg-justice-50 text-justice-800',
+      'Reportajes': 'bg-justice-50 text-justice-800',
+      'Opinión': 'bg-primary-50 text-primary-800',
     };
     return colors[category as keyof typeof colors] || 'bg-neutral-100 text-neutral-800';
   };
@@ -173,7 +175,7 @@ const News: React.FC = () => {
           {article.tags && article.tags.length > 0 && (
             <div className="flex flex-wrap gap-1">
               {article.tags.slice(0, 3).map((tag, index) => (
-                <span key={index} className="bg-justice-100 text-justice-600 px-2 py-1 rounded text-xs">
+                <span key={index} className="bg-justice-50 text-justice-600 px-2 py-1 rounded text-xs">
                   #{tag}
                 </span>
               ))}
@@ -411,7 +413,7 @@ const News: React.FC = () => {
 
       {/* Results Summary */}
       <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between">
-        <p className="text-justice-600 mb-4 md:mb-0">
+        <p className="text-neutral-600 mb-4 md:mb-0">
           Mostrando {paginatedArticles.length} de {filteredArticles.length} artículos
           {(searchQuery || categoryFilter !== 'all') && (
             <span className="ml-1">
@@ -430,7 +432,7 @@ const News: React.FC = () => {
               className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                 categoryFilter === category
                   ? 'bg-primary-600 text-white'
-                  : 'bg-justice-100 text-justice-700 hover:bg-justice-200'
+                  : 'bg-justice-50 text-justice-700 hover:bg-justice-200'
               }`}
             >
               {category}
@@ -561,7 +563,7 @@ const News: React.FC = () => {
             return (
               <div
                 key={category}
-                className="bg-white p-4 rounded-lg hover:bg-justice-100 transition-colors cursor-pointer"
+                className="bg-white p-4 rounded-lg hover:bg-justice-50 transition-colors cursor-pointer"
                 onClick={() => setCategoryFilter(category)}
               >
                 <div className="flex items-center justify-between mb-2">
@@ -584,7 +586,7 @@ const News: React.FC = () => {
       </div>
 
       {/* Newsletter Subscription */}
-      <div className="mt-20 bg-gradient-to-br from-justice-600 via-justice-700 to-teal-600 text-white rounded-2xl p-10 md:p-12 text-center shadow-2xl">
+      <div className="mt-20 text-white rounded-2xl p-10 md:p-12 text-center shadow-2xl" style={{ backgroundImage: `url(${registro})` }}>
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Mantente Informado</h2>
         <p className="text-justice-50 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
           Suscríbete a nuestro boletín para recibir las últimas noticias y análisis sobre el sistema judicial guatemalteco.
@@ -596,8 +598,8 @@ const News: React.FC = () => {
             className="flex-1 px-5 py-3 rounded-lg text-justice-900 focus:outline-none focus:ring-2 focus:ring-white shadow-md"
           />
           <Button
-            variant="secondary"
-            className="bg-white text-justice-600 hover:bg-justice-50 shadow-md hover:shadow-lg transition-all font-semibold px-6 py-3"
+            variant="danger"
+            className="bg-justice-200 text-white hover:bg-neutral-500 shadow-md hover:shadow-lg transition-all font-semibold px-6 py-3"
           >
             Suscribirse
           </Button>

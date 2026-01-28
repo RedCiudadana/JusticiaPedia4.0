@@ -84,7 +84,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.imageUrl})` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/70 to-justice-900/60" />
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/70 to-justice-900/60" /> */}
             </div>
           ) : (
             <div

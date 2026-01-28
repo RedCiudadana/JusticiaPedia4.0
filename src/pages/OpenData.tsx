@@ -3,6 +3,8 @@ import { Download, Database, FileText, BookOpen, CheckCircle, ExternalLink, File
 import PageLayout from '../components/layout/PageLayout';
 import Card, { CardContent, CardHeader } from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import slider from '../assets/SLIDER_BANNERS/JP-05.png';
+import slider2 from '../assets/SLIDER_BANNERS/JP-07.png';
 
 const OpenData: React.FC = () => {
   const datasets = [
@@ -106,15 +108,10 @@ const OpenData: React.FC = () => {
       description="Accede a datos públicos del sector justicia para análisis, investigación y control ciudadano."
     >
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-primary-800 via-primary-900 to-justice-900 rounded-2xl p-8 md:p-12 lg:p-16 mb-16 shadow-2xl overflow-hidden">
+      <div className="relative rounded-2xl p-8 md:p-12 lg:p-16 mb-16 shadow-2xl overflow-hidden" style={{backgroundImage: `url(${slider})` }}>
         <div className="absolute top-0 right-0 w-64 h-64 bg-justice-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-400/10 rounded-full blur-3xl -ml-24 -mb-24"></div>
         <div className="max-w-4xl mx-auto text-center relative">
-          <div className="mb-6">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-justice-400 to-justice-600 rounded-2xl shadow-xl">
-              <Database size={40} className="text-white" />
-            </div>
-          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
             Datos para la transparencia
           </h1>
@@ -152,14 +149,14 @@ const OpenData: React.FC = () => {
             const Icon = dataset.icon;
             return (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-neutral-100 hover:border-primary-300">
-                <CardHeader className="bg-gradient-to-r from-primary-50 to-justice-50">
+                <CardHeader className="bg-secondary-200">
                   <div className="flex items-start justify-between">
                     <div className="flex items-start">
                       <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform">
                         <Icon size={24} className="text-primary-600" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-primary-700 transition-colors">{dataset.title}</h3>
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-700 transition-colors">{dataset.title}</h3>
                         <p className="text-neutral-600 text-sm">{dataset.description}</p>
                       </div>
                     </div>
@@ -190,7 +187,7 @@ const OpenData: React.FC = () => {
                     </div>
                     <Button
                       variant="primary"
-                      className="w-full mt-4 bg-primary-600 hover:bg-primary-700"
+                      className="w-full mt-4 bg-secondary-600 hover:bg-neutral-700"
                     >
                       <Download size={18} className="mr-2" />
                       Descargar
@@ -206,9 +203,9 @@ const OpenData: React.FC = () => {
       {/* Documents Section */}
       <div className="mb-16">
         <Card className="overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50">
+          <CardHeader className="bg-gradient-to-r from-neutral-50 to-neutral-50">
             <div className="flex items-center">
-              <FileText size={32} className="text-justice-600 mr-4" />
+              <FileText size={32} className="text-neutral-600 mr-4" />
               <div>
                 <h2 className="text-3xl font-bold text-neutral-900">Documentos oficiales</h2>
                 <p className="text-lg text-neutral-700 mt-1">
@@ -224,16 +221,16 @@ const OpenData: React.FC = () => {
                 return (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-justice-50 to-white border border-justice-200 rounded-lg p-6 hover:shadow-md transition-shadow cursor-pointer"
+                    className="bg-gradient-to-br from-neutral-50 to-white border border-neutral-200 rounded-lg p-6 hover:shadow-md transition-shadow cursor-pointer"
                   >
-                    <div className="w-12 h-12 bg-justice-100 rounded-full flex items-center justify-center mb-4">
-                      <Icon size={24} className="text-justice-600" />
+                    <div className="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mb-4">
+                      <Icon size={24} className="text-white" />
                     </div>
                     <h3 className="font-semibold text-neutral-900 mb-2">{category.title}</h3>
                     <p className="text-neutral-600 text-sm mb-3">{category.description}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-neutral-500">{category.count} documentos</span>
-                      <ExternalLink size={16} className="text-justice-600" />
+                      <ExternalLink size={16} className="text-neutral-600" />
                     </div>
                   </div>
                 );
@@ -252,9 +249,9 @@ const OpenData: React.FC = () => {
       {/* Methodology Section */}
       <div className="mb-16">
         <Card className="overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50">
+          <CardHeader className="bg-gradient-to-r from-neutral-50 to-neutral-50">
             <div className="flex items-center">
-              <BookOpen size={32} className="text-justice-600 mr-4" />
+              <BookOpen size={32} className="text-neutral-600 mr-4" />
               <div>
                 <h2 className="text-3xl font-bold text-neutral-900">Metodología</h2>
                 <p className="text-lg text-neutral-700 mt-1">
@@ -273,11 +270,11 @@ const OpenData: React.FC = () => {
                 return (
                   <div
                     key={index}
-                    className="bg-white border-2 border-justice-100 rounded-lg p-6 hover:border-justice-300 transition-colors"
+                    className="bg-white border-2 border-secondary-100 rounded-lg p-6 hover:border-secondary-300 transition-colors"
                   >
                     <div className="flex items-start">
-                      <div className="w-12 h-12 bg-justice-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                        <Icon size={24} className="text-justice-600" />
+                      <div className="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                        <Icon size={24} className="text-white" />
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-neutral-900 mb-2">
@@ -297,9 +294,9 @@ const OpenData: React.FC = () => {
       {/* Sources Section */}
       <div className="mb-16">
         <Card className="overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50">
+          <CardHeader className="bg-gradient-to-r from-neutral-50 to-justice-50">
             <div className="flex items-center">
-              <CheckCircle size={32} className="text-justice-600 mr-4" />
+              <CheckCircle size={32} className="text-neutral-600 mr-4" />
               <div>
                 <h2 className="text-3xl font-bold text-neutral-900">Fuentes de información</h2>
                 <p className="text-lg text-neutral-700 mt-1">
@@ -316,14 +313,14 @@ const OpenData: React.FC = () => {
               {sources.map((source, index) => (
                 <div
                   key={index}
-                  className="flex items-center bg-gradient-to-r from-justice-50 to-justice-50 border border-justice-100 rounded-lg p-4"
+                  className="flex items-center bg-gradient-to-r from-secondary-50 to-secondary-50 border border-justice-100 rounded-lg p-4"
                 >
-                  <CheckCircle size={20} className="text-justice-600 mr-3 flex-shrink-0" />
+                  <CheckCircle size={20} className="text-secondary-600 mr-3 flex-shrink-0" />
                   <span className="text-neutral-800 font-medium">{source}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-8 bg-justice-50 border-l-4 border-justice-600 p-6 rounded-r-lg">
+            <div className="mt-8 bg-secondary-50 border-l-4 border-secondary-600 p-6 rounded-r-lg">
               <p className="text-neutral-800 leading-relaxed">
                 <strong className="text-neutral-700">Ley de Acceso a la Información Pública:</strong> Todos los datos se obtienen en cumplimiento del derecho constitucional de acceso a la información pública, garantizando la legitimidad y legalidad de cada dato publicado.
               </p>
@@ -333,9 +330,8 @@ const OpenData: React.FC = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-br from-justice-600 via-justice-700 to-neutral-600 rounded-2xl p-10 md:p-14 text-center shadow-2xl">
+      <div className="rounded-2xl p-10 md:p-14 text-center shadow-2xl" style={{backgroundImage: `url(${slider2})` }}>
         <div className="max-w-3xl mx-auto text-white">
-          <Database size={56} className="mx-auto mb-6 text-justice-100" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Accede a todos los datos
           </h2>
@@ -346,7 +342,7 @@ const OpenData: React.FC = () => {
             <Button
               variant="secondary"
               size="lg"
-              className="inline-flex items-center gap-2 bg-white text-justice-600 hover:bg-justice-50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all font-semibold px-8 py-4"
+              className="inline-flex items-center gap-2 bg-secondary-200 text-justice-600 hover:bg-justice-50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all font-semibold px-8 py-4"
             >
               <span className="inline-flex items-center gap-2">
                 <Download size={24} />
@@ -356,7 +352,7 @@ const OpenData: React.FC = () => {
             <Button
               variant="outline"
               size="lg"
-              className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-justice-600 transition-all font-semibold px-8 py-4"
+              className="inline-flex items-center gap-2 border-2 border-white text-neutral-200 hover:bg-secondary-200 hover:text-neutral-600 transition-all font-semibold px-8 py-4"
             >
               <span className="inline-flex items-center gap-2">
                 <BookOpen size={24} />

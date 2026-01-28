@@ -1,32 +1,36 @@
 import React from 'react';
 import { Users, Search, FileText, ArrowRight, Scale, Building2 } from 'lucide-react';
 import Container from '../ui/Container';
+import Icono1 from '../../assets/ICONOS/JP-11.png';
+import Icono2 from '../../assets/ICONOS/JP-12.png';
+import Icono3 from '../../assets/ICONOS/JP-13.png';
+import Icono4 from '../../assets/ICONOS/JP-14.png';
 
 const FeatureBlocks: React.FC = () => {
   const features = [
     {
-      icon: Search,
+      icon: Icono1,
       title: 'Explora Perfiles',
       description: 'Conoce a los aspirantes a puestos clave en el sistema judicial guatemalteco. Accede a información verificada sobre su trayectoria.',
       link: '/candidatos',
       color: 'primary',
     },
     {
-      icon: Users,
+      icon: Icono2,
       title: 'Sigue las Comisiones',
       description: 'Mantente informado sobre los procesos de postulación y selección de magistrados y funcionarios judiciales.',
       link: '/comisiones',
       color: 'accent',
     },
     {
-      icon: Building2,
+      icon: Icono3,
       title: 'Instituciones',
       description: 'Descubre las instituciones que conforman el sistema de justicia y su rol en la democracia guatemalteca.',
       link: '/instituciones',
       color: 'justice',
     },
     {
-      icon: FileText,
+      icon: Icono4,
       title: 'Notas de Interés',
       description: 'Lee las últimas noticias, análisis y reportajes sobre el sistema judicial y los procesos de selección.',
       link: '/noticias',
@@ -90,8 +94,8 @@ const FeatureBlocks: React.FC = () => {
                 href={feature.link}
                 className={`group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-neutral-100 ${colorClasses.border}`}
               >
-                <div className={`h-14 w-14 bg-gradient-to-br ${colorClasses.bg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon size={26} className={colorClasses.icon} />
+                <div className={`h-18 w-18 mb-4`}>
+                  <img src={feature.icon} alt={feature.title} className="h-100 w-100" />
                 </div>
                 <h3 className={`text-xl font-bold mb-3 text-neutral-900 ${colorClasses.hover} transition-colors`}>
                   {feature.title}

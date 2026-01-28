@@ -3,6 +3,8 @@ import { BookOpen, FileText, Image, Video, HelpCircle, GraduationCap, Lightbulb,
 import PageLayout from '../components/layout/PageLayout';
 import Card, { CardContent, CardHeader } from '../components/ui/Card';
 import Button from '../components/ui/Button';
+import slider from '../assets/SLIDER_BANNERS/JP-07.png';
+import poder from '../assets/SLIDER_BANNERS/JP-04.png'
 
 const Learn: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -155,15 +157,10 @@ const Learn: React.FC = () => {
       description="Contenidos educativos sobre justicia, democracia y transparencia para todo público."
     >
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-primary-800 via-primary-900 to-justice-900 rounded-2xl p-8 md:p-12 lg:p-16 mb-16 shadow-2xl overflow-hidden">
+      <div className="relative rounded-2xl p-8 md:p-12 lg:p-16 mb-16 shadow-2xl overflow-hidden" style={{ backgroundImage: `url(${slider})` }}>
         <div className="absolute top-0 right-0 w-64 h-64 bg-justice-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-400/10 rounded-full blur-3xl -ml-24 -mb-24"></div>
         <div className="max-w-4xl mx-auto text-center relative">
-          <div className="mb-6">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-justice-400 to-justice-600 rounded-2xl shadow-xl">
-              <GraduationCap size={40} className="text-white" />
-            </div>
-          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
             Aprender para participar
           </h1>
@@ -194,17 +191,17 @@ const Learn: React.FC = () => {
           {guides.map((guide, index) => {
             const Icon = guide.icon;
             return (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer border-2 border-neutral-100 hover:border-justice-300">
-                <CardHeader className="bg-gradient-to-br from-justice-50 to-primary-50">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer border-2 border-neutral-100 hover:border-secondary-300">
+                <CardHeader className="bg-secondary-100">
                   <div className="flex items-start justify-between mb-3">
-                    <div className="w-12 h-12 bg-justice-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Icon size={24} className="text-justice-600" />
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Icon size={24} className="text-secondary-200" />
                     </div>
                     <span className="px-3 py-1 bg-white rounded-full text-xs font-medium text-neutral-700 border border-neutral-200">
                       {guide.level}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-justice-700 transition-colors">{guide.title}</h3>
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-neutral-700 transition-colors">{guide.title}</h3>
                   <p className="text-neutral-600 text-sm">{guide.description}</p>
                 </CardHeader>
                 <CardContent>
@@ -218,7 +215,7 @@ const Learn: React.FC = () => {
                     {guide.topics.map((topic, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-1 bg-justice-100 text-justice-700 rounded-lg text-xs font-medium"
+                        className="px-2 py-1 bg-secondary-100 text-white rounded-lg text-xs font-medium"
                       >
                         {topic}
                       </span>
@@ -326,10 +323,10 @@ const Learn: React.FC = () => {
                       {video.duration}
                     </div>
                   </div>
-                  <h3 className="font-semibold text-justice-900 mb-1 group-hover:text-justice-600 transition-colors">
+                  <h3 className="font-semibold text-neutral-900 mb-1 group-hover:text-secondary-600 transition-colors">
                     {video.title}
                   </h3>
-                  <p className="text-sm text-justice-500">{video.views} reproducciones</p>
+                  <p className="text-sm text-neutral-500">{video.views} reproducciones</p>
                 </div>
               ))}
             </div>
@@ -346,7 +343,7 @@ const Learn: React.FC = () => {
       {/* FAQs Section */}
       <div className="mb-16">
         <Card className="overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50">
+          <CardHeader className="bg-gradient-to-r from-neutral-50 to-neutral-50">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-3xl font-bold text-neutral-900 mb-2">Preguntas frecuentes</h2>
@@ -354,7 +351,7 @@ const Learn: React.FC = () => {
                   Respuestas claras a dudas comunes de la ciudadanía
                 </p>
               </div>
-              <HelpCircle size={40} className="text-justice-600 hidden md:block" />
+              <HelpCircle size={40} className="text-neutral-600 hidden md:block" />
             </div>
           </CardHeader>
           <CardContent className="p-8">
@@ -364,8 +361,8 @@ const Learn: React.FC = () => {
                   key={index}
                   className={`border-2 rounded-lg overflow-hidden transition-all duration-300 ${
                     faq.featured
-                      ? 'border-justice-300 bg-gradient-to-r from-justice-50 to-justice-50'
-                      : 'border-justice-200 bg-white hover:border-justice-300'
+                      ? 'border-neutral-300 bg-gradient-to-r from-neutral-50 to-neutral-50'
+                      : 'border-neutral-200 bg-white hover:border-neutral-300'
                   }`}
                 >
                   <button
@@ -376,31 +373,31 @@ const Learn: React.FC = () => {
                       <HelpCircle
                         size={24}
                         className={`mr-4 flex-shrink-0 mt-1 ${
-                          faq.featured ? 'text-justice-600' : 'text-justice-400'
+                          faq.featured ? 'text-neutral-600' : 'text-neutral-400'
                         }`}
                       />
                       <div className="flex-1">
                         <h3 className={`font-bold text-lg ${
-                          faq.featured ? 'text-justice-900' : 'text-justice-800'
+                          faq.featured ? 'text-neutral-900' : 'text-neutral-800'
                         }`}>
                           {faq.question}
                         </h3>
                         {faq.featured && (
-                          <span className="inline-block mt-2 px-3 py-1 bg-justice-600 text-white text-xs font-medium rounded-full">
+                          <span className="inline-block mt-2 px-3 py-1 bg-neutral-600 text-white text-xs font-medium rounded-full">
                             Destacada
                           </span>
                         )}
                       </div>
                     </div>
                     {openFaq === index ? (
-                      <ChevronUp size={24} className="text-justice-400 flex-shrink-0 ml-4" />
+                      <ChevronUp size={24} className="text-secondary-400 flex-shrink-0 ml-4" />
                     ) : (
-                      <ChevronDown size={24} className="text-justice-400 flex-shrink-0 ml-4" />
+                      <ChevronDown size={24} className="text-secondary-400 flex-shrink-0 ml-4" />
                     )}
                   </button>
                   {openFaq === index && (
                     <div className={`px-6 pb-6 pl-16 ${
-                      faq.featured ? 'text-justice-800' : 'text-justice-700'
+                      faq.featured ? 'text-neutral-800' : 'text-neutral-700'
                     }`}>
                       <p className="leading-relaxed">{faq.answer}</p>
                     </div>
@@ -413,7 +410,7 @@ const Learn: React.FC = () => {
       </div>
 
       {/* Inspirational CTA Section */}
-      <div className="bg-gradient-to-br from-neutral-600 via-justice-700 to-justice-600 rounded-2xl p-10 md:p-14 text-center shadow-2xl">
+      <div className="rounded-2xl p-10 md:p-14 text-center shadow-2xl" style={{ backgroundImage: `url(${poder})` }}>
         <div className="max-w-3xl mx-auto text-white">
           <Lightbulb size={56} className="mx-auto mb-6 text-neutral-100" />
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -426,7 +423,7 @@ const Learn: React.FC = () => {
             <Button
               variant="secondary"
               size="lg"
-              className="bg-white text-neutral-600 hover:bg-neutral-50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all font-semibold px-8 py-4"
+              className="bg-secondary-200 text-neutral-600 hover:bg-neutral-50 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all font-semibold px-8 py-4"
             >
               <GraduationCap size={24} className="mr-2" />
               Explorar contenidos
@@ -434,7 +431,7 @@ const Learn: React.FC = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-neutral-600 transition-all font-semibold px-8 py-4"
+              className="border-2 border-white text-white hover:bg-secondary-200 hover:text-neutral-600 transition-all font-semibold px-8 py-4"
             >
               <ExternalLink size={24} className="mr-2" />
               Compartir recursos

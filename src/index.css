@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font definitions */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/FONT/Montserrat-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/FONT/Montserrat-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 @layer base {
   /* Improved typography and spacing */
   html {
@@ -10,7 +25,8 @@
   }
   
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 400;
     font-optical-sizing: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

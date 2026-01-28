@@ -194,10 +194,10 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
       {/* Problem Section */}
       <div className="mb-16">
         <Card className="overflow-hidden border-2 border-neutral-100">
-          <CardHeader className="bg-gradient-to-r from-justice-50 to-justice-50 border-b border-justice-100">
+          <CardHeader className="bg-gradient-to-r from-neutral-50 to-neutral-50 border-b border-justice-100">
             <div className="flex items-center">
               <div className="w-14 h-14 bg-justice-100 rounded-xl flex items-center justify-center mr-4">
-                <AlertCircle size={28} className="text-justice-600" />
+                <AlertCircle size={28} className="text-white" />
               </div>
               <div>
                 <h2 className="text-3xl font-bold text-neutral-900">¿Qué problema aborda?</h2>
@@ -216,10 +216,10 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
                 return (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-justice-50 to-justice-100 p-6 rounded-lg border border-justice-200 hover:shadow-md transition-shadow"
+                    className="bg-neutral-50 p-6 rounded-lg border border-justice-200 hover:shadow-md transition-shadow"
                   >
                     <div className="w-12 h-12 bg-justice-100 rounded-full flex items-center justify-center mb-4">
-                      <Icon size={24} className="text-justice-600" />
+                      <Icon size={24} className="text-white" />
                     </div>
                     <h3 className="font-semibold text-neutral-900 mb-2">{problem.title}</h3>
                     <p className="text-neutral-600 text-sm">{problem.description}</p>
@@ -263,7 +263,7 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
                     className="flex items-start bg-white border border-justice-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-justice-100 to-justice-100 rounded-full flex items-center justify-center mr-5">
-                      <Icon size={28} className="text-justice-700" />
+                      <Icon size={28} className="text-white" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-neutral-900 mb-2">{objective.title}</h3>
@@ -282,7 +282,7 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
 
       {/* Guiding Principle Section - Highlighted */}
       <div className="mb-16">
-        <Card className="overflow-hidden bg-gradient-to-br from-neutral-600 via-justice-700 to-justice-600 text-white shadow-2xl">
+        <Card className="overflow-hidden bg-neutral-700 to-justice-600 text-white shadow-2xl">
           <CardContent className="p-10 md:p-14 lg:p-20 text-center">
             <div className="max-w-3xl mx-auto">
               <div className="mb-8">
@@ -350,7 +350,7 @@ Las nóminas deberán remitirse a donde correspondan, con toda la documentación
       </div>
 
       {/* Call to Action */}
-      <div className="bg-gradient-to-br from-justice-50 via-teal-50 to-justice-50 rounded-2xl p-10 md:p-12 text-center border border-justice-200 shadow-lg">
+      <div className="bg-neutral-50 rounded-2xl p-10 md:p-12 text-center border border-justice-200 shadow-lg">
         <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
           Explora Justiciapedia
         </h2>
