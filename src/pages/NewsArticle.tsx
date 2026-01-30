@@ -54,18 +54,6 @@ const NewsArticle: React.FC = () => {
     });
   };
 
-  const getCategoryColor = (category: string) => {
-    const colors = {
-      'Procesos de Selección': 'bg-justice-100 text-justice-800',
-      'Análisis': 'bg-purple-100 text-purple-800',
-      'Entrevistas': 'bg-justice-100 text-justice-800',
-      'Noticias': 'bg-justice-100 text-justice-800',
-      'Reportajes': 'bg-justice-100 text-justice-800',
-      'Opinión': 'bg-indigo-100 text-indigo-800',
-    };
-    return colors[category as keyof typeof colors] || 'bg-justice-100 text-justice-800';
-  };
-
   // Related articles (same category, excluding current)
   const relatedArticles = newsArticles
     .filter(a => a.category === article.category && a.id !== article.id)
@@ -77,7 +65,7 @@ const NewsArticle: React.FC = () => {
       imageUrl={article.imageUrl}
       headerContent={
         <div className="flex flex-col md:flex-row md:items-center gap-4 mt-4">
-          <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(article.category)}`}>
+          <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-justice-50 text-justice-800`}>
             {article.category}
           </span>
           <div className="flex items-center text-white/80">
@@ -139,12 +127,12 @@ const NewsArticle: React.FC = () => {
 
               {/* Article Body */}
               <div className="prose prose-lg max-w-none">
-                <p className="text-xl text-justice-600 mb-6 font-medium leading-relaxed">
+                <p className="text-xl text-neutral-600 mb-6 font-medium leading-relaxed">
                   {article.excerpt}
                 </p>
                 
                 {/* Mock content - in a real app, this would come from the article.content field */}
-                <div className="space-y-6 text-justice-700 leading-relaxed">
+                <div className="space-y-6 text-neutral-700 leading-relaxed">
                   <p>
                     El sistema judicial guatemalteco se encuentra en un momento crucial de transformación y modernización. 
                     Los procesos de selección de autoridades judiciales han cobrado especial relevancia en el contexto 
@@ -160,7 +148,7 @@ const NewsArticle: React.FC = () => {
                     selección judicial.
                   </p>
                   
-                  <h3 className="text-2xl font-semibold text-justice-900 mt-8 mb-4">
+                  <h3 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">
                     Principales Cambios en los Criterios
                   </h3>
                   
@@ -177,7 +165,7 @@ const NewsArticle: React.FC = () => {
                     las sesiones de las comisiones y los criterios de evaluación utilizados.
                   </p>
                   
-                  <h3 className="text-2xl font-semibold text-justice-900 mt-8 mb-4">
+                  <h3 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">
                     Impacto en la Independencia Judicial
                   </h3>
                   
@@ -198,8 +186,8 @@ const NewsArticle: React.FC = () => {
 
               {/* Tags */}
               {article.tags && article.tags.length > 0 && (
-                <div className="mt-8 pt-6 border-t border-justice-200">
-                  <h4 className="text-sm font-medium text-justice-900 mb-3 flex items-center">
+                <div className="mt-8 pt-6 border-t border-neutral-200">
+                  <h4 className="text-sm font-medium text-neutral-900 mb-3 flex items-center">
                     <Tag size={16} className="mr-2" />
                     Etiquetas
                   </h4>
@@ -207,7 +195,7 @@ const NewsArticle: React.FC = () => {
                     {article.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="bg-justice-100 text-justice-700 px-3 py-1 rounded-full text-sm hover:bg-justice-200 transition-colors cursor-pointer"
+                        className="bg-justice-50 text-justice-700 px-3 py-1 rounded-full text-sm hover:bg-white transition-colors cursor-pointer"
                       >
                         #{tag}
                       </span>

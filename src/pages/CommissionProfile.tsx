@@ -34,8 +34,8 @@ const CommissionProfile: React.FC = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <Users size={64} className="mx-auto text-justice-400 mb-4" />
-          <h1 className="text-2xl font-bold text-justice-900 mb-2">Comisión no encontrada</h1>
-          <p className="text-justice-600 mb-4">La comisión que buscas no existe o ha sido removida.</p>
+          <h1 className="text-2xl font-bold text-neutral-600 mb-2">Comisión no encontrada</h1>
+          <p className="text-neutral-600 mb-4">La comisión que buscas no existe o ha sido removida.</p>
           <Link
             to="/comisiones"
             className="inline-flex items-center px-4 py-2 bg-justice-600 text-white rounded-md hover:bg-justice-700 transition-colors"
@@ -61,30 +61,30 @@ const CommissionProfile: React.FC = () => {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'Completada':
-        return <CheckCircle size={16} className="text-justice-600" />;
+        return <CheckCircle size={16} className="text-neutral-600" />;
       case 'En proceso':
-        return <AlertCircle size={16} className="text-justice-600" />;
+        return <AlertCircle size={16} className="text-neutral-600" />;
       case 'Pendiente':
-        return <Clock size={16} className="text-justice-600" />;
+        return <Clock size={16} className="text-neutral-600" />;
       case 'Finalizada':
-        return <CheckCircle size={16} className="text-justice-600" />;
+        return <CheckCircle size={16} className="text-neutral-600" />;
       default:
-        return <XCircle size={16} className="text-justice-600" />;
+        return <XCircle size={16} className="text-neutral-600" />;
     }
   };
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Completada':
-        return 'bg-justice-100 text-justice-800 border-justice-200';
+        return 'bg-justice-100 text-neutral-600 border-justice-200';
       case 'En proceso':
-        return 'bg-justice-100 text-justice-800 border-justice-200';
+        return 'bg-justice-100 text-neutral-600 border-justice-200';
       case 'Pendiente':
-        return 'bg-justice-100 text-justice-800 border-justice-200';
+        return 'bg-justice-100 text-neutral-600 border-justice-200';
       case 'Finalizada':
-        return 'bg-justice-100 text-justice-800 border-justice-200';
+        return 'bg-justice-100 text-neutral-600 border-justice-200';
       default:
-        return 'bg-justice-100 text-justice-800 border-justice-200';
+        return 'bg-justice-100 text-neutral-600 border-justice-200';
     }
   };
 
@@ -123,38 +123,38 @@ const CommissionProfile: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <Card className="bg-gradient-to-br from-justice-50 to-justice-100 border-justice-200">
                 <CardContent className="p-6 text-center">
-                  <Users className="mx-auto mb-3 text-justice-600" size={32} />
-                  <div className="text-2xl font-bold text-justice-700 mb-1">{commission.candidatesCount}</div>
-                  <div className="text-justice-600 text-sm font-medium">Candidatos</div>
+                  <Users className="mx-auto mb-3 text-neutral-600" size={32} />
+                  <div className="text-2xl font-bold text-neutral-600 mb-1">{commission.candidatesCount}</div>
+                  <div className="text-neutral-600 text-sm font-medium">Candidatos</div>
                 </CardContent>
               </Card>
               <Card className="bg-gradient-to-br from-justice-50 to-justice-100 border-justice-200">
                 <CardContent className="p-6 text-center">
-                  <Award className="mx-auto mb-3 text-justice-600" size={32} />
-                  <div className="text-2xl font-bold text-justice-700 mb-1">{commission.positionsAvailable}</div>
-                  <div className="text-justice-600 text-sm font-medium">Plazas</div>
+                  <Award className="mx-auto mb-3 text-neutral-600" size={32} />
+                  <div className="text-2xl font-bold text-neutral-600 mb-1">{commission.positionsAvailable}</div>
+                  <div className="text-neutral-600 text-sm font-medium">Plazas</div>
                 </CardContent>
               </Card>
-              <Card className="bg-gradient-to-br from-indigo-50 to-indigo-100 border-indigo-200">
+              <Card className="bg-gradient-to-br  from-justice-50 to-justice-100 border-justice-200">
                 <CardContent className="p-6 text-center">
-                  <Calendar className="mx-auto mb-3 text-indigo-600" size={32} />
-                  <div className="text-2xl font-bold text-indigo-700 mb-1">{commission.phases.length}</div>
-                  <div className="text-indigo-600 text-sm font-medium">Fases</div>
+                  <Calendar className="mx-auto mb-3 text-neutral-600" size={32} />
+                  <div className="text-2xl font-bold text-neutral-700 mb-1">{commission.phases.length}</div>
+                  <div className="text-neutral-600 text-sm font-medium">Fases</div>
                 </CardContent>
               </Card>
-              <Card className="bg-gradient-to-br from-amber-50 to-amber-100 border-amber-200">
+              <Card className="bg-gradient-to-br  from-justice-50 to-justice-100 border-justice-200">
                 <CardContent className="p-6 text-center">
-                  <TrendingUp className="mx-auto mb-3 text-amber-600" size={32} />
-                  <div className="text-2xl font-bold text-amber-700 mb-1">{getPhaseProgress()}%</div>
-                  <div className="text-amber-600 text-sm font-medium">Progreso</div>
+                  <TrendingUp className="mx-auto mb-3 text-neutral-600" size={32} />
+                  <div className="text-2xl font-bold text-neutral-700 mb-1">{getPhaseProgress()}%</div>
+                  <div className="text-amneutralber-600 text-sm font-medium">Progreso</div>
                 </CardContent>
               </Card>
             </div>
 
             <Card className="border-l-4 border-l-justice-600">
               <CardHeader>
-                <h3 className="text-xl font-bold text-justice-900 flex items-center">
-                  <TrendingUp size={24} className="mr-3 text-justice-600" />
+                <h3 className="text-xl font-bold text-neutral-600 flex items-center">
+                  <TrendingUp size={24} className="mr-3 text-neutral-600" />
                   Estado Actual del Proceso
                 </h3>
               </CardHeader>
@@ -162,8 +162,8 @@ const CommissionProfile: React.FC = () => {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-5 bg-gradient-to-r from-justice-50 to-slate-50 rounded-lg border">
                     <div>
-                      <h4 className="font-bold text-justice-900 mb-1">Estado General</h4>
-                      <p className="text-justice-600 text-sm">{commission.description}</p>
+                      <h4 className="font-bold text-neutral-600 mb-1">Estado General</h4>
+                      <p className="text-neutral-600 text-sm">{commission.description}</p>
                     </div>
                     <span className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-bold border ${getStatusColor(commission.status)}`}>
                       {getStatusIcon(commission.status)}
@@ -173,13 +173,13 @@ const CommissionProfile: React.FC = () => {
 
                   {getCurrentPhase() && (
                     <div className="p-5 bg-gradient-to-r from-justice-50 to-indigo-50 rounded-lg border-2 border-justice-200">
-                      <h4 className="font-bold text-justice-900 mb-2 flex items-center">
+                      <h4 className="font-bold text-neutral-600 mb-2 flex items-center">
                         <Clock size={20} className="mr-2" />
                         Fase Actual
                       </h4>
-                      <p className="text-justice-800 font-semibold text-lg">{getCurrentPhase()!.name}</p>
-                      <p className="text-justice-700 mt-1">{getCurrentPhase()!.description}</p>
-                      <div className="mt-3 flex items-center text-sm text-justice-600 bg-white px-3 py-2 rounded-md inline-flex">
+                      <p className="text-neutral-600 font-semibold text-lg">{getCurrentPhase()!.name}</p>
+                      <p className="text-neutral-600 mt-1">{getCurrentPhase()!.description}</p>
+                      <div className="mt-3 flex items-center text-sm text-neutral-600 bg-white px-3 py-2 rounded-md inline-flex">
                         <Calendar size={16} className="mr-2" />
                         {formatDate(getCurrentPhase()!.startDate)} - {formatDate(getCurrentPhase()!.endDate)}
                       </div>
@@ -206,23 +206,23 @@ const CommissionProfile: React.FC = () => {
 
             <Card>
               <CardHeader>
-                <h3 className="text-xl font-bold text-justice-900">Propósito y Descripción</h3>
+                <h3 className="text-xl font-bold text-neutral-600">Propósito y Descripción</h3>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   <div className="p-5 bg-gradient-to-r from-justice-50 to-indigo-50 rounded-lg border border-justice-100">
-                    <h4 className="font-bold text-justice-900 mb-3 flex items-center">
-                      <Target size={20} className="mr-2 text-justice-600" />
+                    <h4 className="font-bold text-neutral-600 mb-3 flex items-center">
+                      <Target size={20} className="mr-2 text-neutral-600" />
                       Propósito
                     </h4>
-                    <p className="text-justice-800 leading-relaxed">{commission.purpose}</p>
+                    <p className="text-neutral-600 leading-relaxed">{commission.purpose}</p>
                   </div>
                   <div className="p-5 bg-gradient-to-r from-justice-50 to-slate-50 rounded-lg border border-justice-200">
-                    <h4 className="font-bold text-justice-900 mb-3 flex items-center">
-                      <FileText size={20} className="mr-2 text-justice-600" />
+                    <h4 className="font-bold text-neutral-600 mb-3 flex items-center">
+                      <FileText size={20} className="mr-2 text-neutral-600" />
                       Descripción Detallada
                     </h4>
-                    <p className="text-justice-800 leading-relaxed">{commission.description}</p>
+                    <p className="text-neutral-600 leading-relaxed">{commission.description}</p>
                   </div>
                 </div>
               </CardContent>
@@ -230,16 +230,16 @@ const CommissionProfile: React.FC = () => {
 
             <Card className="border-l-4 border-l-justice-600">
               <CardHeader>
-                <h3 className="text-xl font-bold text-justice-900 flex items-center">
-                  <TrendingUp size={24} className="mr-3 text-justice-600" />
+                <h3 className="text-xl font-bold text-neutral-600 flex items-center">
+                  <TrendingUp size={24} className="mr-3 text-neutral-600" />
                   Progreso del Proceso
                 </h3>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-bold text-justice-700">Progreso General</span>
-                    <span className="text-lg font-bold text-justice-900">{getPhaseProgress()}%</span>
+                    <span className="text-sm font-bold text-neutral-600">Progreso General</span>
+                    <span className="text-lg font-bold text-neutral-600">{getPhaseProgress()}%</span>
                   </div>
                   <div className="w-full bg-justice-200 rounded-full h-4 shadow-inner">
                     <div
@@ -252,8 +252,8 @@ const CommissionProfile: React.FC = () => {
                       <div key={index} className="flex items-center space-x-3 p-3 bg-gradient-to-r from-justice-50 to-slate-50 rounded-lg border">
                         {getStatusIcon(phase.status)}
                         <div className="flex-1">
-                          <div className="text-sm font-semibold text-justice-900">{phase.name}</div>
-                          <div className="text-xs text-justice-600">{formatDate(phase.startDate)}</div>
+                          <div className="text-sm font-semibold text-neutral-600">{phase.name}</div>
+                          <div className="text-xs text-neutral-600">{formatDate(phase.startDate)}</div>
                         </div>
                       </div>
                     ))}
@@ -268,8 +268,8 @@ const CommissionProfile: React.FC = () => {
         return (
           <Card className="border-l-4 border-l-justice-600">
             <CardHeader>
-              <h3 className="text-xl font-bold text-justice-900 flex items-center">
-                <Calendar size={24} className="mr-3 text-justice-600" />
+              <h3 className="text-xl font-bold text-neutral-600 flex items-center">
+                <Calendar size={24} className="mr-3 text-neutral-600" />
                 Cronograma Detallado
               </h3>
             </CardHeader>
@@ -279,21 +279,21 @@ const CommissionProfile: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <span className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Fecha de Inicio</span>
-                      <span className="text-justice-900 font-bold text-lg">{formatDate(commission.startDate)}</span>
+                      <span className="text-neutral-600 font-bold text-lg">{formatDate(commission.startDate)}</span>
                     </div>
                     <div>
                       <span className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Fecha de Finalización</span>
-                      <span className="text-justice-900 font-bold text-lg">{formatDate(commission.endDate)}</span>
+                      <span className="text-neutral-600 font-bold text-lg">{formatDate(commission.endDate)}</span>
                     </div>
                     <div>
                       <span className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Duración Total</span>
-                      <span className="text-justice-900 font-bold text-lg">
+                      <span className="text-neutral-600 font-bold text-lg">
                         {Math.ceil((new Date(commission.endDate).getTime() - new Date(commission.startDate).getTime()) / (1000 * 60 * 60 * 24))} días
                       </span>
                     </div>
                     <div>
                       <span className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Progreso</span>
-                      <span className="text-justice-900 font-bold text-lg">{getPhaseProgress()}% completado</span>
+                      <span className="text-neutral-600 font-bold text-lg">{getPhaseProgress()}% completado</span>
                     </div>
                   </div>
                 </div>
@@ -328,35 +328,35 @@ const CommissionProfile: React.FC = () => {
                               : 'border-justice-200 bg-white'
                           }`}>
                             <div className="flex items-center justify-between mb-3">
-                              <h4 className="text-xl font-bold text-justice-900">{phase.name}</h4>
+                              <h4 className="text-xl font-bold text-neutral-600">{phase.name}</h4>
                               <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-bold border ${getStatusColor(phase.status)}`}>
                                 {phase.status}
                               </span>
                             </div>
-                            <p className="text-justice-700 mb-4 leading-relaxed">{phase.description}</p>
+                            <p className="text-neutral-600 mb-4 leading-relaxed">{phase.description}</p>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                               <div className="bg-white p-3 rounded-md border">
                                 <span className="block text-xs font-semibold text-justice-500 uppercase mb-1">Inicio</span>
-                                <div className="text-justice-900 font-semibold">{formatDate(phase.startDate)}</div>
+                                <div className="text-neutral-600 font-semibold">{formatDate(phase.startDate)}</div>
                               </div>
                               <div className="bg-white p-3 rounded-md border">
                                 <span className="block text-xs font-semibold text-justice-500 uppercase mb-1">Finalización</span>
-                                <div className="text-justice-900 font-semibold">{formatDate(phase.endDate)}</div>
+                                <div className="text-neutral-600 font-semibold">{formatDate(phase.endDate)}</div>
                               </div>
                               <div className="bg-white p-3 rounded-md border">
                                 <span className="block text-xs font-semibold text-justice-500 uppercase mb-1">Duración</span>
-                                <div className="text-justice-900 font-semibold">{duration} días</div>
+                                <div className="text-neutral-600 font-semibold">{duration} días</div>
                               </div>
                             </div>
 
                             {phase.status === 'En proceso' && (
                               <div className="mt-4 p-4 bg-justice-100 rounded-lg border border-justice-200">
-                                <div className="flex items-center text-justice-800 font-bold mb-1">
+                                <div className="flex items-center text-neutral-600 font-bold mb-1">
                                   <Clock size={18} className="mr-2" />
                                   Fase en curso
                                 </div>
-                                <p className="text-justice-700 text-sm">
+                                <p className="text-neutral-600 text-sm">
                                   Esta fase está actualmente en desarrollo. Consulta regularmente para actualizaciones.
                                 </p>
                               </div>
@@ -364,11 +364,11 @@ const CommissionProfile: React.FC = () => {
 
                             {phase.status === 'Completada' && (
                               <div className="mt-4 p-4 bg-justice-100 rounded-lg border border-justice-200">
-                                <div className="flex items-center text-justice-800 font-bold mb-1">
+                                <div className="flex items-center text-neutral-600 font-bold mb-1">
                                   <CheckCircle size={18} className="mr-2" />
                                   Fase completada
                                 </div>
-                                <p className="text-justice-700 text-sm">
+                                <p className="text-neutral-600 text-sm">
                                   Esta fase ha sido finalizada exitosamente según el cronograma establecido.
                                 </p>
                               </div>
@@ -389,8 +389,8 @@ const CommissionProfile: React.FC = () => {
           <div className="space-y-6">
             <Card className="border-l-4 border-l-justice-600">
               <CardHeader>
-                <h3 className="text-xl font-bold text-justice-900 flex items-center">
-                  <Users size={24} className="mr-3 text-justice-600" />
+                <h3 className="text-xl font-bold text-neutral-600 flex items-center">
+                  <Users size={24} className="mr-3 text-neutral-600" />
                   Integrantes de la Comisión
                 </h3>
               </CardHeader>
@@ -407,21 +407,21 @@ const CommissionProfile: React.FC = () => {
                           />
                         ) : (
                           <div className="w-16 h-16 rounded-full bg-gradient-to-br from-justice-100 to-indigo-100 flex items-center justify-center border-4 border-justice-200">
-                            <Users size={28} className="text-justice-600" />
+                            <Users size={28} className="text-neutral-600" />
                           </div>
                         )}
                         <div className="flex-1">
-                          <h4 className="font-bold text-justice-900 text-lg mb-1">{member.name}</h4>
-                          <p className="text-justice-600 font-semibold mb-2">{member.role}</p>
-                          <p className="text-justice-600 text-sm">{member.institution}</p>
+                          <h4 className="font-bold text-neutral-600 text-lg mb-1">{member.name}</h4>
+                          <p className="text-neutral-600 font-semibold mb-2">{member.role}</p>
+                          <p className="text-neutral-600 text-sm">{member.institution}</p>
 
                           <div className="mt-3">
                             <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold border ${
                               member.role === 'Presidente'
-                                ? 'bg-justice-100 text-justice-800 border-justice-200'
+                                ? 'bg-justice-100 text-neutral-600 border-justice-200'
                                 : member.role === 'Secretaria' || member.role === 'Secretario'
-                                ? 'bg-justice-100 text-justice-800 border-justice-200'
-                                : 'bg-justice-100 text-justice-800 border-justice-200'
+                                ? 'bg-justice-100 text-neutral-600 border-justice-200'
+                                : 'bg-justice-100 text-neutral-600 border-justice-200'
                             }`}>
                               {member.role}
                             </span>
@@ -436,17 +436,17 @@ const CommissionProfile: React.FC = () => {
 
             <Card className="bg-gradient-to-r from-justice-50 to-indigo-50 border-justice-200">
               <CardHeader>
-                <h4 className="font-bold text-justice-900">Estructura de la Comisión</h4>
+                <h4 className="font-bold text-neutral-600">Estructura de la Comisión</h4>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-center justify-between p-4 bg-white rounded-lg border-2 border-justice-200 shadow-sm">
-                    <span className="font-bold text-justice-900">Total de Integrantes</span>
-                    <span className="text-justice-600 font-bold text-2xl">{commission.members.length}</span>
+                    <span className="font-bold text-neutral-600">Total de Integrantes</span>
+                    <span className="text-neutral-600 font-bold text-2xl">{commission.members.length}</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-white rounded-lg border-2 border-justice-200 shadow-sm">
-                    <span className="font-bold text-justice-900">Instituciones</span>
-                    <span className="text-justice-600 font-bold text-2xl">
+                    <span className="font-bold text-neutral-600">Instituciones</span>
+                    <span className="text-neutral-600 font-bold text-2xl">
                       {new Set(commission.members.map(m => m.institution)).size}
                     </span>
                   </div>
@@ -460,7 +460,7 @@ const CommissionProfile: React.FC = () => {
         return (
           <Card className="border-l-4 border-l-amber-600">
             <CardHeader>
-              <h3 className="text-xl font-bold text-justice-900 flex items-center">
+              <h3 className="text-xl font-bold text-neutral-600 flex items-center">
                 <Award size={24} className="mr-3 text-amber-600" />
                 Candidatos Postulados
               </h3>
@@ -470,14 +470,14 @@ const CommissionProfile: React.FC = () => {
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-gradient-to-br from-justice-50 to-justice-100 p-6 rounded-lg text-center border border-justice-200">
-                      <div className="text-3xl font-bold text-justice-700">{commissionCandidates.length}</div>
-                      <div className="text-justice-600 text-sm font-medium mt-1">Candidatos Totales</div>
+                      <div className="text-3xl font-bold text-neutral-600">{commissionCandidates.length}</div>
+                      <div className="text-neutral-600 text-sm font-medium mt-1">Candidatos Totales</div>
                     </div>
                     <div className="bg-gradient-to-br from-justice-50 to-justice-100 p-6 rounded-lg text-center border border-justice-200">
-                      <div className="text-3xl font-bold text-justice-700">
+                      <div className="text-3xl font-bold text-neutral-600">
                         {commissionCandidates.filter(c => c.status === 'Activo').length}
                       </div>
-                      <div className="text-justice-600 text-sm font-medium mt-1">Candidatos Activos</div>
+                      <div className="text-neutral-600 text-sm font-medium mt-1">Candidatos Activos</div>
                     </div>
                     <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg text-center border border-indigo-200">
                       <div className="text-3xl font-bold text-indigo-700">
@@ -500,17 +500,17 @@ const CommissionProfile: React.FC = () => {
                               className="w-14 h-14 rounded-full object-cover border-2 border-justice-200"
                             />
                             <div className="flex-1">
-                              <h4 className="font-bold text-justice-900 leading-tight">{candidate.name}</h4>
-                              <p className="text-sm text-justice-600 font-medium">{candidate.role}</p>
+                              <h4 className="font-bold text-neutral-600 leading-tight">{candidate.name}</h4>
+                              <p className="text-sm text-neutral-600 font-medium">{candidate.role}</p>
                             </div>
                           </div>
-                          <p className="text-sm text-justice-700 mb-4 line-clamp-2 leading-relaxed">{candidate.description}</p>
+                          <p className="text-sm text-neutral-600 mb-4 line-clamp-2 leading-relaxed">{candidate.description}</p>
                           <div className="space-y-2 text-xs">
-                            <div className="flex items-center text-justice-600">
+                            <div className="flex items-center text-neutral-600">
                               <Award size={14} className="mr-2 text-amber-500" />
                               <span className="font-medium">{candidate.specialization}</span>
                             </div>
-                            <div className="flex items-center text-justice-600">
+                            <div className="flex items-center text-neutral-600">
                               <Clock size={14} className="mr-2 text-justice-500" />
                               <span className="font-medium">{candidate.yearsOfExperience} años exp.</span>
                             </div>
@@ -518,8 +518,8 @@ const CommissionProfile: React.FC = () => {
                           <div className="mt-4 pt-4 border-t">
                             <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold border ${
                               candidate.status === 'Activo'
-                                ? 'bg-justice-100 text-justice-800 border-justice-200'
-                                : 'bg-justice-100 text-justice-800 border-justice-200'
+                                ? 'bg-justice-100 text-neutral-600 border-justice-200'
+                                : 'bg-justice-100 text-neutral-600 border-justice-200'
                             }`}>
                               {candidate.status}
                             </span>
@@ -541,10 +541,10 @@ const CommissionProfile: React.FC = () => {
               ) : (
                 <div className="text-center py-12">
                   <Award size={64} className="mx-auto text-justice-300 mb-4" />
-                  <h4 className="text-lg font-bold text-justice-900 mb-2">
+                  <h4 className="text-lg font-bold text-neutral-600 mb-2">
                     No hay candidatos registrados
                   </h4>
-                  <p className="text-justice-600">
+                  <p className="text-neutral-600">
                     Los candidatos aparecerán aquí una vez que se abra el proceso de postulación.
                   </p>
                 </div>
@@ -557,8 +557,8 @@ const CommissionProfile: React.FC = () => {
         return (
           <Card className="border-l-4 border-l-justice-600">
             <CardHeader>
-              <h3 className="text-xl font-bold text-justice-900 flex items-center">
-                <FileText size={24} className="mr-3 text-justice-600" />
+              <h3 className="text-xl font-bold text-neutral-600 flex items-center">
+                <FileText size={24} className="mr-3 text-neutral-600" />
                 Documentos del Proceso
               </h3>
             </CardHeader>
@@ -572,8 +572,8 @@ const CommissionProfile: React.FC = () => {
                           <FileText size={28} className="text-white" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-justice-900 text-lg">{doc.title}</h4>
-                          <p className="text-sm text-justice-600">Tipo: <span className="font-semibold">{doc.type}</span></p>
+                          <h4 className="font-bold text-neutral-600 text-lg">{doc.title}</h4>
+                          <p className="text-sm text-neutral-600">Tipo: <span className="font-semibold">{doc.type}</span></p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-3">
@@ -600,10 +600,10 @@ const CommissionProfile: React.FC = () => {
               ) : (
                 <div className="text-center py-12">
                   <FileText size={64} className="mx-auto text-justice-300 mb-4" />
-                  <h4 className="text-lg font-bold text-justice-900 mb-2">
+                  <h4 className="text-lg font-bold text-neutral-600 mb-2">
                     No hay documentos disponibles
                   </h4>
-                  <p className="text-justice-600">
+                  <p className="text-neutral-600">
                     Los documentos del proceso se publicarán aquí cuando estén disponibles.
                   </p>
                 </div>
@@ -672,8 +672,8 @@ const CommissionProfile: React.FC = () => {
                   className={`
                     flex items-center py-4 px-2 border-b-4 font-semibold text-sm transition-all whitespace-nowrap
                     ${activeTab === tab.id
-                      ? 'border-justice-600 text-justice-600'
-                      : 'border-transparent text-justice-500 hover:text-justice-700 hover:border-justice-300'
+                      ? 'border-justice-600 text-neutral-600'
+                      : 'border-transparent text-justice-500 hover:text-neutral-600 hover:border-justice-300'
                     }
                   `}
                 >
@@ -694,7 +694,7 @@ const CommissionProfile: React.FC = () => {
             <CardContent className="py-6">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <span className="text-justice-700 font-semibold">Compartir perfil:</span>
+                  <span className="text-neutral-600 font-semibold">Compartir perfil:</span>
                   <SocialShare
                     url={profileUrl}
                     title={shareTitle}
@@ -736,11 +736,11 @@ const CommissionProfile: React.FC = () => {
                   <Info className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-justice-900 mb-2 text-lg">Base legal de la información</h3>
-                  <p className="text-justice-800 leading-relaxed">
+                  <h3 className="font-bold text-neutral-600 mb-2 text-lg">Base legal de la información</h3>
+                  <p className="text-neutral-600 leading-relaxed">
                     La información publicada en Justiciapedia se fundamenta en los artículos 30 y 31 de la Constitución Política de la República de Guatemala, que garantizan el derecho de toda persona a acceder a la información pública y a conocer los registros estatales.
                   </p>
-                  <p className="text-justice-800 leading-relaxed mt-3">
+                  <p className="text-neutral-600 leading-relaxed mt-3">
                     Justiciapedia utiliza únicamente información obtenida mediante mecanismos legales de acceso a la información pública y respeta los límites establecidos por la ley en materia de confidencialidad y protección de datos.
                   </p>
                 </div>
@@ -748,25 +748,25 @@ const CommissionProfile: React.FC = () => {
 
               <div className="border-t-2 border-justice-200 pt-6 mt-6 space-y-6">
                 <div className="bg-white rounded-lg p-5 shadow-sm">
-                  <h4 className="font-bold text-justice-900 mb-3 flex items-center">
+                  <h4 className="font-bold text-neutral-600 mb-3 flex items-center">
                     <div className="w-8 h-8 bg-justice-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-justice-600 font-bold text-sm">30</span>
+                      <span className="text-neutral-600 font-bold text-sm">30</span>
                     </div>
                     Artículo 30: Publicidad de los actos administrativos
                   </h4>
-                  <p className="text-justice-700 leading-relaxed pl-11">
+                  <p className="text-neutral-600 leading-relaxed pl-11">
                     Todos los actos de la administración son públicos. Los interesados tienen derecho a obtener, en cualquier tiempo, informes, copias, reproducciones y certificaciones que soliciten y la exhibición de los expedientes que deseen consultar, salvo que se trate de asuntos militares o diplomáticos de seguridad nacional, o de datos suministrados por particulares bajo garantía de confidencia.
                   </p>
                 </div>
 
                 <div className="bg-white rounded-lg p-5 shadow-sm">
-                  <h4 className="font-bold text-justice-900 mb-3 flex items-center">
+                  <h4 className="font-bold text-neutral-600 mb-3 flex items-center">
                     <div className="w-8 h-8 bg-justice-100 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-justice-600 font-bold text-sm">31</span>
+                      <span className="text-neutral-600 font-bold text-sm">31</span>
                     </div>
                     Artículo 31: Acceso a archivos y registros estatales
                   </h4>
-                  <p className="text-justice-700 leading-relaxed pl-11">
+                  <p className="text-neutral-600 leading-relaxed pl-11">
                     Toda persona tiene el derecho de conocer lo que de ella conste en archivos, fichas o cualquier otra forma de registros estatales, y la finalidad a que se dedica esta información, así como a corrección, rectificación y actualización. Quedan prohibidos los registros y archivos de filiación política, excepto los propios de las autoridades electorales y de los partidos políticos.
                   </p>
                 </div>

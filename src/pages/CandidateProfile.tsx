@@ -33,7 +33,7 @@ const CandidateProfile: React.FC = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <User size={64} className="mx-auto text-justice-400 mb-4" />
-          <h1 className="text-2xl font-bold text-justice-900 mb-2">Aspirante no encontrado</h1>
+          <h1 className="text-2xl font-bold text-neutral-600 mb-2">Aspirante no encontrado</h1>
           <p className="text-justice-600 mb-4">El aspirante que buscas no existe o ha sido removido.</p>
           <Link
             to="/candidatos"
@@ -58,13 +58,13 @@ const CandidateProfile: React.FC = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Activo':
-        return 'bg-justice-100 text-justice-800 border-justice-200';
+        return 'bg-justice-50 text-neutral-600 border-justice-200';
       case 'Inactivo':
-        return 'bg-justice-100 text-justice-800 border-justice-200';
+        return 'bg-justice-50 text-neutral-600 border-justice-200';
       case 'Retirado':
-        return 'bg-justice-100 text-justice-800 border-justice-200';
+        return 'bg-justice-50 text-neutral-600 border-justice-200';
       default:
-        return 'bg-justice-100 text-justice-800 border-justice-200';
+        return 'bg-justice-50 text-neutral-600 border-justice-200';
     }
   };
 
@@ -77,14 +77,14 @@ const CandidateProfile: React.FC = () => {
               <Card className="bg-gradient-to-br from-justice-50 to-justice-100 border-justice-200">
                 <CardContent className="p-6 text-center">
                   <Briefcase className="mx-auto mb-3 text-justice-600" size={32} />
-                  <div className="text-2xl font-bold text-justice-700 mb-1">{candidate.yearsOfExperience}</div>
+                  <div className="text-2xl font-bold text-neutral-600 mb-1">{candidate.yearsOfExperience}</div>
                   <div className="text-justice-600 text-sm font-medium">Años de Experiencia</div>
                 </CardContent>
               </Card>
               <Card className="bg-gradient-to-br from-justice-50 to-justice-100 border-justice-200">
                 <CardContent className="p-6 text-center">
                   <GraduationCap className="mx-auto mb-3 text-justice-600" size={32} />
-                  <div className="text-2xl font-bold text-justice-700 mb-1">{candidate.education?.length || 0}</div>
+                  <div className="text-2xl font-bold text-neutral-600 mb-1">{candidate.education?.length || 0}</div>
                   <div className="text-justice-600 text-sm font-medium">Títulos Académicos</div>
                 </CardContent>
               </Card>
@@ -99,7 +99,7 @@ const CandidateProfile: React.FC = () => {
 
             <Card>
               <CardHeader>
-                <h3 className="text-xl font-bold text-justice-900 flex items-center">
+                <h3 className="text-xl font-bold text-neutral-600 flex items-center">
                   <User size={24} className="mr-3 text-justice-600" />
                   Información General
                 </h3>
@@ -108,17 +108,17 @@ const CandidateProfile: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-5">
                     <div className="border-b border-justice-100 pb-4">
-                      <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Nombre Completo</label>
-                      <p className="text-justice-900 font-semibold text-lg">{candidate.name}</p>
+                      <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Nombre Completo</label>
+                      <p className="text-neutral-600 font-semibold text-lg">{candidate.name}</p>
                     </div>
                     <div className="border-b border-justice-100 pb-4">
-                      <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Cargo al que Aspira</label>
-                      <p className="text-justice-900 font-medium">{candidate.role}</p>
+                      <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Cargo al que Aspira</label>
+                      <p className="text-neutral-600 font-medium">{candidate.role}</p>
                     </div>
                     {candidate.institution && (
                       <div className="border-b border-justice-100 pb-4">
-                        <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Institución</label>
-                        <div className="flex items-center text-justice-900 font-medium">
+                        <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Institución</label>
+                        <div className="flex items-center text-neutral-600 font-medium">
                           <Building2 size={16} className="mr-2 text-justice-600" />
                           {candidate.institution}
                         </div>
@@ -126,8 +126,8 @@ const CandidateProfile: React.FC = () => {
                     )}
                     {candidate.election && (
                       <div className="border-b border-justice-100 pb-4">
-                        <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Elección</label>
-                        <div className="flex items-center text-justice-900 font-medium">
+                        <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Elección</label>
+                        <div className="flex items-center text-neutral-600 font-medium">
                           <Calendar size={16} className="mr-2 text-justice-600" />
                           {candidate.election}
                         </div>
@@ -135,46 +135,46 @@ const CandidateProfile: React.FC = () => {
                     )}
                     {candidate.commission && (
                       <div className="border-b border-justice-100 pb-4">
-                        <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Comisión</label>
-                        <p className="text-justice-900 font-medium">{candidate.commission}</p>
+                        <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Comisión</label>
+                        <p className="text-neutral-600 font-medium">{candidate.commission}</p>
                       </div>
                     )}
                     {candidate.profession && (
                       <div className="border-b border-justice-100 pb-4">
-                        <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Profesión</label>
-                        <p className="text-justice-900 font-medium">{candidate.profession}</p>
+                        <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Profesión</label>
+                        <p className="text-neutral-600 font-medium">{candidate.profession}</p>
                       </div>
                     )}
                   </div>
                   <div className="space-y-5">
                     <div className="border-b border-justice-100 pb-4">
-                      <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Estado</label>
+                      <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Estado</label>
                       <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-semibold border ${getStatusColor(candidate.status)}`}>
                         {candidate.status}
                       </span>
                     </div>
                     {candidate.gender && (
                       <div className="border-b border-justice-100 pb-4">
-                        <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Sexo</label>
-                        <p className="text-justice-900 font-medium">{candidate.gender}</p>
+                        <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Sexo</label>
+                        <p className="text-neutral-600 font-medium">{candidate.gender}</p>
                       </div>
                     )}
                     {candidate.maritalStatus && (
                       <div className="border-b border-justice-100 pb-4">
-                        <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Estado Civil</label>
-                        <p className="text-justice-900 font-medium">{candidate.maritalStatus}</p>
+                        <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Estado Civil</label>
+                        <p className="text-neutral-600 font-medium">{candidate.maritalStatus}</p>
                       </div>
                     )}
                     {candidate.barAssociationNumber && (
                       <div className="border-b border-justice-100 pb-4">
-                        <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">No. Colegiado</label>
-                        <p className="text-justice-900 font-mono font-bold text-justice-600">{candidate.barAssociationNumber}</p>
+                        <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">No. Colegiado</label>
+                        <p className="text-neutral-600 font-mono font-bold text-justice-600">{candidate.barAssociationNumber}</p>
                       </div>
                     )}
                     {candidate.department && (
                       <div className="border-b border-justice-100 pb-4">
-                        <label className="block text-xs font-semibold text-justice-500 uppercase tracking-wide mb-2">Departamento</label>
-                        <div className="flex items-center text-justice-900 font-medium">
+                        <label className="block text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-2">Departamento</label>
+                        <div className="flex items-center text-neutral-600 font-medium">
                           <MapPin size={16} className="mr-2 text-justice-600" />
                           {candidate.department}
                         </div>
@@ -184,8 +184,8 @@ const CandidateProfile: React.FC = () => {
                 </div>
                 {(candidate.summary || candidate.description) && (
                   <div className="mt-8 p-6 bg-gradient-to-r from-justice-50 to-indigo-50 rounded-lg border border-justice-100">
-                    <label className="block text-sm font-bold text-justice-900 mb-3">Perfil Profesional</label>
-                    <p className="text-justice-800 leading-relaxed whitespace-pre-wrap">{candidate.summary || candidate.description}</p>
+                    <label className="block text-sm font-bold text-neutral-600 mb-3">Perfil Profesional</label>
+                    <p className="text-neutral-600 leading-relaxed whitespace-pre-wrap">{candidate.summary || candidate.description}</p>
                   </div>
                 )}
               </CardContent>
@@ -194,7 +194,7 @@ const CandidateProfile: React.FC = () => {
             {candidate.humanProjection && (
               <Card className="border-l-4 border-l-justice-600">
                 <CardHeader>
-                  <h3 className="text-xl font-bold text-justice-900 flex items-center">
+                  <h3 className="text-xl font-bold text-neutral-600 flex items-center">
                     <Star size={24} className="mr-3 text-amber-500" />
                     Proyección Humana
                   </h3>
@@ -204,12 +204,12 @@ const CandidateProfile: React.FC = () => {
                     const items = candidate.humanProjection.split(/[|\.]/).map(item => item.trim()).filter(item => item);
                     if (items.length > 1) {
                       return (
-                        <ul className="list-disc list-inside text-justice-800 leading-relaxed text-lg space-y-2">
+                        <ul className="list-disc list-inside text-neutral-600 leading-relaxed text-lg space-y-2">
                           {items.map((item, index) => <li key={index}>{item}</li>)}
                         </ul>
                       );
                     } else {
-                      return <p className="text-justice-800 leading-relaxed whitespace-pre-wrap text-lg">{candidate.humanProjection}</p>;
+                      return <p className="text-neutral-600 leading-relaxed whitespace-pre-wrap text-lg">{candidate.humanProjection}</p>;
                     }
                   })()}
                 </CardContent>
@@ -219,7 +219,7 @@ const CandidateProfile: React.FC = () => {
             {candidate.certifications && candidate.certifications.length > 0 && (
               <Card>
                 <CardHeader>
-                  <h3 className="text-xl font-bold text-justice-900 flex items-center">
+                  <h3 className="text-xl font-bold text-neutral-600 flex items-center">
                     <Award size={24} className="mr-3 text-justice-600" />
                     Certificaciones
                   </h3>
@@ -229,7 +229,7 @@ const CandidateProfile: React.FC = () => {
                     {candidate.certifications.map((cert, index) => (
                       <div key={index} className="flex items-center p-4 bg-gradient-to-r from-justice-50 to-justice-50 rounded-lg border border-justice-200 hover:shadow-md transition-all">
                         <Award size={20} className="mr-3 text-justice-600 flex-shrink-0" />
-                        <span className="text-justice-900 font-medium">{cert}</span>
+                        <span className="text-neutral-600 font-medium">{cert}</span>
                       </div>
                     ))}
                   </div>
@@ -243,7 +243,7 @@ const CandidateProfile: React.FC = () => {
         return (
           <Card className="border-l-4 border-l-justice-600">
             <CardHeader>
-              <h3 className="text-xl font-bold text-justice-900 flex items-center">
+              <h3 className="text-xl font-bold text-neutral-600 flex items-center">
                 <Briefcase size={24} className="mr-3 text-justice-600" />
                 Experiencia Profesional
               </h3>
@@ -255,12 +255,12 @@ const CandidateProfile: React.FC = () => {
                     const items = candidate.professionalExperience.split(/[|\.]/).map(item => item.trim()).filter(item => item);
                     if (items.length > 1) {
                       return (
-                        <ul className="list-disc list-inside text-justice-800 leading-relaxed text-lg space-y-2">
+                        <ul className="list-disc list-inside text-neutral-600 leading-relaxed text-lg space-y-2">
                           {items.map((item, index) => <li key={index}>{item}</li>)}
                         </ul>
                       );
                     } else {
-                      return <p className="text-justice-800 leading-relaxed whitespace-pre-wrap text-lg">{candidate.professionalExperience}</p>;
+                      return <p className="text-neutral-600 leading-relaxed whitespace-pre-wrap text-lg">{candidate.professionalExperience}</p>;
                     }
                   })()}
                 </div>
@@ -270,7 +270,7 @@ const CandidateProfile: React.FC = () => {
                     <div key={index} className="relative pl-10 pb-8 border-l-2 border-justice-300 last:border-l-0 last:pb-0">
                       <div className="absolute -left-3 top-0 w-6 h-6 bg-justice-600 rounded-full ring-4 ring-justice-100"></div>
                       <div className="bg-gradient-to-br from-white to-justice-50 p-6 rounded-lg shadow-sm border border-justice-100 hover:shadow-md transition-shadow">
-                        <h4 className="font-bold text-justice-900 text-xl mb-2">{exp.position}</h4>
+                        <h4 className="font-bold text-neutral-600 text-xl mb-2">{exp.position}</h4>
                         <p className="text-justice-600 font-semibold mb-3 flex items-center">
                           <Building2 size={16} className="mr-2" />
                           {exp.institution}
@@ -279,7 +279,7 @@ const CandidateProfile: React.FC = () => {
                           <Calendar size={16} className="mr-2 text-justice-600" />
                           <span className="font-medium">{exp.period}</span>
                         </div>
-                        <p className="text-justice-700 leading-relaxed">{exp.description}</p>
+                        <p className="text-neutral-600 leading-relaxed">{exp.description}</p>
                       </div>
                     </div>
                   ))}
@@ -287,7 +287,7 @@ const CandidateProfile: React.FC = () => {
               ) : (
                 <div className="text-center py-12">
                   <Briefcase size={48} className="mx-auto text-justice-300 mb-4" />
-                  <p className="text-justice-500 italic">No hay data de experiencia profesional para esta sección.</p>
+                  <p className="text-neutral-600 italic">No hay data de experiencia profesional para esta sección.</p>
                 </div>
               )}
             </CardContent>
@@ -298,7 +298,7 @@ const CandidateProfile: React.FC = () => {
         return (
           <Card className="border-l-4 border-l-justice-600">
             <CardHeader>
-              <h3 className="text-xl font-bold text-justice-900 flex items-center">
+              <h3 className="text-xl font-bold text-neutral-600 flex items-center">
                 <GraduationCap size={24} className="mr-3 text-justice-600" />
                 Formación Académica
               </h3>
@@ -310,12 +310,12 @@ const CandidateProfile: React.FC = () => {
                     const items = candidate.academicExperience.split(/[|\.]/).map(item => item.trim()).filter(item => item);
                     if (items.length > 1) {
                       return (
-                        <ul className="list-disc list-inside text-justice-800 leading-relaxed text-lg space-y-2">
+                        <ul className="list-disc list-inside text-neutral-600 leading-relaxed text-lg space-y-2">
                           {items.map((item, index) => <li key={index}>{item}</li>)}
                         </ul>
                       );
                     } else {
-                      return <p className="text-justice-800 leading-relaxed whitespace-pre-wrap text-lg">{candidate.academicExperience}</p>;
+                      return <p className="text-neutral-600 leading-relaxed whitespace-pre-wrap text-lg">{candidate.academicExperience}</p>;
                     }
                   })()}
                 </div>
@@ -325,7 +325,7 @@ const CandidateProfile: React.FC = () => {
                     <div key={index} className="relative pl-10 pb-8 border-l-2 border-justice-300 last:border-l-0 last:pb-0">
                       <div className="absolute -left-3 top-0 w-6 h-6 bg-justice-600 rounded-full ring-4 ring-justice-100"></div>
                       <div className="bg-gradient-to-br from-white to-justice-50 p-6 rounded-lg shadow-sm border border-justice-100 hover:shadow-md transition-shadow">
-                        <h4 className="font-bold text-justice-900 text-xl mb-2">{edu.degree}</h4>
+                        <h4 className="font-bold text-neutral-600 text-xl mb-2">{edu.degree}</h4>
                         <p className="text-justice-600 font-semibold mb-3 flex items-center">
                           <GraduationCap size={16} className="mr-2" />
                           {edu.institution}
@@ -348,7 +348,7 @@ const CandidateProfile: React.FC = () => {
               ) : (
                 <div className="text-center py-12">
                   <GraduationCap size={48} className="mx-auto text-justice-300 mb-4" />
-                  <p className="text-justice-500 italic">No se ha proporcionado información de formación académica.</p>
+                  <p className="text-neutral-600 italic">No se ha proporcionado información de formación académica.</p>
                 </div>
               )}
             </CardContent>
@@ -361,7 +361,7 @@ const CandidateProfile: React.FC = () => {
             {candidate.publications && candidate.publications.length > 0 && (
               <Card className="border-l-4 border-l-indigo-600">
                 <CardHeader>
-                  <h3 className="text-xl font-bold text-justice-900 flex items-center">
+                  <h3 className="text-xl font-bold text-neutral-600 flex items-center">
                     <BookOpen size={24} className="mr-3 text-indigo-600" />
                     Publicaciones
                   </h3>
@@ -370,12 +370,12 @@ const CandidateProfile: React.FC = () => {
                   <div className="space-y-4">
                     {candidate.publications.map((pub, index) => (
                       <div key={index} className="p-5 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg border border-indigo-200 hover:shadow-md transition-all">
-                        <h4 className="font-bold text-justice-900 mb-2 text-lg">{pub.title}</h4>
+                        <h4 className="font-bold text-neutral-600 mb-2 text-lg">{pub.title}</h4>
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-justice-700 font-medium">{pub.publisher}</span>
+                          <span className="text-neutral-600 font-medium">{pub.publisher}</span>
                           <div className="flex items-center gap-3">
                             <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full font-semibold border border-indigo-200">{pub.type}</span>
-                            <span className="bg-white text-justice-700 px-3 py-1 rounded-full font-semibold border">{pub.year}</span>
+                            <span className="bg-white text-neutral-600 px-3 py-1 rounded-full font-semibold border">{pub.year}</span>
                           </div>
                         </div>
                       </div>
@@ -388,7 +388,7 @@ const CandidateProfile: React.FC = () => {
             {candidate.awards && candidate.awards.length > 0 && (
               <Card className="border-l-4 border-l-amber-500">
                 <CardHeader>
-                  <h3 className="text-xl font-bold text-justice-900 flex items-center">
+                  <h3 className="text-xl font-bold text-neutral-600 flex items-center">
                     <Star size={24} className="mr-3 text-amber-500" />
                     Reconocimientos y Premios
                   </h3>
@@ -400,9 +400,9 @@ const CandidateProfile: React.FC = () => {
                         <div className="flex items-start gap-3">
                           <Star size={24} className="text-amber-500 flex-shrink-0 mt-1" />
                           <div className="flex-1">
-                            <h4 className="font-bold text-justice-900 mb-2 text-lg">{award.title}</h4>
+                            <h4 className="font-bold text-neutral-600 mb-2 text-lg">{award.title}</h4>
                             <div className="flex items-center justify-between text-sm">
-                              <span className="text-justice-700 font-medium">{award.institution}</span>
+                              <span className="text-neutral-600 font-medium">{award.institution}</span>
                               <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-bold border border-amber-300">{award.year}</span>
                             </div>
                           </div>
@@ -420,7 +420,7 @@ const CandidateProfile: React.FC = () => {
                 <CardContent className="py-12">
                   <div className="text-center">
                     <Award size={48} className="mx-auto text-justice-300 mb-4" />
-                    <p className="text-justice-500 italic">No se han registrado logros o reconocimientos.</p>
+                    <p className="text-neutral-600 italic">No se han registrado logros o reconocimientos.</p>
                   </div>
                 </CardContent>
               </Card>
@@ -434,7 +434,7 @@ const CandidateProfile: React.FC = () => {
             {(candidate.cvUrl || candidate.fileUrl) && (
               <Card className="border-l-4 border-l-justice-600">
                 <CardHeader>
-                  <h3 className="text-xl font-bold text-justice-900 flex items-center">
+                  <h3 className="text-xl font-bold text-neutral-600 flex items-center">
                     <FileText size={24} className="mr-3 text-justice-600" />
                     Documentos Oficiales
                   </h3>
@@ -453,11 +453,11 @@ const CandidateProfile: React.FC = () => {
                             <FileText size={24} className="text-white" />
                           </div>
                           <div>
-                            <span className="font-bold text-justice-900 text-lg block">Currículum Vitae</span>
+                            <span className="font-bold text-neutral-600 text-lg block">Currículum Vitae</span>
                             <span className="text-justice-600 text-sm">Ver documento</span>
                           </div>
                         </div>
-                        <ExternalLink size={20} className="text-justice-600 group-hover:text-justice-700" />
+                        <ExternalLink size={20} className="text-justice-600 group-hover:text-neutral-600" />
                       </a>
                     )}
                     {candidate.fileUrl && (
@@ -472,11 +472,11 @@ const CandidateProfile: React.FC = () => {
                             <FileText size={24} className="text-white" />
                           </div>
                           <div>
-                            <span className="font-bold text-justice-900 text-lg block">Expediente Completo</span>
+                            <span className="font-bold text-neutral-600 text-lg block">Expediente Completo</span>
                             <span className="text-justice-600 text-sm">Ver documento</span>
                           </div>
                         </div>
-                        <ExternalLink size={20} className="text-justice-600 group-hover:text-justice-700" />
+                        <ExternalLink size={20} className="text-justice-600 group-hover:text-neutral-600" />
                       </a>
                     )}
                   </div>
@@ -487,7 +487,7 @@ const CandidateProfile: React.FC = () => {
             {(candidate.sourceText || candidate.sourceUrl) && (
               <Card className="bg-gradient-to-r from-justice-50 to-slate-50 border-justice-200">
                 <CardHeader>
-                  <h3 className="text-xl font-bold text-justice-900 flex items-center">
+                  <h3 className="text-xl font-bold text-neutral-600 flex items-center">
                     <Globe size={24} className="mr-3 text-justice-600" />
                     Fuente de Información
                   </h3>
@@ -497,7 +497,7 @@ const CandidateProfile: React.FC = () => {
                     {candidate.sourceText && (
                       <div>
                         <label className="block text-sm font-semibold text-justice-600 mb-2">Fuente</label>
-                        <p className="text-justice-900 font-medium">{candidate.sourceText}</p>
+                        <p className="text-neutral-600 font-medium">{candidate.sourceText}</p>
                       </div>
                     )}
                     {candidate.sourceUrl && (
@@ -523,7 +523,7 @@ const CandidateProfile: React.FC = () => {
                 <CardContent className="py-12">
                   <div className="text-center">
                     <FileText size={48} className="mx-auto text-justice-300 mb-4" />
-                    <p className="text-justice-500 italic">No hay documentos disponibles.</p>
+                    <p className="text-neutral-600 italic">No hay documentos disponibles.</p>
                   </div>
                 </CardContent>
               </Card>
@@ -604,7 +604,7 @@ const CandidateProfile: React.FC = () => {
                     flex items-center py-4 px-2 border-b-4 font-semibold text-sm transition-all whitespace-nowrap
                     ${activeTab === tab.id
                       ? 'border-justice-600 text-justice-600'
-                      : 'border-transparent text-justice-500 hover:text-justice-700 hover:border-justice-300'
+                      : 'border-transparent text-neutral-600 hover:text-neutral-600 hover:border-justice-300'
                     }
                   `}
                 >
@@ -625,7 +625,7 @@ const CandidateProfile: React.FC = () => {
             <CardContent className="py-6">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <span className="text-justice-700 font-semibold">Compartir perfil:</span>
+                  <span className="text-neutral-600 font-semibold">Compartir perfil:</span>
                   <SocialShare
                     url={profileUrl}
                     title={shareTitle}
@@ -670,11 +670,11 @@ const CandidateProfile: React.FC = () => {
                   <Info className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-justice-900 mb-2 text-lg">Base legal de la información</h3>
-                  <p className="text-justice-800 leading-relaxed">
+                  <h3 className="font-bold text-neutral-600 mb-2 text-lg">Base legal de la información</h3>
+                  <p className="text-neutral-600 leading-relaxed">
                     La información publicada en Justiciapedia se fundamenta en los artículos 30 y 31 de la Constitución Política de la República de Guatemala, que garantizan el derecho de toda persona a acceder a la información pública y a conocer los registros estatales.
                   </p>
-                  <p className="text-justice-800 leading-relaxed mt-3">
+                  <p className="text-neutral-600 leading-relaxed mt-3">
                     Justiciapedia utiliza únicamente información obtenida mediante mecanismos legales de acceso a la información pública y respeta los límites establecidos por la ley en materia de confidencialidad y protección de datos.
                   </p>
                 </div>
@@ -682,25 +682,25 @@ const CandidateProfile: React.FC = () => {
 
               <div className="border-t-2 border-justice-200 pt-6 mt-6 space-y-6">
                 <div className="bg-white rounded-lg p-5 shadow-sm">
-                  <h4 className="font-bold text-justice-900 mb-3 flex items-center">
-                    <div className="w-8 h-8 bg-justice-100 rounded-full flex items-center justify-center mr-3">
+                  <h4 className="font-bold text-neutral-600 mb-3 flex items-center">
+                    <div className="w-8 h-8 bg-justice-50 rounded-full flex items-center justify-center mr-3">
                       <span className="text-justice-600 font-bold text-sm">30</span>
                     </div>
                     Artículo 30: Publicidad de los actos administrativos
                   </h4>
-                  <p className="text-justice-700 leading-relaxed pl-11">
+                  <p className="text-neutral-600 leading-relaxed pl-11">
                     Todos los actos de la administración son públicos. Los interesados tienen derecho a obtener, en cualquier tiempo, informes, copias, reproducciones y certificaciones que soliciten y la exhibición de los expedientes que deseen consultar, salvo que se trate de asuntos militares o diplomáticos de seguridad nacional, o de datos suministrados por particulares bajo garantía de confidencia.
                   </p>
                 </div>
 
                 <div className="bg-white rounded-lg p-5 shadow-sm">
-                  <h4 className="font-bold text-justice-900 mb-3 flex items-center">
-                    <div className="w-8 h-8 bg-justice-100 rounded-full flex items-center justify-center mr-3">
+                  <h4 className="font-bold text-neutral-600 mb-3 flex items-center">
+                    <div className="w-8 h-8 bg-justice-50 rounded-full flex items-center justify-center mr-3">
                       <span className="text-justice-600 font-bold text-sm">31</span>
                     </div>
                     Artículo 31: Acceso a archivos y registros estatales
                   </h4>
-                  <p className="text-justice-700 leading-relaxed pl-11">
+                  <p className="text-neutral-600 leading-relaxed pl-11">
                     Toda persona tiene el derecho de conocer lo que de ella conste en archivos, fichas o cualquier otra forma de registros estatales, y la finalidad a que se dedica esta información, así como a corrección, rectificación y actualización. Quedan prohibidos los registros y archivos de filiación política, excepto los propios de las autoridades electorales y de los partidos políticos.
                   </p>
                 </div>

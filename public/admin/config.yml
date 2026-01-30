@@ -30,8 +30,19 @@ collections:
       - { label: "Duración de lectura (minutos)", name: "duracion_lectura", widget: "number", required: true, value_type: "int" }
       - { label: "Autor", name: "autor", widget: "string", required: true }
       - { label: "Texto del blog", name: "body", widget: "markdown", required: true }
+      - { label: "Tipo de blog", name: "tipo_blog", widget: "select", options: ["análisis", "noticias", "opinión", "reportaje", "entrevistas", "procesos de selección"], required: true }
+      - { label: "Etiquetas", name: "etiquetas", widget: "relation", collection: "etiquetas", search_fields: ["title"], value_field: "title", display_fields: ["title"], required: false, multiple: true }
+      - { label: "Destacado", name: "destacado", widget: "boolean", required: false, default: false }
       - { label: "Galería de imágenes y videos", name: "media", widget: "list", required: false, fields: [
           { label: "Tipo", name: "tipo", widget: "select", options: ["imagen", "video"], required: true },
           { label: "Archivo", name: "archivo", widget: "image", required: true },
           { label: "Descripción", name: "descripcion", widget: "string", required: false }
         ] }
+  - name: "etiquetas"
+    label: "Etiquetas"
+    folder: "src/content/etiquetas"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string", required: true }
+      - { label: "Descripción", name: "descripcion", widget: "string", required: true }

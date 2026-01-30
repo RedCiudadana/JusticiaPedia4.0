@@ -675,7 +675,7 @@ const Commissions: React.FC = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                   >
-                                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary-100 to-secondary-100 flex items-center justify-center flex-shrink-0 group-hover:from-secondary-200 group-hover:to-secondary-200 transition-all">
+                                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary-50 to-secondary-100 flex items-center justify-center flex-shrink-0 group-hover:from-secondary-200 group-hover:to-secondary-200 transition-all">
                                       <FileText size={24} className="text-secondary-600" />
                                     </div>
                                     <div className="flex-1 min-w-0">
