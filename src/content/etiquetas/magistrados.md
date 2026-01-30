@@ -1,4 +1,4 @@
 ---
-title: magistrados
+title: Magistrados
 descripcion: magistrados
 ---
