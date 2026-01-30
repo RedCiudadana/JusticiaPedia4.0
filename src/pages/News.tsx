@@ -5,7 +5,7 @@ import Card, { CardContent, CardHeader } from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import HeroSlider from '../components/ui/HeroSlider';
 import SocialShare from '../components/ui/SocialShare';
-import { newsArticles } from '../data/news';
+import { blogs, convertBlogsToNewsArticles } from '../data/news';
 import slider from '../assets/SLIDER_BANNERS/JP-04.png';
 import registro from '../assets/SLIDER_BANNERS/JP-03.png';
 
@@ -17,6 +17,9 @@ const News: React.FC = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const articlesPerPage = 9;
+
+  // Convertir blogs a formato NewsArticle para compatibilidad
+  const newsArticles = convertBlogsToNewsArticles(blogs);
 
   const slides = [
     {

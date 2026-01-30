@@ -6,12 +6,13 @@ import Card, { CardContent } from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import SocialShare from '../components/ui/SocialShare';
 import Loading from '../components/ui/Loading';
-import { newsArticles } from '../data/news';
+import { blogs, convertBlogsToNewsArticles } from '../data/news';
 
 const NewsArticle: React.FC = () => {
   const { articleId } = useParams<{ articleId: string }>();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  const newsArticles = React.useMemo(() => convertBlogsToNewsArticles(blogs), []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,7 +22,7 @@ const NewsArticle: React.FC = () => {
     return () => clearTimeout(timer);
   }, [articleId]);
 
-  const article = newsArticles.find(a => a.id === articleId);
+  const article = articleId ? newsArticles.find(a => a.id === articleId) : undefined;
 
   if (isLoading) {
     return <Loading fullScreen text="Cargando artículo..." />;
@@ -32,8 +33,8 @@ const NewsArticle: React.FC = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <BookOpen size={64} className="mx-auto text-justice-400 mb-4" />
-          <h1 className="text-2xl font-bold text-justice-900 mb-2">Artículo no encontrado</h1>
-          <p className="text-justice-600 mb-4">El artículo que buscas no existe o ha sido removido.</p>
+          <h1 className="text-2xl font-bold text-neutral-900 mb-2">Artículo no encontrado</h1>
+          <p className="text-neutral-600 mb-4">El artículo que buscas no existe o ha sido removido.</p>
           <Link
             to="/noticias"
             className="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors"
@@ -131,57 +132,21 @@ const NewsArticle: React.FC = () => {
                   {article.excerpt}
                 </p>
                 
-                {/* Mock content - in a real app, this would come from the article.content field */}
-                <div className="space-y-6 text-neutral-700 leading-relaxed">
-                  <p>
-                    El sistema judicial guatemalteco se encuentra en un momento crucial de transformación y modernización. 
-                    Los procesos de selección de autoridades judiciales han cobrado especial relevancia en el contexto 
-                    actual, donde la transparencia y la rendición de cuentas son fundamentales para fortalecer la 
-                    confianza ciudadana en las instituciones.
-                  </p>
-                  
-                  <p>
-                    Las comisiones de postulación han implementado nuevos criterios de evaluación que buscan garantizar 
-                    que los candidatos seleccionados cuenten con la experiencia, integridad y competencias necesarias 
-                    para ejercer sus funciones de manera efectiva. Estos cambios responden a las demandas de la sociedad 
-                    civil y organismos internacionales que han señalado la importancia de fortalecer los mecanismos de 
-                    selección judicial.
-                  </p>
-                  
-                  <h3 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">
-                    Principales Cambios en los Criterios
-                  </h3>
-                  
-                  <p>
-                    Entre las modificaciones más significativas se encuentran la inclusión de evaluaciones psicológicas 
-                    más rigurosas, la verificación exhaustiva de antecedentes y la implementación de entrevistas públicas 
-                    que permiten a la ciudadanía conocer mejor a los candidatos. Estas medidas buscan asegurar que quienes 
-                    accedan a cargos judiciales cuenten con la idoneidad moral y profesional requerida.
-                  </p>
-                  
-                  <p>
-                    Además, se ha fortalecido el componente de transparencia mediante la publicación de todos los documentos 
-                    relacionados con los procesos de selección, incluyendo los expedientes de los candidatos, las actas de 
-                    las sesiones de las comisiones y los criterios de evaluación utilizados.
-                  </p>
-                  
-                  <h3 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">
-                    Impacto en la Independencia Judicial
-                  </h3>
-                  
-                  <p>
-                    Estos cambios tienen un impacto directo en el fortalecimiento de la independencia judicial, ya que 
-                    procesos más transparentes y rigurosos reducen las posibilidades de interferencia política o de 
-                    intereses particulares en la selección de autoridades judiciales. La participación ciudadana en 
-                    estos procesos también contribuye a legitimizar las decisiones tomadas por las comisiones.
-                  </p>
-                  
-                  <p>
-                    La implementación de estas medidas representa un paso importante hacia la consolidación de un sistema 
-                    judicial más sólido y confiable, que pueda responder efectivamente a las necesidades de justicia de 
-                    la población guatemalteca.
-                  </p>
-                </div>
+                {article.content ? (
+                  <div className="space-y-6 text-neutral-700 leading-relaxed">
+                    {article.content
+                      .split(/\n{2,}/)
+                      .map((paragraph, index) => {
+                        const trimmed = paragraph.trim();
+                        if (!trimmed) return null;
+                        return <p key={index}>{trimmed}</p>;
+                      })}
+                  </div>
+                ) : (
+                  <div className="text-neutral-600">
+                    Este artículo no tiene contenido disponible.
+                  </div>
+                )}
               </div>
 
               {/* Tags */}
@@ -338,3 +303,4 @@ const NewsArticle: React.FC = () => {
 };
 
 export default NewsArticle;
+

@@ -22,7 +22,22 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({
   onRetry,
   className = ''
 }) => {
-  const navigate = useNavigate();
+  let navigate: ReturnType<typeof useNavigate> | null = null;
+  
+  try {
+    navigate = useNavigate();
+  } catch (e) {
+    // useNavigate no disponible fuera del contexto de Router
+    navigate = null;
+  }
+
+  const handleNavigateHome = () => {
+    if (navigate) {
+      navigate('/');
+    } else {
+      window.location.href = '/';
+    }
+  };
 
   const content = (
     <div className={`flex flex-col items-center justify-center text-center space-y-4 p-8 ${className}`}>
@@ -41,7 +56,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({
           </Button>
         )}
         {showHomeButton && (
-          <Button variant="outline" onClick={() => navigate('/')}>
+          <Button variant="outline" onClick={handleNavigateHome}>
             <Home size={16} className="mr-2" />
             Volver al inicio
           </Button>
