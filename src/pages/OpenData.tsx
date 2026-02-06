@@ -350,9 +350,9 @@ const OpenData: React.FC = () => {
               </span>
             </Button>
             <Button
-              variant="outline"
+              variant="danger"
               size="lg"
-              className="inline-flex items-center gap-2 border-2 border-white text-neutral-200 hover:bg-secondary-200 hover:text-neutral-600 transition-all font-semibold px-8 py-4"
+              className="bg-justice-600 text-justice-600 hover:bg-justice-50 hover:shadow-xl transform hover:scale-105"
             >
               <span className="inline-flex items-center gap-2">
                 <BookOpen size={24} />

@@ -47,7 +47,7 @@ const NewsSection: React.FC = () => {
           </div>
           <a
             href="/noticias"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-justice-600 hover:bg-primary-700 text-white font-medium rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
           >
             Ver todas las notas
             <ArrowRight size={18} />

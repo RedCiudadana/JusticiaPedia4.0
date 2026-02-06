@@ -47,7 +47,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({
           {viewAllLink && (
             <a
               href={viewAllLink}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-justice-600 hover:bg-primary-700 text-white font-medium rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Ver todos
               <ArrowRight size={18} />
@@ -66,7 +66,7 @@ const FeaturedSection: React.FC<FeaturedSectionProps> = ({
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 p-4"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>

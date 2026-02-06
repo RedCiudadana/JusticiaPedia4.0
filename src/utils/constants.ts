@@ -50,28 +50,11 @@ export const FOOTER_SECTIONS: FooterSection[] = [
     title: 'Sobre JusticiapedIA',
     links: [
       { title: '¿Qué es Justiciapedia?', href: '/que-es-justiciapedia' },
-      { title: 'Acerca de Nosotros', href: '/acerca' },
-      { title: 'Contacto', href: '/contacto' },
-      { title: 'Nuestro Equipo', href: '/acerca#equipo' },
-      { title: 'Colaboradores', href: '/acerca#colaboradores' },
-    ],
-  },
-  {
-    title: 'Recursos',
-    links: [
+      { title: 'Comisiones', href: '/comisiones' },
+      { title: 'Aspirantes', href: '/candidatos' },
+      { title: 'Noticias', href: '/noticias' },
+      { title: 'Aprende', href: '/aprende' },
       { title: 'Datos Abiertos', href: '/recursos/datos' },
-      { title: 'Informes', href: '/recursos/informes' },
-      { title: 'Biblioteca Legal', href: '/recursos/biblioteca' },
-      { title: 'Documentación', href: '/documentacion' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { title: 'Términos y Condiciones', href: '/legal/terminos' },
-      { title: 'Política de Privacidad', href: '/legal/privacidad' },
-      { title: 'Política de Cookies', href: '/legal/cookies' },
-      { title: 'Contacto', href: '/contacto' },
     ],
   },
 ];

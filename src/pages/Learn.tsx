@@ -331,7 +331,7 @@ const Learn: React.FC = () => {
               ))}
             </div>
             <div className="mt-8 text-center">
-              <Button variant="outline" size="lg" className="border-justice-600 text-justice-600 hover:bg-justice-50">
+              <Button variant='danger' size="lg" className="bg-justice-600 text-justice-600 hover:bg-justice-50">
                 <Video size={20} className="mr-2" />
                 Ver todos los videos
               </Button>

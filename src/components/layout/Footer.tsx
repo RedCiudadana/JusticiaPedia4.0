@@ -29,14 +29,14 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-primary-900 text-white">
+    <footer >
       {/* Main Footer Content */}
-      <div>
+      <div className="bg-black text-white">
         <Container className="section-padding">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8 lg:gap-20">
             {/* About Site */}
-            <div className="lg:col-span-1">
-              <img src={Logo} alt={SITE_NAME} className="h-10 mb-4" style={{ filter: 'invert(100%)' }}/>
+            <div className="w-full md:w-1/4 text-center md:text-left">
+              <img src={Logo} alt={SITE_NAME} className="h-10 mb-4 mx-auto md:mx-0" style={{ filter: 'invert(100%)' }}/>
               <p className="text-primary-50 mb-6 leading-relaxed">
                 Plataforma cívica dedicada a promover la transparencia en los procesos de
                 designación de autoridades judiciales en Guatemala.
@@ -48,7 +48,8 @@ const Footer: React.FC = () => {
                     <a
                       key={social.platform}
                       href={social.href}
-                      className="w-10 h-10 bg-primary-800 hover:bg-primary-700 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110"
+                      className="w-10 h-10 bg-transparent hover:bg-white hover:text-black border border-white flex items-center justify-center transition-all duration-200 hover:scale-110"
+                      style={{ borderRadius: '50%' }}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Seguir en ${social.platform}`}
@@ -62,7 +63,7 @@ const Footer: React.FC = () => {
 
             {/* Footer Sections */}
             {FOOTER_SECTIONS.map((section) => (
-              <div key={section.title}>
+              <div key={section.title} className="w-full md:w-1/4 text-center md:text-left">
                 <h3 className="text-lg font-semibold mb-6 text-white">{section.title}</h3>
                 <ul className="space-y-3">
                   {section.links.map((link) => (
@@ -79,8 +80,32 @@ const Footer: React.FC = () => {
                 </ul>
               </div>
             ))}
+
+            {/* Contact Column */}
+            <div className="w-full md:w-1/4 text-center md:text-left">
+              <h3 className="text-lg font-semibold mb-6 text-white">Contacto</h3>
+              <div className="text-primary-50 space-y-4">
+                <div>
+                  <p className="font-semibold text-white mb-1">Dirección:</p>
+                  <p>Zona 10, Ciudad de Guatemala, Guatemala</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-white mb-1">Correo electrónico:</p>
+                  <a href="mailto:info@redciudadana.org.gt" className="hover:text-white">info@redciudadana.org.gt</a>
+                </div>
+                <div>
+                  <p className="font-semibold text-white mb-1">Horario de atención:</p>
+                  <p>Lunes a viernes, 8:00 a.m. - 5:00 p.m.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
+      </div>
+      <div>
+        <div className='py-6 text-center'>
+          <h6>Asociación Civil Red Ciudadana 2026</h6>
+        </div>
       </div>
     </footer>
   );
